@@ -1,0 +1,725 @@
+periodo,abogado_id,nombre,nivel,area,sueldo,cargas_sociales,gastos_asignados,costo_total,horas_facturadas
+2025-01,AB-001,Marcelo Quiroga,Socio,Corporativo,53388.85,9076.10,3500.00,65964.95,0.00
+2025-02,AB-001,Marcelo Quiroga,Socio,Corporativo,52133.79,8862.74,3500.00,64496.53,0.00
+2025-03,AB-001,Marcelo Quiroga,Socio,Corporativo,52439.72,8914.75,3500.00,64854.47,0.00
+2025-04,AB-001,Marcelo Quiroga,Socio,Corporativo,51899.34,8822.89,3500.00,64222.23,0.00
+2025-05,AB-001,Marcelo Quiroga,Socio,Corporativo,53380.80,9074.74,3500.00,65955.54,0.00
+2025-06,AB-001,Marcelo Quiroga,Socio,Corporativo,51781.18,8802.80,3500.00,64083.98,0.00
+2025-07,AB-001,Marcelo Quiroga,Socio,Corporativo,52810.78,8977.83,3500.00,65288.61,0.00
+2025-08,AB-001,Marcelo Quiroga,Socio,Corporativo,50925.06,8657.26,3500.00,63082.32,0.00
+2025-09,AB-001,Marcelo Quiroga,Socio,Corporativo,52611.55,8943.96,3500.00,65055.51,0.00
+2025-10,AB-001,Marcelo Quiroga,Socio,Corporativo,52843.21,8983.35,3500.00,65326.56,0.00
+2025-11,AB-001,Marcelo Quiroga,Socio,Corporativo,51501.71,8755.29,3500.00,63757.00,0.00
+2025-12,AB-001,Marcelo Quiroga,Socio,Corporativo,52995.27,9009.20,3500.00,65504.47,0.00
+2026-01,AB-001,Marcelo Quiroga,Socio,Corporativo,56730.97,9644.26,3500.00,69875.23,0.00
+2026-02,AB-001,Marcelo Quiroga,Socio,Corporativo,54443.09,9255.33,3500.00,67198.42,0.00
+2026-03,AB-001,Marcelo Quiroga,Socio,Corporativo,55238.67,9390.57,3500.00,68129.24,0.00
+2026-04,AB-001,Marcelo Quiroga,Socio,Corporativo,56670.25,9633.94,3500.00,69804.19,0.00
+2026-05,AB-001,Marcelo Quiroga,Socio,Corporativo,56722.63,9642.85,3500.00,69865.48,0.00
+2026-06,AB-001,Marcelo Quiroga,Socio,Corporativo,55119.05,9370.24,3500.00,67989.29,0.00
+2026-07,AB-001,Marcelo Quiroga,Socio,Corporativo,55934.91,9508.93,3500.00,68943.84,0.00
+2026-08,AB-001,Marcelo Quiroga,Socio,Corporativo,54287.23,9228.83,3500.00,67016.06,0.00
+2025-01,AB-002,Ulises Durán,Socio,Tributario,52120.76,8860.53,3500.00,64481.29,0.00
+2025-02,AB-002,Ulises Durán,Socio,Tributario,50742.51,8626.23,3500.00,62868.74,0.00
+2025-03,AB-002,Ulises Durán,Socio,Tributario,52931.36,8998.33,3500.00,65429.69,0.00
+2025-04,AB-002,Ulises Durán,Socio,Tributario,51521.65,8758.68,3500.00,63780.33,0.00
+2025-05,AB-002,Ulises Durán,Socio,Tributario,53483.50,9092.20,3500.00,66075.70,0.00
+2025-06,AB-002,Ulises Durán,Socio,Tributario,50716.82,8621.86,3500.00,62838.68,0.00
+2025-07,AB-002,Ulises Durán,Socio,Tributario,50717.74,8622.02,3500.00,62839.76,0.00
+2025-08,AB-002,Ulises Durán,Socio,Tributario,52968.26,9004.60,3500.00,65472.86,0.00
+2025-09,AB-002,Ulises Durán,Socio,Tributario,50446.37,8575.88,3500.00,62522.25,0.00
+2025-10,AB-002,Ulises Durán,Socio,Tributario,52555.76,8934.48,3500.00,64990.24,0.00
+2025-11,AB-002,Ulises Durán,Socio,Tributario,50843.36,8643.37,3500.00,62986.73,0.00
+2025-12,AB-002,Ulises Durán,Socio,Tributario,52707.63,8960.30,3500.00,65167.93,0.00
+2026-01,AB-002,Ulises Durán,Socio,Tributario,54430.78,9253.23,3500.00,67184.01,0.00
+2026-02,AB-002,Ulises Durán,Socio,Tributario,55762.45,9479.62,3500.00,68742.07,0.00
+2026-03,AB-002,Ulises Durán,Socio,Tributario,56581.21,9618.81,3500.00,69700.02,0.00
+2026-04,AB-002,Ulises Durán,Socio,Tributario,53702.91,9129.49,3500.00,66332.40,0.00
+2026-05,AB-002,Ulises Durán,Socio,Tributario,54226.93,9218.58,3500.00,66945.51,0.00
+2026-06,AB-002,Ulises Durán,Socio,Tributario,56408.64,9589.47,3500.00,69498.11,0.00
+2026-07,AB-002,Ulises Durán,Socio,Tributario,56202.95,9554.50,3500.00,69257.45,0.00
+2026-08,AB-002,Ulises Durán,Socio,Tributario,55483.70,9432.23,3500.00,68415.93,0.00
+2025-01,AB-003,Carla Flores,Socio,Laboral,52623.56,8946.01,3500.00,65069.57,0.00
+2025-02,AB-003,Carla Flores,Socio,Laboral,50444.67,8575.59,3500.00,62520.26,0.00
+2025-03,AB-003,Carla Flores,Socio,Laboral,50737.51,8625.38,3500.00,62862.89,0.00
+2025-04,AB-003,Carla Flores,Socio,Laboral,51175.05,8699.76,3500.00,63374.81,0.00
+2025-05,AB-003,Carla Flores,Socio,Laboral,51746.62,8796.93,3500.00,64043.55,0.00
+2025-06,AB-003,Carla Flores,Socio,Laboral,52623.39,8945.98,3500.00,65069.37,0.00
+2025-07,AB-003,Carla Flores,Socio,Laboral,53545.26,9102.69,3500.00,66147.95,0.00
+2025-08,AB-003,Carla Flores,Socio,Laboral,52007.80,8841.33,3500.00,64349.13,0.00
+2025-09,AB-003,Carla Flores,Socio,Laboral,52121.00,8860.57,3500.00,64481.57,0.00
+2025-10,AB-003,Carla Flores,Socio,Laboral,52461.95,8918.53,3500.00,64880.48,0.00
+2025-11,AB-003,Carla Flores,Socio,Laboral,52877.73,8989.21,3500.00,65366.94,0.00
+2025-12,AB-003,Carla Flores,Socio,Laboral,50594.43,8601.05,3500.00,62695.48,0.00
+2026-01,AB-003,Carla Flores,Socio,Laboral,56517.87,9608.04,3500.00,69625.91,0.00
+2026-02,AB-003,Carla Flores,Socio,Laboral,54535.20,9270.98,3500.00,67306.18,0.00
+2026-03,AB-003,Carla Flores,Socio,Laboral,55887.98,9500.96,3500.00,68888.94,0.00
+2026-04,AB-003,Carla Flores,Socio,Laboral,55430.30,9423.15,3500.00,68353.45,0.00
+2026-05,AB-003,Carla Flores,Socio,Laboral,55544.58,9442.58,3500.00,68487.16,0.00
+2026-06,AB-003,Carla Flores,Socio,Laboral,54317.14,9233.91,3500.00,67051.05,0.00
+2026-07,AB-003,Carla Flores,Socio,Laboral,55059.08,9360.04,3500.00,67919.12,0.00
+2026-08,AB-003,Carla Flores,Socio,Laboral,54858.05,9325.87,3500.00,67683.92,0.00
+2025-01,AB-004,Olga Terrazas,Socio,Litigios,52176.62,8870.03,3500.00,64546.65,0.00
+2025-02,AB-004,Olga Terrazas,Socio,Litigios,52833.48,8981.69,3500.00,65315.17,0.00
+2025-03,AB-004,Olga Terrazas,Socio,Litigios,51362.85,8731.68,3500.00,63594.53,0.00
+2025-04,AB-004,Olga Terrazas,Socio,Litigios,51651.58,8780.77,3500.00,63932.35,0.00
+2025-05,AB-004,Olga Terrazas,Socio,Litigios,52918.40,8996.13,3500.00,65414.53,0.00
+2025-06,AB-004,Olga Terrazas,Socio,Litigios,52913.62,8995.32,3500.00,65408.94,0.00
+2025-07,AB-004,Olga Terrazas,Socio,Litigios,52009.22,8841.57,3500.00,64350.79,0.00
+2025-08,AB-004,Olga Terrazas,Socio,Litigios,51217.60,8706.99,3500.00,63424.59,0.00
+2025-09,AB-004,Olga Terrazas,Socio,Litigios,51357.36,8730.75,3500.00,63588.11,0.00
+2025-10,AB-004,Olga Terrazas,Socio,Litigios,51934.76,8828.91,3500.00,64263.67,0.00
+2025-11,AB-004,Olga Terrazas,Socio,Litigios,50780.81,8632.74,3500.00,62913.55,0.00
+2025-12,AB-004,Olga Terrazas,Socio,Litigios,53352.33,9069.90,3500.00,65922.23,0.00
+2026-01,AB-004,Olga Terrazas,Socio,Litigios,54619.19,9285.26,3500.00,67404.45,0.00
+2026-02,AB-004,Olga Terrazas,Socio,Litigios,54781.02,9312.77,3500.00,67593.79,0.00
+2026-03,AB-004,Olga Terrazas,Socio,Litigios,54613.63,9284.32,3500.00,67397.95,0.00
+2026-04,AB-004,Olga Terrazas,Socio,Litigios,53777.74,9142.22,3500.00,66419.96,0.00
+2026-05,AB-004,Olga Terrazas,Socio,Litigios,54455.40,9257.42,3500.00,67212.82,0.00
+2026-06,AB-004,Olga Terrazas,Socio,Litigios,53638.94,9118.62,3500.00,66257.56,0.00
+2026-07,AB-004,Olga Terrazas,Socio,Litigios,54672.41,9294.31,3500.00,67466.72,0.00
+2026-08,AB-004,Olga Terrazas,Socio,Litigios,55426.70,9422.54,3500.00,68349.24,0.00
+2025-01,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,50555.48,8594.43,3500.00,62649.91,0.00
+2025-02,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,50801.33,8636.23,3500.00,62937.56,0.00
+2025-03,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,52582.95,8939.10,3500.00,65022.05,0.00
+2025-04,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,53030.30,9015.15,3500.00,65545.45,0.00
+2025-05,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,51444.01,8745.48,3500.00,63689.49,0.00
+2025-06,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,52060.61,8850.30,3500.00,64410.91,0.00
+2025-07,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,52829.68,8981.05,3500.00,65310.73,0.00
+2025-08,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,51658.24,8781.90,3500.00,63940.14,0.00
+2025-09,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,52835.83,8982.09,3500.00,65317.92,0.00
+2025-10,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,53115.91,9029.70,3500.00,65645.61,0.00
+2025-11,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,51492.75,8753.77,3500.00,63746.52,0.00
+2025-12,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,52003.75,8840.64,3500.00,64344.39,0.00
+2026-01,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,56365.07,9582.06,3500.00,69447.13,0.00
+2026-02,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,55888.61,9501.06,3500.00,68889.67,0.00
+2026-03,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,55828.85,9490.90,3500.00,68819.75,0.00
+2026-04,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,55026.97,9354.58,3500.00,67881.55,0.00
+2026-05,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,56239.93,9560.79,3500.00,69300.72,0.00
+2026-06,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,54329.44,9236.00,3500.00,67065.44,0.00
+2026-07,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,54217.97,9217.05,3500.00,66935.02,0.00
+2026-08,AB-005,Gabriela Ortuño,Socio,Propiedad Intelectual,54644.09,9289.50,3500.00,67433.59,0.00
+2025-01,AB-006,Florencia Lema,Socio,Corporativo,52471.82,8920.21,3500.00,64892.03,0.00
+2025-02,AB-006,Florencia Lema,Socio,Corporativo,53359.85,9071.17,3500.00,65931.02,0.00
+2025-03,AB-006,Florencia Lema,Socio,Corporativo,53165.47,9038.13,3500.00,65703.60,0.00
+2025-04,AB-006,Florencia Lema,Socio,Corporativo,51610.15,8773.73,3500.00,63883.88,0.00
+2025-05,AB-006,Florencia Lema,Socio,Corporativo,50602.92,8602.50,3500.00,62705.42,0.00
+2025-06,AB-006,Florencia Lema,Socio,Corporativo,52026.07,8844.43,3500.00,64370.50,0.00
+2025-07,AB-006,Florencia Lema,Socio,Corporativo,52595.88,8941.30,3500.00,65037.18,0.00
+2025-08,AB-006,Florencia Lema,Socio,Corporativo,52134.00,8862.78,3500.00,64496.78,0.00
+2025-09,AB-006,Florencia Lema,Socio,Corporativo,53395.57,9077.25,3500.00,65972.82,0.00
+2025-10,AB-006,Florencia Lema,Socio,Corporativo,50498.65,8584.77,3500.00,62583.42,0.00
+2025-11,AB-006,Florencia Lema,Socio,Corporativo,51443.84,8745.45,3500.00,63689.29,0.00
+2025-12,AB-006,Florencia Lema,Socio,Corporativo,50676.42,8614.99,3500.00,62791.41,0.00
+2026-01,AB-006,Florencia Lema,Socio,Corporativo,54763.52,9309.80,3500.00,67573.32,0.00
+2026-02,AB-006,Florencia Lema,Socio,Corporativo,55111.09,9368.89,3500.00,67979.98,0.00
+2026-03,AB-006,Florencia Lema,Socio,Corporativo,54432.16,9253.47,3500.00,67185.63,0.00
+2026-04,AB-006,Florencia Lema,Socio,Corporativo,54229.10,9218.95,3500.00,66948.05,0.00
+2026-05,AB-006,Florencia Lema,Socio,Corporativo,56193.97,9552.97,3500.00,69246.94,0.00
+2026-06,AB-006,Florencia Lema,Socio,Corporativo,55964.29,9513.93,3500.00,68978.22,0.00
+2026-07,AB-006,Florencia Lema,Socio,Corporativo,56521.82,9608.71,3500.00,69630.53,0.00
+2026-08,AB-006,Florencia Lema,Socio,Corporativo,55675.69,9464.87,3500.00,68640.56,0.00
+2025-01,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23891.60,4061.57,3500.00,31453.17,127.00
+2025-02,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24127.69,4101.71,3500.00,31729.40,105.50
+2025-03,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23636.52,4018.21,3500.00,31154.73,96.00
+2025-04,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23817.32,4048.94,3500.00,31366.26,115.75
+2025-05,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23288.80,3959.10,3500.00,30747.90,128.00
+2025-06,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24243.69,4121.43,3500.00,31865.12,114.75
+2025-07,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24586.27,4179.67,3500.00,32265.94,129.25
+2025-08,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24321.56,4134.67,3500.00,31956.23,56.75
+2025-09,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24631.44,4187.34,3500.00,32318.78,113.50
+2025-10,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23765.12,4040.07,3500.00,31305.19,133.25
+2025-11,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23578.10,4008.28,3500.00,31086.38,116.00
+2025-12,AB-007,Zulema Aguirre,Asociado Senior,Tributario,23935.48,4069.03,3500.00,31504.51,128.00
+2026-01,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25700.64,4369.11,3500.00,33569.75,69.75
+2026-02,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25419.35,4321.29,3500.00,33240.64,87.50
+2026-03,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25684.85,4366.42,3500.00,33551.27,117.75
+2026-04,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25491.07,4333.48,3500.00,33324.55,117.25
+2026-05,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25096.80,4266.46,3500.00,32863.26,110.75
+2026-06,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25664.44,4362.95,3500.00,33527.39,110.00
+2026-07,AB-007,Zulema Aguirre,Asociado Senior,Tributario,24777.01,4212.09,3500.00,32489.10,138.00
+2026-08,AB-007,Zulema Aguirre,Asociado Senior,Tributario,25885.95,4400.61,3500.00,33786.56,97.25
+2025-01,AB-008,Nicolás Lema,Asociado Senior,Laboral,23935.55,4069.04,3500.00,31504.59,117.25
+2025-02,AB-008,Nicolás Lema,Asociado Senior,Laboral,24607.25,4183.23,3500.00,32290.48,115.25
+2025-03,AB-008,Nicolás Lema,Asociado Senior,Laboral,24465.78,4159.18,3500.00,32124.96,113.25
+2025-04,AB-008,Nicolás Lema,Asociado Senior,Laboral,24030.74,4085.23,3500.00,31615.97,103.00
+2025-05,AB-008,Nicolás Lema,Asociado Senior,Laboral,23840.08,4052.81,3500.00,31392.89,116.00
+2025-06,AB-008,Nicolás Lema,Asociado Senior,Laboral,24158.96,4107.02,3500.00,31765.98,101.50
+2025-07,AB-008,Nicolás Lema,Asociado Senior,Laboral,24520.55,4168.49,3500.00,32189.04,74.75
+2025-08,AB-008,Nicolás Lema,Asociado Senior,Laboral,23410.69,3979.82,3500.00,30890.51,106.00
+2025-09,AB-008,Nicolás Lema,Asociado Senior,Laboral,24052.06,4088.85,3500.00,31640.91,124.00
+2025-10,AB-008,Nicolás Lema,Asociado Senior,Laboral,24299.25,4130.87,3500.00,31930.12,113.75
+2025-11,AB-008,Nicolás Lema,Asociado Senior,Laboral,23840.31,4052.85,3500.00,31393.16,99.75
+2025-12,AB-008,Nicolás Lema,Asociado Senior,Laboral,23689.86,4027.28,3500.00,31217.14,119.75
+2026-01,AB-008,Nicolás Lema,Asociado Senior,Laboral,25273.59,4296.51,3500.00,33070.10,97.25
+2026-02,AB-008,Nicolás Lema,Asociado Senior,Laboral,25587.43,4349.86,3500.00,33437.29,101.00
+2026-03,AB-008,Nicolás Lema,Asociado Senior,Laboral,25067.75,4261.52,3500.00,32829.27,115.75
+2026-04,AB-008,Nicolás Lema,Asociado Senior,Laboral,25168.37,4278.62,3500.00,32946.99,84.00
+2026-05,AB-008,Nicolás Lema,Asociado Senior,Laboral,25186.55,4281.71,3500.00,32968.26,93.75
+2026-06,AB-008,Nicolás Lema,Asociado Senior,Laboral,25549.89,4343.48,3500.00,33393.37,132.00
+2026-07,AB-008,Nicolás Lema,Asociado Senior,Laboral,25981.80,4416.91,3500.00,33898.71,122.50
+2026-08,AB-008,Nicolás Lema,Asociado Senior,Laboral,26046.12,4427.84,3500.00,33973.96,110.50
+2025-01,AB-009,Ximena Fuentes,Asociado Senior,Litigios,23376.91,3974.07,3500.00,30850.98,113.00
+2025-02,AB-009,Ximena Fuentes,Asociado Senior,Litigios,23946.38,4070.88,3500.00,31517.26,103.50
+2025-03,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24245.71,4121.77,3500.00,31867.48,107.00
+2025-04,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24006.03,4081.03,3500.00,31587.06,58.75
+2025-05,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24369.92,4142.89,3500.00,32012.81,125.00
+2025-06,AB-009,Ximena Fuentes,Asociado Senior,Litigios,23422.96,3981.90,3500.00,30904.86,102.50
+2025-07,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24608.68,4183.48,3500.00,32292.16,122.50
+2025-08,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24419.84,4151.37,3500.00,32071.21,102.00
+2025-09,AB-009,Ximena Fuentes,Asociado Senior,Litigios,23329.34,3965.99,3500.00,30795.33,123.00
+2025-10,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24143.15,4104.34,3500.00,31747.49,142.00
+2025-11,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24166.45,4108.30,3500.00,31774.75,101.25
+2025-12,AB-009,Ximena Fuentes,Asociado Senior,Litigios,23747.34,4037.05,3500.00,31284.39,117.00
+2026-01,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25806.79,4387.15,3500.00,33693.94,123.00
+2026-02,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24745.40,4206.72,3500.00,32452.12,82.25
+2026-03,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25083.80,4264.25,3500.00,32848.05,108.25
+2026-04,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25663.77,4362.84,3500.00,33526.61,121.50
+2026-05,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25655.87,4361.50,3500.00,33517.37,108.75
+2026-06,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25242.90,4291.29,3500.00,33034.19,104.00
+2026-07,AB-009,Ximena Fuentes,Asociado Senior,Litigios,24771.48,4211.15,3500.00,32482.63,95.00
+2026-08,AB-009,Ximena Fuentes,Asociado Senior,Litigios,25578.26,4348.30,3500.00,33426.56,118.25
+2025-01,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24624.50,4186.16,3500.00,32310.66,113.00
+2025-02,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24407.58,4149.29,3500.00,32056.87,109.25
+2025-03,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,23887.43,4060.86,3500.00,31448.29,86.25
+2025-04,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24677.53,4195.18,3500.00,32372.71,115.75
+2025-05,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24615.51,4184.64,3500.00,32300.15,113.75
+2025-06,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,23291.89,3959.62,3500.00,30751.51,119.00
+2025-07,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24069.77,4091.86,3500.00,31661.63,134.25
+2025-08,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24266.94,4125.38,3500.00,31892.32,115.00
+2025-09,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24063.12,4090.73,3500.00,31653.85,76.00
+2025-10,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,23474.18,3990.61,3500.00,30964.79,124.00
+2025-11,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,23691.36,4027.53,3500.00,31218.89,120.50
+2025-12,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,23623.22,4015.95,3500.00,31139.17,124.25
+2026-01,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25741.36,4376.03,3500.00,33617.39,116.25
+2026-02,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25522.21,4338.78,3500.00,33360.99,99.50
+2026-03,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24779.70,4212.55,3500.00,32492.25,134.75
+2026-04,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25423.47,4321.99,3500.00,33245.46,126.50
+2026-05,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,24710.56,4200.80,3500.00,32411.36,92.75
+2026-06,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25984.97,4417.44,3500.00,33902.41,53.25
+2026-07,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25109.79,4268.66,3500.00,32878.45,133.00
+2026-08,AB-010,Julia Fuentes,Asociado Senior,Propiedad Intelectual,25758.56,4378.96,3500.00,33637.52,110.00
+2025-01,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23951.47,4071.75,3500.00,31523.22,110.25
+2025-02,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23923.64,4067.02,3500.00,31490.66,108.50
+2025-03,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,24505.76,4165.98,3500.00,32171.74,98.75
+2025-04,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23410.08,3979.71,3500.00,30889.79,116.00
+2025-05,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23774.23,4041.62,3500.00,31315.85,101.50
+2025-06,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,24143.47,4104.39,3500.00,31747.86,102.75
+2025-07,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23397.99,3977.66,3500.00,30875.65,121.50
+2025-08,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23936.46,4069.20,3500.00,31505.66,118.00
+2025-09,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,24677.29,4195.14,3500.00,32372.43,84.00
+2025-10,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23570.19,4006.93,3500.00,31077.12,115.75
+2025-11,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,24082.79,4094.07,3500.00,31676.86,106.75
+2025-12,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,23303.94,3961.67,3500.00,30765.61,122.50
+2026-01,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25264.91,4295.03,3500.00,33059.94,115.25
+2026-02,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25100.17,4267.03,3500.00,32867.20,88.75
+2026-03,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,24868.20,4227.59,3500.00,32595.79,120.50
+2026-04,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25931.29,4408.32,3500.00,33839.61,83.25
+2026-05,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25672.53,4364.33,3500.00,33536.86,121.50
+2026-06,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25606.41,4353.09,3500.00,33459.50,97.75
+2026-07,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25808.88,4387.51,3500.00,33696.39,98.50
+2026-08,AB-011,Gonzalo Soliz,Asociado Senior,Corporativo,25632.26,4357.48,3500.00,33489.74,116.00
+2025-01,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23536.85,4001.26,3500.00,31038.11,103.50
+2025-02,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23308.28,3962.41,3500.00,30770.69,107.25
+2025-03,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24649.79,4190.46,3500.00,32340.25,111.75
+2025-04,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24515.89,4167.70,3500.00,32183.59,122.50
+2025-05,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23754.53,4038.27,3500.00,31292.80,120.25
+2025-06,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24674.68,4194.70,3500.00,32369.38,105.25
+2025-07,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23355.89,3970.50,3500.00,30826.39,116.50
+2025-08,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24008.13,4081.38,3500.00,31589.51,88.00
+2025-09,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23986.61,4077.72,3500.00,31564.33,126.50
+2025-10,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23594.35,4011.04,3500.00,31105.39,119.75
+2025-11,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,23768.87,4040.71,3500.00,31309.58,113.25
+2025-12,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24138.34,4103.52,3500.00,31741.86,119.50
+2026-01,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24686.88,4196.77,3500.00,32383.65,114.75
+2026-02,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25682.38,4366.00,3500.00,33548.38,105.25
+2026-03,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25797.02,4385.49,3500.00,33682.51,91.50
+2026-04,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25333.20,4306.64,3500.00,33139.84,118.00
+2026-05,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25992.62,4418.75,3500.00,33911.37,106.25
+2026-06,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,24957.02,4242.69,3500.00,32699.71,107.00
+2026-07,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25579.40,4348.50,3500.00,33427.90,71.25
+2026-08,AB-012,Bruno Hinojosa,Asociado Senior,Tributario,25674.35,4364.64,3500.00,33538.99,115.75
+2025-01,AB-013,Sergio Antezana,Asociado Senior,Laboral,24385.19,4145.48,3500.00,32030.67,118.75
+2025-02,AB-013,Sergio Antezana,Asociado Senior,Laboral,24038.17,4086.49,3500.00,31624.66,118.25
+2025-03,AB-013,Sergio Antezana,Asociado Senior,Laboral,24289.94,4129.29,3500.00,31919.23,92.75
+2025-04,AB-013,Sergio Antezana,Asociado Senior,Laboral,24054.62,4089.29,3500.00,31643.91,117.75
+2025-05,AB-013,Sergio Antezana,Asociado Senior,Laboral,23843.04,4053.32,3500.00,31396.36,101.75
+2025-06,AB-013,Sergio Antezana,Asociado Senior,Laboral,23835.01,4051.95,3500.00,31386.96,117.00
+2025-07,AB-013,Sergio Antezana,Asociado Senior,Laboral,23409.33,3979.59,3500.00,30888.92,111.75
+2025-08,AB-013,Sergio Antezana,Asociado Senior,Laboral,23634.34,4017.84,3500.00,31152.18,108.75
+2025-09,AB-013,Sergio Antezana,Asociado Senior,Laboral,23286.30,3958.67,3500.00,30744.97,56.50
+2025-10,AB-013,Sergio Antezana,Asociado Senior,Laboral,23814.62,4048.49,3500.00,31363.11,131.50
+2025-11,AB-013,Sergio Antezana,Asociado Senior,Laboral,23327.52,3965.68,3500.00,30793.20,104.75
+2025-12,AB-013,Sergio Antezana,Asociado Senior,Laboral,24085.24,4094.49,3500.00,31679.73,137.50
+2026-01,AB-013,Sergio Antezana,Asociado Senior,Laboral,25723.20,4372.94,3500.00,33596.14,114.25
+2026-02,AB-013,Sergio Antezana,Asociado Senior,Laboral,25282.06,4297.95,3500.00,33080.01,95.00
+2026-03,AB-013,Sergio Antezana,Asociado Senior,Laboral,24760.09,4209.22,3500.00,32469.31,114.25
+2026-04,AB-013,Sergio Antezana,Asociado Senior,Laboral,25738.68,4375.58,3500.00,33614.26,61.00
+2026-05,AB-013,Sergio Antezana,Asociado Senior,Laboral,24873.31,4228.46,3500.00,32601.77,115.25
+2026-06,AB-013,Sergio Antezana,Asociado Senior,Laboral,25281.14,4297.79,3500.00,33078.93,139.25
+2026-07,AB-013,Sergio Antezana,Asociado Senior,Laboral,25622.80,4355.88,3500.00,33478.68,119.75
+2026-08,AB-013,Sergio Antezana,Asociado Senior,Laboral,25257.05,4293.70,3500.00,33050.75,130.75
+2025-01,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24242.46,4121.22,3500.00,31863.68,114.75
+2025-02,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24344.91,4138.63,3500.00,31983.54,109.50
+2025-03,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23729.83,4034.07,3500.00,31263.90,107.75
+2025-04,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24477.77,4161.22,3500.00,32138.99,103.00
+2025-05,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24290.63,4129.41,3500.00,31920.04,109.00
+2025-06,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24446.59,4155.92,3500.00,32102.51,125.75
+2025-07,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23453.20,3987.04,3500.00,30940.24,107.25
+2025-08,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23328.38,3965.82,3500.00,30794.20,110.25
+2025-09,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23393.29,3976.86,3500.00,30870.15,69.00
+2025-10,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23482.46,3992.02,3500.00,30974.48,120.50
+2025-11,AB-014,Cristian Ortuño,Asociado Senior,Litigios,23378.51,3974.35,3500.00,30852.86,109.00
+2025-12,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24495.85,4164.29,3500.00,32160.14,135.00
+2026-01,AB-014,Cristian Ortuño,Asociado Senior,Litigios,25091.18,4265.50,3500.00,32856.68,102.25
+2026-02,AB-014,Cristian Ortuño,Asociado Senior,Litigios,25566.98,4346.39,3500.00,33413.37,91.75
+2026-03,AB-014,Cristian Ortuño,Asociado Senior,Litigios,24979.19,4246.46,3500.00,32725.65,133.00
+2026-04,AB-014,Cristian Ortuño,Asociado Senior,Litigios,25630.58,4357.20,3500.00,33487.78,122.25
+2026-05,AB-014,Cristian Ortuño,Asociado Senior,Litigios,26071.19,4432.10,3500.00,34003.29,58.00
+2026-06,AB-014,Cristian Ortuño,Asociado Senior,Litigios,25261.14,4294.39,3500.00,33055.53,121.75
+2026-07,AB-014,Cristian Ortuño,Asociado Senior,Litigios,26084.00,4434.28,3500.00,34018.28,132.25
+2026-08,AB-014,Cristian Ortuño,Asociado Senior,Litigios,25425.61,4322.35,3500.00,33247.96,105.75
+2025-01,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15094.27,2566.03,3500.00,21160.30,119.50
+2025-02,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15165.64,2578.16,3500.00,21243.80,111.75
+2025-03,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15857.59,2695.79,3500.00,22053.38,99.75
+2025-04,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15061.81,2560.51,3500.00,21122.32,132.25
+2025-05,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15828.15,2690.79,3500.00,22018.94,69.00
+2025-06,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15125.13,2571.27,3500.00,21196.40,116.25
+2025-07,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15599.37,2651.89,3500.00,21751.26,144.75
+2025-08,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15955.89,2712.50,3500.00,22168.39,115.00
+2025-09,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15487.92,2632.95,3500.00,21620.87,131.50
+2025-10,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15127.76,2571.72,3500.00,21199.48,135.25
+2025-11,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15554.47,2644.26,3500.00,21698.73,116.50
+2025-12,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15716.42,2671.79,3500.00,21888.21,121.25
+2026-01,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16330.35,2776.16,3500.00,22606.51,124.75
+2026-02,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16162.21,2747.58,3500.00,22409.79,76.00
+2026-03,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16858.49,2865.94,3500.00,23224.43,97.50
+2026-04,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16133.79,2742.74,3500.00,22376.53,129.00
+2026-05,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,15964.66,2713.99,3500.00,22178.65,120.25
+2026-06,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16334.02,2776.78,3500.00,22610.80,119.00
+2026-07,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16177.04,2750.10,3500.00,22427.14,146.00
+2026-08,AB-015,Óscar Jordán,Asociado,Propiedad Intelectual,16332.12,2776.46,3500.00,22608.58,122.75
+2025-01,AB-016,Lorena Aguirre,Asociado,Corporativo,15468.11,2629.58,3500.00,21597.69,118.50
+2025-02,AB-016,Lorena Aguirre,Asociado,Corporativo,15090.58,2565.40,3500.00,21155.98,117.75
+2025-03,AB-016,Lorena Aguirre,Asociado,Corporativo,15624.48,2656.16,3500.00,21780.64,112.00
+2025-04,AB-016,Lorena Aguirre,Asociado,Corporativo,15568.28,2646.61,3500.00,21714.89,129.75
+2025-05,AB-016,Lorena Aguirre,Asociado,Corporativo,15066.81,2561.36,3500.00,21128.17,110.75
+2025-06,AB-016,Lorena Aguirre,Asociado,Corporativo,15456.36,2627.58,3500.00,21583.94,108.25
+2025-07,AB-016,Lorena Aguirre,Asociado,Corporativo,15226.28,2588.47,3500.00,21314.75,149.25
+2025-08,AB-016,Lorena Aguirre,Asociado,Corporativo,15143.15,2574.34,3500.00,21217.49,122.50
+2025-09,AB-016,Lorena Aguirre,Asociado,Corporativo,15408.77,2619.49,3500.00,21528.26,73.50
+2025-10,AB-016,Lorena Aguirre,Asociado,Corporativo,15191.44,2582.54,3500.00,21273.98,137.75
+2025-11,AB-016,Lorena Aguirre,Asociado,Corporativo,15827.35,2690.65,3500.00,22018.00,104.00
+2025-12,AB-016,Lorena Aguirre,Asociado,Corporativo,15781.70,2682.89,3500.00,21964.59,132.00
+2026-01,AB-016,Lorena Aguirre,Asociado,Corporativo,16416.30,2790.77,3500.00,22707.07,111.00
+2026-02,AB-016,Lorena Aguirre,Asociado,Corporativo,16160.13,2747.22,3500.00,22407.35,119.25
+2026-03,AB-016,Lorena Aguirre,Asociado,Corporativo,16111.65,2738.98,3500.00,22350.63,124.50
+2026-04,AB-016,Lorena Aguirre,Asociado,Corporativo,16139.35,2743.69,3500.00,22383.04,124.25
+2026-05,AB-016,Lorena Aguirre,Asociado,Corporativo,16018.27,2723.11,3500.00,22241.38,71.75
+2026-06,AB-016,Lorena Aguirre,Asociado,Corporativo,16144.11,2744.50,3500.00,22388.61,119.50
+2026-07,AB-016,Lorena Aguirre,Asociado,Corporativo,16704.73,2839.80,3500.00,23044.53,128.00
+2026-08,AB-016,Lorena Aguirre,Asociado,Corporativo,16122.96,2740.90,3500.00,22363.86,100.50
+2025-01,AB-017,Gabriela Villarroel,Asociado,Tributario,15165.62,2578.16,3500.00,21243.78,119.00
+2025-02,AB-017,Gabriela Villarroel,Asociado,Tributario,15584.94,2649.44,3500.00,21734.38,118.75
+2025-03,AB-017,Gabriela Villarroel,Asociado,Tributario,15434.69,2623.90,3500.00,21558.59,129.50
+2025-04,AB-017,Gabriela Villarroel,Asociado,Tributario,15601.42,2652.24,3500.00,21753.66,111.50
+2025-05,AB-017,Gabriela Villarroel,Asociado,Tributario,15199.29,2583.88,3500.00,21283.17,118.50
+2025-06,AB-017,Gabriela Villarroel,Asociado,Tributario,15785.88,2683.60,3500.00,21969.48,124.25
+2025-07,AB-017,Gabriela Villarroel,Asociado,Tributario,15559.98,2645.20,3500.00,21705.18,138.50
+2025-08,AB-017,Gabriela Villarroel,Asociado,Tributario,15293.39,2599.88,3500.00,21393.27,112.00
+2025-09,AB-017,Gabriela Villarroel,Asociado,Tributario,15562.55,2645.63,3500.00,21708.18,125.00
+2025-10,AB-017,Gabriela Villarroel,Asociado,Tributario,15918.23,2706.10,3500.00,22124.33,122.25
+2025-11,AB-017,Gabriela Villarroel,Asociado,Tributario,15246.64,2591.93,3500.00,21338.57,75.25
+2025-12,AB-017,Gabriela Villarroel,Asociado,Tributario,15767.16,2680.42,3500.00,21947.58,138.25
+2026-01,AB-017,Gabriela Villarroel,Asociado,Tributario,16693.72,2837.93,3500.00,23031.65,113.75
+2026-02,AB-017,Gabriela Villarroel,Asociado,Tributario,16096.82,2736.46,3500.00,22333.28,92.25
+2026-03,AB-017,Gabriela Villarroel,Asociado,Tributario,16878.36,2869.32,3500.00,23247.68,135.00
+2026-04,AB-017,Gabriela Villarroel,Asociado,Tributario,16813.29,2858.26,3500.00,23171.55,126.25
+2026-05,AB-017,Gabriela Villarroel,Asociado,Tributario,16895.29,2872.20,3500.00,23267.49,59.50
+2026-06,AB-017,Gabriela Villarroel,Asociado,Tributario,16081.77,2733.90,3500.00,22315.67,119.00
+2026-07,AB-017,Gabriela Villarroel,Asociado,Tributario,16411.36,2789.93,3500.00,22701.29,115.00
+2026-08,AB-017,Gabriela Villarroel,Asociado,Tributario,16090.72,2735.42,3500.00,22326.14,101.25
+2025-01,AB-018,Daniel Guzmán,Asociado,Laboral,15258.06,2593.87,3500.00,21351.93,121.00
+2025-02,AB-018,Daniel Guzmán,Asociado,Laboral,15804.42,2686.75,3500.00,21991.17,122.00
+2025-03,AB-018,Daniel Guzmán,Asociado,Laboral,15560.70,2645.32,3500.00,21706.02,113.75
+2025-04,AB-018,Daniel Guzmán,Asociado,Laboral,15924.17,2707.11,3500.00,22131.28,126.75
+2025-05,AB-018,Daniel Guzmán,Asociado,Laboral,15769.92,2680.89,3500.00,21950.81,116.50
+2025-06,AB-018,Daniel Guzmán,Asociado,Laboral,15681.16,2665.80,3500.00,21846.96,108.50
+2025-07,AB-018,Daniel Guzmán,Asociado,Laboral,15422.04,2621.75,3500.00,21543.79,148.50
+2025-08,AB-018,Daniel Guzmán,Asociado,Laboral,15688.08,2666.97,3500.00,21855.05,102.00
+2025-09,AB-018,Daniel Guzmán,Asociado,Laboral,15217.57,2586.99,3500.00,21304.56,117.00
+2025-10,AB-018,Daniel Guzmán,Asociado,Laboral,15122.60,2570.84,3500.00,21193.44,122.75
+2025-11,AB-018,Daniel Guzmán,Asociado,Laboral,15540.06,2641.81,3500.00,21681.87,107.50
+2025-12,AB-018,Daniel Guzmán,Asociado,Laboral,15475.42,2630.82,3500.00,21606.24,66.25
+2026-01,AB-018,Daniel Guzmán,Asociado,Laboral,16276.92,2767.08,3500.00,22544.00,120.25
+2026-02,AB-018,Daniel Guzmán,Asociado,Laboral,16101.35,2737.23,3500.00,22338.58,107.25
+2026-03,AB-018,Daniel Guzmán,Asociado,Laboral,16885.08,2870.46,3500.00,23255.54,121.75
+2026-04,AB-018,Daniel Guzmán,Asociado,Laboral,16366.25,2782.26,3500.00,22648.51,87.25
+2026-05,AB-018,Daniel Guzmán,Asociado,Laboral,16899.60,2872.93,3500.00,23272.53,95.00
+2026-06,AB-018,Daniel Guzmán,Asociado,Laboral,16528.21,2809.80,3500.00,22838.01,126.00
+2026-07,AB-018,Daniel Guzmán,Asociado,Laboral,15950.90,2711.65,3500.00,22162.55,147.75
+2026-08,AB-018,Daniel Guzmán,Asociado,Laboral,16825.36,2860.31,3500.00,23185.67,122.50
+2025-01,AB-019,Mariana Daza,Asociado,Litigios,15721.86,2672.72,3500.00,21894.58,122.50
+2025-02,AB-019,Mariana Daza,Asociado,Litigios,15837.79,2692.42,3500.00,22030.21,134.75
+2025-03,AB-019,Mariana Daza,Asociado,Litigios,15702.95,2669.50,3500.00,21872.45,114.25
+2025-04,AB-019,Mariana Daza,Asociado,Litigios,15100.41,2567.07,3500.00,21167.48,122.00
+2025-05,AB-019,Mariana Daza,Asociado,Litigios,15275.40,2596.82,3500.00,21372.22,122.25
+2025-06,AB-019,Mariana Daza,Asociado,Litigios,15882.18,2699.97,3500.00,22082.15,121.00
+2025-07,AB-019,Mariana Daza,Asociado,Litigios,15710.09,2670.72,3500.00,21880.81,140.75
+2025-08,AB-019,Mariana Daza,Asociado,Litigios,15218.66,2587.17,3500.00,21305.83,121.50
+2025-09,AB-019,Mariana Daza,Asociado,Litigios,15719.88,2672.38,3500.00,21892.26,131.50
+2025-10,AB-019,Mariana Daza,Asociado,Litigios,15760.88,2679.35,3500.00,21940.23,140.75
+2025-11,AB-019,Mariana Daza,Asociado,Litigios,15398.12,2617.68,3500.00,21515.80,54.75
+2025-12,AB-019,Mariana Daza,Asociado,Litigios,15306.94,2602.18,3500.00,21409.12,113.50
+2026-01,AB-019,Mariana Daza,Asociado,Litigios,16914.62,2875.49,3500.00,23290.11,107.00
+2026-02,AB-019,Mariana Daza,Asociado,Litigios,16256.82,2763.66,3500.00,22520.48,110.75
+2026-03,AB-019,Mariana Daza,Asociado,Litigios,16853.51,2865.10,3500.00,23218.61,117.25
+2026-04,AB-019,Mariana Daza,Asociado,Litigios,15980.77,2716.73,3500.00,22197.50,135.00
+2026-05,AB-019,Mariana Daza,Asociado,Litigios,16480.98,2801.77,3500.00,22782.75,125.25
+2026-06,AB-019,Mariana Daza,Asociado,Litigios,16815.59,2858.65,3500.00,23174.24,66.25
+2026-07,AB-019,Mariana Daza,Asociado,Litigios,16900.60,2873.10,3500.00,23273.70,148.50
+2026-08,AB-019,Mariana Daza,Asociado,Litigios,16579.46,2818.51,3500.00,22897.97,125.75
+2025-01,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15533.31,2640.66,3500.00,21673.97,135.00
+2025-02,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15581.50,2648.86,3500.00,21730.36,129.75
+2025-03,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15942.25,2710.18,3500.00,22152.43,115.25
+2025-04,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15157.63,2576.80,3500.00,21234.43,96.75
+2025-05,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15073.58,2562.51,3500.00,21136.09,110.00
+2025-06,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15778.25,2682.30,3500.00,21960.55,126.25
+2025-07,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15154.02,2576.18,3500.00,21230.20,148.00
+2025-08,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15181.35,2580.83,3500.00,21262.18,118.75
+2025-09,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15141.89,2574.12,3500.00,21216.01,125.50
+2025-10,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15818.02,2689.06,3500.00,22007.08,152.25
+2025-11,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15934.95,2708.94,3500.00,22143.89,117.50
+2025-12,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15261.28,2594.42,3500.00,21355.70,131.50
+2026-01,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15983.71,2717.23,3500.00,22200.94,115.25
+2026-02,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16333.52,2776.70,3500.00,22610.22,76.00
+2026-03,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,15955.28,2712.40,3500.00,22167.68,116.50
+2026-04,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16614.73,2824.50,3500.00,22939.23,131.75
+2026-05,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16837.30,2862.34,3500.00,23199.64,116.25
+2026-06,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16583.94,2819.27,3500.00,22903.21,124.75
+2026-07,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16229.73,2759.05,3500.00,22488.78,153.25
+2026-08,AB-020,Tatiana Ortuño,Asociado,Propiedad Intelectual,16523.18,2808.94,3500.00,22832.12,115.50
+2025-01,AB-021,Marcelo Antezana,Asociado,Corporativo,15394.97,2617.14,3500.00,21512.11,115.00
+2025-02,AB-021,Marcelo Antezana,Asociado,Corporativo,15597.56,2651.59,3500.00,21749.15,114.25
+2025-03,AB-021,Marcelo Antezana,Asociado,Corporativo,15119.96,2570.39,3500.00,21190.35,117.00
+2025-04,AB-021,Marcelo Antezana,Asociado,Corporativo,15560.65,2645.31,3500.00,21705.96,123.50
+2025-05,AB-021,Marcelo Antezana,Asociado,Corporativo,15880.67,2699.71,3500.00,22080.38,130.75
+2025-06,AB-021,Marcelo Antezana,Asociado,Corporativo,15903.20,2703.54,3500.00,22106.74,131.00
+2025-07,AB-021,Marcelo Antezana,Asociado,Corporativo,15061.87,2560.52,3500.00,21122.39,140.75
+2025-08,AB-021,Marcelo Antezana,Asociado,Corporativo,15759.99,2679.20,3500.00,21939.19,70.25
+2025-09,AB-021,Marcelo Antezana,Asociado,Corporativo,15483.96,2632.27,3500.00,21616.23,118.00
+2025-01,AB-022,Bruno Zambrana,Asociado,Tributario,15177.11,2580.11,3500.00,21257.22,123.50
+2025-02,AB-022,Bruno Zambrana,Asociado,Tributario,15599.10,2651.85,3500.00,21750.95,131.00
+2025-03,AB-022,Bruno Zambrana,Asociado,Tributario,15796.16,2685.35,3500.00,21981.51,111.25
+2025-04,AB-022,Bruno Zambrana,Asociado,Tributario,15516.55,2637.81,3500.00,21654.36,135.00
+2025-05,AB-022,Bruno Zambrana,Asociado,Tributario,15806.88,2687.17,3500.00,21994.05,126.75
+2025-06,AB-022,Bruno Zambrana,Asociado,Tributario,15955.93,2712.51,3500.00,22168.44,111.50
+2025-07,AB-022,Bruno Zambrana,Asociado,Tributario,15716.26,2671.76,3500.00,21888.02,120.50
+2025-08,AB-022,Bruno Zambrana,Asociado,Tributario,15776.40,2681.99,3500.00,21958.39,119.50
+2025-09,AB-022,Bruno Zambrana,Asociado,Tributario,15675.25,2664.79,3500.00,21840.04,76.00
+2025-10,AB-022,Bruno Zambrana,Asociado,Tributario,15901.39,2703.24,3500.00,22104.63,129.25
+2025-11,AB-022,Bruno Zambrana,Asociado,Tributario,15406.34,2619.08,3500.00,21525.42,113.00
+2025-12,AB-022,Bruno Zambrana,Asociado,Tributario,15169.25,2578.77,3500.00,21248.02,110.00
+2026-01,AB-022,Bruno Zambrana,Asociado,Tributario,16900.31,2873.05,3500.00,23273.36,43.00
+2026-02,AB-022,Bruno Zambrana,Asociado,Tributario,16653.82,2831.15,3500.00,22984.97,111.50
+2026-03,AB-022,Bruno Zambrana,Asociado,Tributario,16271.79,2766.20,3500.00,22537.99,126.25
+2026-04,AB-022,Bruno Zambrana,Asociado,Tributario,16047.23,2728.03,3500.00,22275.26,130.75
+2026-05,AB-022,Bruno Zambrana,Asociado,Tributario,16087.59,2734.89,3500.00,22322.48,105.25
+2026-06,AB-022,Bruno Zambrana,Asociado,Tributario,16058.08,2729.87,3500.00,22287.95,127.50
+2026-07,AB-022,Bruno Zambrana,Asociado,Tributario,16899.46,2872.91,3500.00,23272.37,146.00
+2026-08,AB-022,Bruno Zambrana,Asociado,Tributario,16074.97,2732.74,3500.00,22307.71,117.75
+2025-01,AB-023,Raquel Gutiérrez,Asociado,Laboral,15795.85,2685.29,3500.00,21981.14,120.50
+2025-02,AB-023,Raquel Gutiérrez,Asociado,Laboral,15477.47,2631.17,3500.00,21608.64,122.50
+2025-03,AB-023,Raquel Gutiérrez,Asociado,Laboral,15360.03,2611.21,3500.00,21471.24,107.25
+2025-04,AB-023,Raquel Gutiérrez,Asociado,Laboral,15881.33,2699.83,3500.00,22081.16,125.00
+2025-05,AB-023,Raquel Gutiérrez,Asociado,Laboral,15577.11,2648.11,3500.00,21725.22,117.25
+2025-06,AB-023,Raquel Gutiérrez,Asociado,Laboral,15877.39,2699.16,3500.00,22076.55,110.25
+2025-07,AB-023,Raquel Gutiérrez,Asociado,Laboral,15237.29,2590.34,3500.00,21327.63,131.25
+2025-08,AB-023,Raquel Gutiérrez,Asociado,Laboral,15711.40,2670.94,3500.00,21882.34,119.50
+2025-09,AB-023,Raquel Gutiérrez,Asociado,Laboral,15809.71,2687.65,3500.00,21997.36,148.75
+2025-10,AB-023,Raquel Gutiérrez,Asociado,Laboral,15731.28,2674.32,3500.00,21905.60,150.75
+2025-11,AB-023,Raquel Gutiérrez,Asociado,Laboral,15380.78,2614.73,3500.00,21495.51,119.50
+2025-12,AB-023,Raquel Gutiérrez,Asociado,Laboral,15810.91,2687.85,3500.00,21998.76,67.00
+2026-01,AB-023,Raquel Gutiérrez,Asociado,Laboral,16063.95,2730.87,3500.00,22294.82,120.00
+2026-02,AB-023,Raquel Gutiérrez,Asociado,Laboral,16517.64,2808.00,3500.00,22825.64,102.50
+2026-03,AB-023,Raquel Gutiérrez,Asociado,Laboral,16353.00,2780.01,3500.00,22633.01,99.50
+2026-04,AB-023,Raquel Gutiérrez,Asociado,Laboral,16044.35,2727.54,3500.00,22271.89,95.00
+2026-05,AB-023,Raquel Gutiérrez,Asociado,Laboral,16402.65,2788.45,3500.00,22691.10,115.00
+2026-06,AB-023,Raquel Gutiérrez,Asociado,Laboral,16894.34,2872.04,3500.00,23266.38,117.00
+2026-07,AB-023,Raquel Gutiérrez,Asociado,Laboral,16631.71,2827.39,3500.00,22959.10,119.25
+2026-08,AB-023,Raquel Gutiérrez,Asociado,Laboral,16220.93,2757.56,3500.00,22478.49,111.50
+2025-01,AB-024,Helena Daza,Asociado,Litigios,15485.43,2632.52,3500.00,21617.95,118.75
+2025-02,AB-024,Helena Daza,Asociado,Litigios,15946.86,2710.97,3500.00,22157.83,111.75
+2025-03,AB-024,Helena Daza,Asociado,Litigios,15794.07,2684.99,3500.00,21979.06,118.00
+2025-04,AB-024,Helena Daza,Asociado,Litigios,15682.97,2666.10,3500.00,21849.07,123.00
+2025-05,AB-024,Helena Daza,Asociado,Litigios,15590.54,2650.39,3500.00,21740.93,123.25
+2025-06,AB-024,Helena Daza,Asociado,Litigios,15679.22,2665.47,3500.00,21844.69,120.50
+2025-07,AB-024,Helena Daza,Asociado,Litigios,15682.01,2665.94,3500.00,21847.95,138.75
+2025-08,AB-024,Helena Daza,Asociado,Litigios,15757.23,2678.73,3500.00,21935.96,116.25
+2025-09,AB-024,Helena Daza,Asociado,Litigios,15602.44,2652.41,3500.00,21754.85,116.75
+2025-10,AB-024,Helena Daza,Asociado,Litigios,15265.81,2595.19,3500.00,21361.00,77.00
+2025-11,AB-024,Helena Daza,Asociado,Litigios,15220.40,2587.47,3500.00,21307.87,113.00
+2025-12,AB-024,Helena Daza,Asociado,Litigios,15225.21,2588.29,3500.00,21313.50,121.00
+2026-01,AB-024,Helena Daza,Asociado,Litigios,16902.89,2873.49,3500.00,23276.38,110.75
+2026-02,AB-024,Helena Daza,Asociado,Litigios,16505.89,2806.00,3500.00,22811.89,95.75
+2026-03,AB-024,Helena Daza,Asociado,Litigios,16090.16,2735.33,3500.00,22325.49,129.50
+2026-04,AB-024,Helena Daza,Asociado,Litigios,16090.58,2735.40,3500.00,22325.98,122.75
+2026-05,AB-024,Helena Daza,Asociado,Litigios,16406.09,2789.04,3500.00,22695.13,106.50
+2026-06,AB-024,Helena Daza,Asociado,Litigios,16915.98,2875.72,3500.00,23291.70,124.50
+2026-07,AB-024,Helena Daza,Asociado,Litigios,16705.99,2840.02,3500.00,23046.01,69.00
+2026-08,AB-024,Helena Daza,Asociado,Litigios,16047.07,2728.00,3500.00,22275.07,126.25
+2025-01,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15058.07,2559.87,3500.00,21117.94,126.50
+2025-02,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15503.55,2635.60,3500.00,21639.15,124.00
+2025-03,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15826.52,2690.51,3500.00,22017.03,109.50
+2025-04,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15574.50,2647.66,3500.00,21722.16,112.50
+2025-05,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15527.15,2639.62,3500.00,21666.77,120.25
+2025-06,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15506.25,2636.06,3500.00,21642.31,112.00
+2025-07,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15942.42,2710.21,3500.00,22152.63,144.50
+2025-08,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15745.93,2676.81,3500.00,21922.74,108.75
+2025-09,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15870.64,2698.01,3500.00,22068.65,107.00
+2025-10,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15310.07,2602.71,3500.00,21412.78,87.50
+2025-11,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15721.42,2672.64,3500.00,21894.06,120.50
+2025-12,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15722.47,2672.82,3500.00,21895.29,143.25
+2026-01,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16906.84,2874.16,3500.00,23281.00,121.50
+2026-02,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15986.14,2717.64,3500.00,22203.78,115.75
+2026-03,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16632.70,2827.56,3500.00,22960.26,128.50
+2026-04,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16712.97,2841.20,3500.00,23054.17,144.75
+2026-05,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,15985.82,2717.59,3500.00,22203.41,124.25
+2026-06,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16252.40,2762.91,3500.00,22515.31,117.00
+2026-07,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16668.95,2833.72,3500.00,23002.67,71.00
+2026-08,AB-025,Patricia Escalante,Asociado,Propiedad Intelectual,16818.45,2859.14,3500.00,23177.59,116.50
+2025-01,AB-026,Ulises Villarroel,Asociado,Corporativo,15373.20,2613.44,3500.00,21486.64,111.25
+2025-02,AB-026,Ulises Villarroel,Asociado,Corporativo,15721.62,2672.68,3500.00,21894.30,115.50
+2025-03,AB-026,Ulises Villarroel,Asociado,Corporativo,15546.28,2642.87,3500.00,21689.15,92.25
+2025-04,AB-026,Ulises Villarroel,Asociado,Corporativo,15290.95,2599.46,3500.00,21390.41,136.00
+2025-05,AB-026,Ulises Villarroel,Asociado,Corporativo,15277.26,2597.13,3500.00,21374.39,127.00
+2025-06,AB-026,Ulises Villarroel,Asociado,Corporativo,15462.82,2628.68,3500.00,21591.50,117.75
+2025-07,AB-026,Ulises Villarroel,Asociado,Corporativo,15127.05,2571.60,3500.00,21198.65,142.25
+2025-08,AB-026,Ulises Villarroel,Asociado,Corporativo,15525.46,2639.33,3500.00,21664.79,59.25
+2025-09,AB-026,Ulises Villarroel,Asociado,Corporativo,15653.62,2661.12,3500.00,21814.74,134.50
+2025-10,AB-026,Ulises Villarroel,Asociado,Corporativo,15310.63,2602.81,3500.00,21413.44,129.25
+2025-11,AB-026,Ulises Villarroel,Asociado,Corporativo,15455.14,2627.37,3500.00,21582.51,115.25
+2025-12,AB-026,Ulises Villarroel,Asociado,Corporativo,15237.67,2590.40,3500.00,21328.07,141.00
+2026-01,AB-026,Ulises Villarroel,Asociado,Corporativo,16308.43,2772.43,3500.00,22580.86,124.25
+2026-02,AB-026,Ulises Villarroel,Asociado,Corporativo,16363.39,2781.78,3500.00,22645.17,103.25
+2026-03,AB-026,Ulises Villarroel,Asociado,Corporativo,15984.03,2717.29,3500.00,22201.32,64.50
+2026-04,AB-026,Ulises Villarroel,Asociado,Corporativo,16301.22,2771.21,3500.00,22572.43,125.00
+2026-05,AB-026,Ulises Villarroel,Asociado,Corporativo,16461.25,2798.41,3500.00,22759.66,125.50
+2026-06,AB-026,Ulises Villarroel,Asociado,Corporativo,16130.47,2742.18,3500.00,22372.65,120.50
+2026-07,AB-026,Ulises Villarroel,Asociado,Corporativo,16187.28,2751.84,3500.00,22439.12,138.75
+2026-08,AB-026,Ulises Villarroel,Asociado,Corporativo,16916.77,2875.85,3500.00,23292.62,122.75
+2025-05,AB-027,Luis Claure,Asociado,Tributario,15486.34,2632.68,3500.00,21619.02,131.75
+2025-06,AB-027,Luis Claure,Asociado,Tributario,15475.44,2630.82,3500.00,21606.26,100.25
+2025-07,AB-027,Luis Claure,Asociado,Tributario,15510.28,2636.75,3500.00,21647.03,129.50
+2025-08,AB-027,Luis Claure,Asociado,Tributario,15341.50,2608.06,3500.00,21449.56,135.00
+2025-09,AB-027,Luis Claure,Asociado,Tributario,15066.77,2561.35,3500.00,21128.12,124.00
+2025-10,AB-027,Luis Claure,Asociado,Tributario,15408.34,2619.42,3500.00,21527.76,149.75
+2025-11,AB-027,Luis Claure,Asociado,Tributario,15134.78,2572.91,3500.00,21207.69,131.00
+2025-12,AB-027,Luis Claure,Asociado,Tributario,15963.34,2713.77,3500.00,22177.11,131.75
+2026-01,AB-027,Luis Claure,Asociado,Tributario,16524.05,2809.09,3500.00,22833.14,133.50
+2026-02,AB-027,Luis Claure,Asociado,Tributario,16405.64,2788.96,3500.00,22694.60,102.50
+2026-03,AB-027,Luis Claure,Asociado,Tributario,16158.83,2747.00,3500.00,22405.83,135.75
+2026-04,AB-027,Luis Claure,Asociado,Tributario,16558.56,2814.96,3500.00,22873.52,127.75
+2026-05,AB-027,Luis Claure,Asociado,Tributario,16031.88,2725.42,3500.00,22257.30,113.50
+2026-06,AB-027,Luis Claure,Asociado,Tributario,16016.13,2722.74,3500.00,22238.87,119.00
+2026-07,AB-027,Luis Claure,Asociado,Tributario,16527.64,2809.70,3500.00,22837.34,134.50
+2026-08,AB-027,Luis Claure,Asociado,Tributario,16206.61,2755.12,3500.00,22461.73,50.75
+2025-01,AB-028,Olga Gutiérrez,Asociado,Laboral,15115.79,2569.68,3500.00,21185.47,116.00
+2025-02,AB-028,Olga Gutiérrez,Asociado,Laboral,15393.21,2616.85,3500.00,21510.06,123.75
+2025-03,AB-028,Olga Gutiérrez,Asociado,Laboral,15163.77,2577.84,3500.00,21241.61,107.25
+2025-04,AB-028,Olga Gutiérrez,Asociado,Laboral,15643.65,2659.42,3500.00,21803.07,113.25
+2025-05,AB-028,Olga Gutiérrez,Asociado,Laboral,15194.32,2583.03,3500.00,21277.35,131.25
+2025-06,AB-028,Olga Gutiérrez,Asociado,Laboral,15273.62,2596.52,3500.00,21370.14,112.00
+2025-07,AB-028,Olga Gutiérrez,Asociado,Laboral,15753.39,2678.08,3500.00,21931.47,134.00
+2025-08,AB-028,Olga Gutiérrez,Asociado,Laboral,15046.26,2557.86,3500.00,21104.12,118.75
+2025-09,AB-028,Olga Gutiérrez,Asociado,Laboral,15643.77,2659.44,3500.00,21803.21,62.25
+2025-10,AB-028,Olga Gutiérrez,Asociado,Laboral,15132.19,2572.47,3500.00,21204.66,136.50
+2025-11,AB-028,Olga Gutiérrez,Asociado,Laboral,15801.27,2686.22,3500.00,21987.49,101.75
+2025-12,AB-028,Olga Gutiérrez,Asociado,Laboral,15319.31,2604.28,3500.00,21423.59,136.75
+2026-01,AB-028,Olga Gutiérrez,Asociado,Laboral,15968.45,2714.64,3500.00,22183.09,111.50
+2026-02,AB-028,Olga Gutiérrez,Asociado,Laboral,16910.43,2874.77,3500.00,23285.20,109.75
+2026-03,AB-028,Olga Gutiérrez,Asociado,Laboral,16750.81,2847.64,3500.00,23098.45,115.75
+2026-04,AB-028,Olga Gutiérrez,Asociado,Laboral,16849.89,2864.48,3500.00,23214.37,113.25
+2026-05,AB-028,Olga Gutiérrez,Asociado,Laboral,16315.13,2773.57,3500.00,22588.70,82.75
+2026-06,AB-028,Olga Gutiérrez,Asociado,Laboral,16784.84,2853.42,3500.00,23138.26,72.50
+2026-07,AB-028,Olga Gutiérrez,Asociado,Laboral,16001.90,2720.32,3500.00,22222.22,121.50
+2026-08,AB-028,Olga Gutiérrez,Asociado,Laboral,16479.63,2801.54,3500.00,22781.17,117.00
+2025-01,AB-029,Mariana Herbas,Junior,Litigios,9147.05,1555.00,3500.00,14202.05,108.75
+2025-02,AB-029,Mariana Herbas,Junior,Litigios,9120.22,1550.44,3500.00,14170.66,103.25
+2025-03,AB-029,Mariana Herbas,Junior,Litigios,8739.08,1485.64,3500.00,13724.72,98.00
+2025-04,AB-029,Mariana Herbas,Junior,Litigios,9003.88,1530.66,3500.00,14034.54,110.75
+2025-05,AB-029,Mariana Herbas,Junior,Litigios,8918.51,1516.15,3500.00,13934.66,63.25
+2025-06,AB-029,Mariana Herbas,Junior,Litigios,8996.75,1529.45,3500.00,14026.20,100.00
+2025-07,AB-029,Mariana Herbas,Junior,Litigios,8745.82,1486.79,3500.00,13732.61,118.50
+2025-08,AB-029,Mariana Herbas,Junior,Litigios,9095.20,1546.18,3500.00,14141.38,108.00
+2025-09,AB-029,Mariana Herbas,Junior,Litigios,9137.17,1553.32,3500.00,14190.49,128.00
+2025-10,AB-029,Mariana Herbas,Junior,Litigios,8913.56,1515.31,3500.00,13928.87,134.25
+2025-11,AB-029,Mariana Herbas,Junior,Litigios,9257.89,1573.84,3500.00,14331.73,110.25
+2025-12,AB-029,Mariana Herbas,Junior,Litigios,8862.22,1506.58,3500.00,13868.80,126.50
+2026-01,AB-029,Mariana Herbas,Junior,Litigios,9653.18,1641.04,3500.00,14794.22,51.00
+2026-02,AB-029,Mariana Herbas,Junior,Litigios,9798.09,1665.68,3500.00,14963.77,105.25
+2026-03,AB-029,Mariana Herbas,Junior,Litigios,9426.82,1602.56,3500.00,14529.38,135.75
+2026-04,AB-029,Mariana Herbas,Junior,Litigios,9371.69,1593.19,3500.00,14464.88,108.00
+2026-05,AB-029,Mariana Herbas,Junior,Litigios,9807.20,1667.22,3500.00,14974.42,120.50
+2026-06,AB-029,Mariana Herbas,Junior,Litigios,9453.92,1607.17,3500.00,14561.09,125.75
+2026-07,AB-029,Mariana Herbas,Junior,Litigios,9589.42,1630.20,3500.00,14719.62,103.25
+2026-08,AB-029,Mariana Herbas,Junior,Litigios,9701.80,1649.31,3500.00,14851.11,110.50
+2025-01,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9255.72,1573.47,3500.00,14329.19,104.75
+2025-02,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8829.96,1501.09,3500.00,13831.05,60.50
+2025-03,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9064.89,1541.03,3500.00,14105.92,95.25
+2025-04,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9189.57,1562.23,3500.00,14251.80,104.75
+2025-05,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8791.95,1494.63,3500.00,13786.58,114.50
+2025-06,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8914.33,1515.44,3500.00,13929.77,97.00
+2025-07,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8746.98,1486.99,3500.00,13733.97,118.75
+2025-08,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9085.20,1544.48,3500.00,14129.68,114.75
+2025-09,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8930.48,1518.18,3500.00,13948.66,120.25
+2025-10,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9070.92,1542.06,3500.00,14112.98,104.25
+2025-11,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,8906.23,1514.06,3500.00,13920.29,99.25
+2025-12,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9144.89,1554.63,3500.00,14199.52,113.00
+2026-01,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9723.88,1653.06,3500.00,14876.94,97.00
+2026-02,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9786.96,1663.78,3500.00,14950.74,96.25
+2026-03,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9451.36,1606.73,3500.00,14558.09,118.50
+2026-04,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9601.28,1632.22,3500.00,14733.50,122.00
+2026-05,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9748.19,1657.19,3500.00,14905.38,107.00
+2026-06,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9381.13,1594.79,3500.00,14475.92,67.75
+2026-07,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9662.04,1642.55,3500.00,14804.59,116.50
+2026-08,AB-030,Pablo Aguirre,Junior,Propiedad Intelectual,9304.46,1581.76,3500.00,14386.22,111.25
+2025-01,AB-031,Gabriela Encinas,Junior,Corporativo,9072.44,1542.31,3500.00,14114.75,113.25
+2025-02,AB-031,Gabriela Encinas,Junior,Corporativo,8879.17,1509.46,3500.00,13888.63,111.25
+2025-03,AB-031,Gabriela Encinas,Junior,Corporativo,9206.68,1565.14,3500.00,14271.82,109.00
+2025-04,AB-031,Gabriela Encinas,Junior,Corporativo,9064.25,1540.92,3500.00,14105.17,103.50
+2025-05,AB-031,Gabriela Encinas,Junior,Corporativo,9024.28,1534.13,3500.00,14058.41,54.50
+2025-06,AB-031,Gabriela Encinas,Junior,Corporativo,8890.19,1511.33,3500.00,13901.52,97.25
+2025-07,AB-031,Gabriela Encinas,Junior,Corporativo,9195.88,1563.30,3500.00,14259.18,123.00
+2025-08,AB-031,Gabriela Encinas,Junior,Corporativo,8864.80,1507.02,3500.00,13871.82,80.25
+2025-09,AB-031,Gabriela Encinas,Junior,Corporativo,9162.02,1557.54,3500.00,14219.56,122.50
+2025-10,AB-031,Gabriela Encinas,Junior,Corporativo,9258.20,1573.89,3500.00,14332.09,121.75
+2025-11,AB-031,Gabriela Encinas,Junior,Corporativo,9054.28,1539.23,3500.00,14093.51,108.25
+2025-12,AB-031,Gabriela Encinas,Junior,Corporativo,8988.46,1528.04,3500.00,14016.50,115.50
+2026-01,AB-031,Gabriela Encinas,Junior,Corporativo,9752.54,1657.93,3500.00,14910.47,110.50
+2026-02,AB-031,Gabriela Encinas,Junior,Corporativo,9254.09,1573.20,3500.00,14327.29,88.75
+2026-03,AB-031,Gabriela Encinas,Junior,Corporativo,9791.08,1664.48,3500.00,14955.56,124.75
+2026-04,AB-031,Gabriela Encinas,Junior,Corporativo,9824.18,1670.11,3500.00,14994.29,107.25
+2026-05,AB-031,Gabriela Encinas,Junior,Corporativo,9760.09,1659.22,3500.00,14919.31,104.75
+2026-06,AB-031,Gabriela Encinas,Junior,Corporativo,9585.56,1629.55,3500.00,14715.11,64.75
+2026-07,AB-031,Gabriela Encinas,Junior,Corporativo,9493.17,1613.84,3500.00,14607.01,127.25
+2026-08,AB-031,Gabriela Encinas,Junior,Corporativo,9359.24,1591.07,3500.00,14450.31,110.50
+2025-01,AB-032,Raquel Ortuño,Junior,Tributario,9269.47,1575.81,3500.00,14345.28,114.75
+2025-02,AB-032,Raquel Ortuño,Junior,Tributario,8918.63,1516.17,3500.00,13934.80,89.75
+2025-03,AB-032,Raquel Ortuño,Junior,Tributario,8844.71,1503.60,3500.00,13848.31,109.25
+2025-04,AB-032,Raquel Ortuño,Junior,Tributario,8785.37,1493.51,3500.00,13778.88,120.50
+2025-05,AB-032,Raquel Ortuño,Junior,Tributario,8882.24,1509.98,3500.00,13892.22,109.75
+2025-06,AB-032,Raquel Ortuño,Junior,Tributario,8855.95,1505.51,3500.00,13861.46,67.00
+2025-07,AB-032,Raquel Ortuño,Junior,Tributario,9055.20,1539.38,3500.00,14094.58,113.00
+2025-08,AB-032,Raquel Ortuño,Junior,Tributario,9260.39,1574.27,3500.00,14334.66,108.50
+2025-09,AB-032,Raquel Ortuño,Junior,Tributario,9062.97,1540.70,3500.00,14103.67,127.00
+2025-10,AB-032,Raquel Ortuño,Junior,Tributario,9004.27,1530.73,3500.00,14035.00,127.00
+2025-11,AB-032,Raquel Ortuño,Junior,Tributario,8954.49,1522.26,3500.00,13976.75,101.25
+2025-12,AB-032,Raquel Ortuño,Junior,Tributario,8744.64,1486.59,3500.00,13731.23,112.25
+2026-01,AB-032,Raquel Ortuño,Junior,Tributario,9722.04,1652.75,3500.00,14874.79,110.75
+2026-02,AB-032,Raquel Ortuño,Junior,Tributario,9586.43,1629.69,3500.00,14716.12,90.25
+2026-03,AB-032,Raquel Ortuño,Junior,Tributario,9817.06,1668.90,3500.00,14985.96,114.00
+2025-01,AB-033,Luis Navia,Junior,Laboral,9175.10,1559.77,3500.00,14234.87,77.75
+2025-02,AB-033,Luis Navia,Junior,Laboral,8762.67,1489.65,3500.00,13752.32,82.00
+2025-03,AB-033,Luis Navia,Junior,Laboral,9245.73,1571.77,3500.00,14317.50,91.75
+2025-04,AB-033,Luis Navia,Junior,Laboral,8968.41,1524.63,3500.00,13993.04,95.25
+2025-05,AB-033,Luis Navia,Junior,Laboral,8835.42,1502.02,3500.00,13837.44,98.50
+2025-06,AB-033,Luis Navia,Junior,Laboral,9191.47,1562.55,3500.00,14254.02,115.25
+2025-07,AB-033,Luis Navia,Junior,Laboral,8734.99,1484.95,3500.00,13719.94,119.75
+2025-08,AB-033,Luis Navia,Junior,Laboral,9091.91,1545.62,3500.00,14137.53,94.25
+2025-09,AB-033,Luis Navia,Junior,Laboral,8776.89,1492.07,3500.00,13768.96,100.25
+2025-10,AB-033,Luis Navia,Junior,Laboral,8918.66,1516.17,3500.00,13934.83,116.00
+2025-11,AB-033,Luis Navia,Junior,Laboral,8843.91,1503.46,3500.00,13847.37,108.00
+2025-12,AB-033,Luis Navia,Junior,Laboral,9134.45,1552.86,3500.00,14187.31,127.25
+2026-01,AB-033,Luis Navia,Junior,Laboral,9311.00,1582.87,3500.00,14393.87,101.25
+2026-02,AB-033,Luis Navia,Junior,Laboral,9626.17,1636.45,3500.00,14762.62,105.00
+2026-03,AB-033,Luis Navia,Junior,Laboral,9277.88,1577.24,3500.00,14355.12,104.00
+2026-04,AB-033,Luis Navia,Junior,Laboral,9623.25,1635.95,3500.00,14759.20,118.25
+2026-05,AB-033,Luis Navia,Junior,Laboral,9645.12,1639.67,3500.00,14784.79,115.00
+2026-06,AB-033,Luis Navia,Junior,Laboral,9456.52,1607.61,3500.00,14564.13,116.25
+2026-07,AB-033,Luis Navia,Junior,Laboral,9370.55,1592.99,3500.00,14463.54,69.50
+2026-08,AB-033,Luis Navia,Junior,Laboral,9684.97,1646.44,3500.00,14831.41,95.75
+2026-06,AB-034,Zulema Iriarte,,Litigios,9672.44,1644.31,3500.00,14816.75,78.50
+2026-07,AB-034,Zulema Iriarte,,Litigios,9663.54,1642.80,3500.00,14806.34,103.75
+2026-08,AB-034,Zulema Iriarte,,Litigios,9709.82,1650.67,3500.00,14860.49,107.75
+2025-01,AB-035,Sergio Flores,Junior,Propiedad Intelectual,8983.83,1527.25,3500.00,14011.08,59.50
+2025-02,AB-035,Sergio Flores,Junior,Propiedad Intelectual,8940.56,1519.90,3500.00,13960.46,116.00
+2025-03,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9037.79,1536.42,3500.00,14074.21,88.75
+2025-04,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9047.19,1538.02,3500.00,14085.21,121.75
+2025-05,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9054.72,1539.30,3500.00,14094.02,116.75
+2025-06,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9159.09,1557.05,3500.00,14216.14,99.50
+2025-07,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9160.00,1557.20,3500.00,14217.20,123.00
+2025-08,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9218.95,1567.22,3500.00,14286.17,111.75
+2025-09,AB-035,Sergio Flores,Junior,Propiedad Intelectual,8906.72,1514.14,3500.00,13920.86,111.50
+2025-10,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9063.51,1540.80,3500.00,14104.31,127.75
+2025-11,AB-035,Sergio Flores,Junior,Propiedad Intelectual,8954.08,1522.19,3500.00,13976.27,107.75
+2025-12,AB-035,Sergio Flores,Junior,Propiedad Intelectual,8894.98,1512.15,3500.00,13907.13,121.25
+2026-01,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9787.31,1663.84,3500.00,14951.15,106.75
+2026-02,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9738.96,1655.62,3500.00,14894.58,96.25
+2026-03,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9365.37,1592.11,3500.00,14457.48,117.25
+2026-04,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9771.83,1661.21,3500.00,14933.04,121.25
+2026-05,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9630.07,1637.11,3500.00,14767.18,108.00
+2026-06,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9428.07,1602.77,3500.00,14530.84,58.50
+2026-07,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9331.28,1586.32,3500.00,14417.60,113.75
+2026-08,AB-035,Sergio Flores,Junior,Propiedad Intelectual,9332.13,1586.46,3500.00,14418.59,96.00
+2025-09,AB-036,Esteban Aguirre,Junior,Corporativo,8815.22,1498.59,3500.00,13813.81,116.50
+2025-10,AB-036,Esteban Aguirre,Junior,Corporativo,8846.02,1503.82,3500.00,13849.84,146.00
+2025-11,AB-036,Esteban Aguirre,Junior,Corporativo,8792.55,1494.73,3500.00,13787.28,115.00
+2025-12,AB-036,Esteban Aguirre,Junior,Corporativo,8761.53,1489.46,3500.00,13750.99,119.75
+2026-01,AB-036,Esteban Aguirre,Junior,Corporativo,9317.45,1583.97,3500.00,14401.42,104.25
+2026-02,AB-036,Esteban Aguirre,Junior,Corporativo,9293.83,1579.95,3500.00,14373.78,104.25
+2026-03,AB-036,Esteban Aguirre,Junior,Corporativo,9364.11,1591.90,3500.00,14456.01,114.50
+2026-04,AB-036,Esteban Aguirre,Junior,Corporativo,9429.18,1602.96,3500.00,14532.14,105.00
+2026-05,AB-036,Esteban Aguirre,Junior,Corporativo,9679.16,1645.46,3500.00,14824.62,74.75
+2026-06,AB-036,Esteban Aguirre,Junior,Corporativo,9616.63,1634.83,3500.00,14751.46,112.25
+2026-07,AB-036,Esteban Aguirre,Junior,Corporativo,9656.33,1641.58,3500.00,14797.91,114.25
+2026-08,AB-036,Esteban Aguirre,Junior,Corporativo,9294.97,1580.14,3500.00,14375.11,115.25
+2025-01,AB-037,Ana Durán,Junior,Tributario,9214.77,1566.51,3500.00,14281.28,123.25
+2025-02,AB-037,Ana Durán,Junior,Tributario,9135.12,1552.97,3500.00,14188.09,116.25
+2025-03,AB-037,Ana Durán,Junior,Tributario,9017.91,1533.04,3500.00,14050.95,126.50
+2025-04,AB-037,Ana Durán,Junior,Tributario,8881.29,1509.82,3500.00,13891.11,108.75
+2025-05,AB-037,Ana Durán,Junior,Tributario,8961.19,1523.40,3500.00,13984.59,107.00
+2025-06,AB-037,Ana Durán,Junior,Tributario,9239.89,1570.78,3500.00,14310.67,115.25
+2025-07,AB-037,Ana Durán,Junior,Tributario,9187.88,1561.94,3500.00,14249.82,122.00
+2025-08,AB-037,Ana Durán,Junior,Tributario,8958.30,1522.91,3500.00,13981.21,97.75
+2025-09,AB-037,Ana Durán,Junior,Tributario,9224.57,1568.18,3500.00,14292.75,58.00
+2025-10,AB-037,Ana Durán,Junior,Tributario,8813.65,1498.32,3500.00,13811.97,132.00
+2025-11,AB-037,Ana Durán,Junior,Tributario,9180.25,1560.64,3500.00,14240.89,107.50
+2025-12,AB-037,Ana Durán,Junior,Tributario,9085.75,1544.58,3500.00,14130.33,107.00
+2026-01,AB-037,Ana Durán,Junior,Tributario,9503.23,1615.55,3500.00,14618.78,99.75
+2026-02,AB-037,Ana Durán,Junior,Tributario,9773.68,1661.53,3500.00,14935.21,85.25
+2026-03,AB-037,Ana Durán,Junior,Tributario,9569.91,1626.88,3500.00,14696.79,105.00
+2026-04,AB-037,Ana Durán,Junior,Tributario,9353.45,1590.09,3500.00,14443.54,114.75
+2026-05,AB-037,Ana Durán,Junior,Tributario,9813.65,1668.32,3500.00,14981.97,105.50
+2026-06,AB-037,Ana Durán,Junior,Tributario,9347.30,1589.04,3500.00,14436.34,105.75
+2026-07,AB-037,Ana Durán,Junior,Tributario,9605.03,1632.86,3500.00,14737.89,68.25
+2026-08,AB-037,Ana Durán,Junior,Tributario,9390.84,1596.44,3500.00,14487.28,111.25
+2026-07,AB-038,Ana Urquieta,,Laboral,9719.99,1652.40,3500.00,14872.39,110.50
+2026-08,AB-038,Ana Urquieta,,Laboral,9280.05,1577.61,3500.00,14357.66,134.50
+2026-02,AB-039,Yamil Antezana,Junior,Litigios,9342.92,1588.30,3500.00,14431.22,80.25
+2026-03,AB-039,Yamil Antezana,Junior,Litigios,9682.11,1645.96,3500.00,14828.07,116.00
+2026-04,AB-039,Yamil Antezana,Junior,Litigios,9747.01,1656.99,3500.00,14904.00,121.25
+2026-05,AB-039,Yamil Antezana,Junior,Litigios,9581.90,1628.92,3500.00,14710.82,89.50
+2026-06,AB-039,Yamil Antezana,Junior,Litigios,9484.58,1612.38,3500.00,14596.96,77.75
+2026-07,AB-039,Yamil Antezana,Junior,Litigios,9416.04,1600.73,3500.00,14516.77,131.00
+2026-08,AB-039,Yamil Antezana,Junior,Litigios,9484.09,1612.30,3500.00,14596.39,111.25
+2025-01,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8839.27,1502.68,3500.00,13841.95,104.25
+2025-02,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9076.65,1543.03,3500.00,14119.68,109.75
+2025-03,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9082.53,1544.03,3500.00,14126.56,80.00
+2025-04,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8951.40,1521.74,3500.00,13973.14,65.25
+2025-05,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8754.69,1488.30,3500.00,13742.99,123.25
+2025-06,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9250.29,1572.55,3500.00,14322.84,96.50
+2025-07,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9005.70,1530.97,3500.00,14036.67,119.25
+2025-08,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8941.30,1520.02,3500.00,13961.32,105.00
+2025-09,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9118.43,1550.13,3500.00,14168.56,114.75
+2025-10,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9173.06,1559.42,3500.00,14232.48,124.25
+2025-11,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8915.61,1515.65,3500.00,13931.26,111.25
+2025-12,AB-040,Julia Soliz,Junior,Propiedad Intelectual,8745.76,1486.78,3500.00,13732.54,114.75
+2026-01,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9713.37,1651.27,3500.00,14864.64,99.25
+2026-02,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9540.39,1621.87,3500.00,14662.26,91.00
+2026-03,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9509.17,1616.56,3500.00,14625.73,115.75
+2026-04,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9581.04,1628.78,3500.00,14709.82,102.75
+2026-05,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9766.81,1660.36,3500.00,14927.17,108.75
+2026-06,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9789.13,1664.15,3500.00,14953.28,108.75
+2026-07,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9701.26,1649.21,3500.00,14850.47,67.75
+2026-08,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9486.66,1612.73,3500.00,14599.39,99.75

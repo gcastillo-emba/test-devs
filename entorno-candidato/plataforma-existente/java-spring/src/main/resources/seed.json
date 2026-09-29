@@ -1,0 +1,2305 @@
+{
+  "periodo": "2026-07",
+  "abogados": [
+    {
+      "id": "P-01",
+      "nombre": "Marta Villarroel",
+      "nivel": "Socio",
+      "socio": true
+    },
+    {
+      "id": "P-02",
+      "nombre": "Rodrigo Céspedes",
+      "nivel": "Socio",
+      "socio": true
+    },
+    {
+      "id": "A-01",
+      "nombre": "Lucía Terrazas",
+      "nivel": "Asociado Senior",
+      "socio": false
+    },
+    {
+      "id": "A-02",
+      "nombre": "Tomás Iriarte",
+      "nivel": "Asociado",
+      "socio": false
+    },
+    {
+      "id": "A-03",
+      "nombre": "Sofía Navia",
+      "nivel": "Asociado",
+      "socio": false
+    },
+    {
+      "id": "A-04",
+      "nombre": "Diego Urquieta",
+      "nivel": "Junior",
+      "socio": false
+    }
+  ],
+  "costos": [
+    {
+      "abogado_id": "P-01",
+      "periodo": "2026-07",
+      "costo_total": 64000
+    },
+    {
+      "abogado_id": "P-02",
+      "periodo": "2026-07",
+      "costo_total": 61000
+    },
+    {
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "costo_total": 31500
+    },
+    {
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "costo_total": 21600
+    },
+    {
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "costo_total": 21000
+    },
+    {
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "costo_total": 13500
+    }
+  ],
+  "registros": [
+    {
+      "id": "X-0001",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0002",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0003",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Telecom Altiplano S.A.",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Telecom Altiplano S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0004",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0005",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0006",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0007",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0008",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0009",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0010",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0011",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0012",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0013",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0014",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0015",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0016",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0017",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0018",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0019",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0020",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0021",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0022",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0023",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0024",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0025",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0026",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0027",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0028",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0029",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0030",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0031",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0032",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0033",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0034",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0035",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0036",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0037",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0038",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0039",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0040",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0041",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0042",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0043",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0044",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0045",
+      "abogado_id": "A-01",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0046",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0047",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0048",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0049",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0050",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0051",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0052",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0053",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0054",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0055",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0056",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0057",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0058",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0059",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0060",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0061",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0062",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0063",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0064",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0065",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0066",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0067",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0068",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0069",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Telecom Altiplano S.A.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Telecom Altiplano S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0070",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0071",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0072",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0073",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0074",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0075",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0076",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0077",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0078",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0079",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0080",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0081",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0082",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0083",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Inmobiliaria Sopocachi",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Inmobiliaria Sopocachi: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0084",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0085",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0086",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0087",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0088",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0089",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0090",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0091",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0092",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0093",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0094",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0095",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0096",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0097",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0098",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0099",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0100",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0101",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0102",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0103",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0104",
+      "abogado_id": "A-02",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0105",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0106",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0107",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0108",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0109",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0110",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0111",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0112",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0113",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0114",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0115",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0116",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0117",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0118",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0119",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0120",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0121",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0122",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0123",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Inmobiliaria Sopocachi",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Inmobiliaria Sopocachi: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0124",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0125",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0126",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0127",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0128",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0129",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0130",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0131",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0132",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0133",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0134",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0135",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0136",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0137",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0138",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0139",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0140",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0141",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0142",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0143",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0144",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0145",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0146",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Inmobiliaria Sopocachi",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Inmobiliaria Sopocachi: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0147",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Distribuidora Tunari",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Distribuidora Tunari: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0148",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0149",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0150",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0151",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Telecom Altiplano S.A.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Telecom Altiplano S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0152",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0153",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Proceso laboral",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0154",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0155",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0156",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0157",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0158",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0159",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0160",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0161",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0162",
+      "abogado_id": "A-03",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0163",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0164",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0165",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0166",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0167",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0168",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0169",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0170",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0171",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0172",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Due diligence",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0173",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0174",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0175",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0176",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0177",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0178",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0179",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0180",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0181",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0182",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0183",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Minera Andina del Sur S.A.",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Minera Andina del Sur S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0184",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0185",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0186",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0187",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0188",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0189",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0190",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0191",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0192",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0193",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0194",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0195",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0196",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": true,
+      "cliente": "Transportes Cordillera",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Transportes Cordillera: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0197",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Textiles Pando",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Textiles Pando: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0198",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Farmacéutica Chuquisaca",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Farmacéutica Chuquisaca: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0199",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0200",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0201",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0202",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Desarrollo de negocio",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0203",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0204",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0205",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0206",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0207",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Planificación tributaria",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0208",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Reestructuración societaria",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0209",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Gestión interna",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0210",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 60,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0211",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0212",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Banco Pyme Horizonte",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Banco Pyme Horizonte: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0213",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Constructora Illimani",
+      "asunto": "Registro de marca",
+      "detalle": "Revisión de documentación reservada de Constructora Illimani: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0214",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 120,
+      "facturable": true,
+      "cliente": "Hotelera Valle Alto",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Hotelera Valle Alto: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0215",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Seguros La Previsora",
+      "asunto": "Licencia ambiental",
+      "detalle": "Revisión de documentación reservada de Seguros La Previsora: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0216",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Energía Solar Uyuni S.A.",
+      "asunto": "Fiscalización tributaria",
+      "detalle": "Revisión de documentación reservada de Energía Solar Uyuni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0217",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Litigio contractual",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0218",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": true,
+      "cliente": "Cervecera Valle Grande",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Cervecera Valle Grande: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0219",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 150,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Formación de pasantes",
+      "detalle": "Actividad interna"
+    },
+    {
+      "id": "X-0220",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": true,
+      "cliente": "Telecom Altiplano S.A.",
+      "asunto": "Contrato de distribución",
+      "detalle": "Revisión de documentación reservada de Telecom Altiplano S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0221",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 180,
+      "facturable": true,
+      "cliente": "Agroexport Oriental S.R.L.",
+      "asunto": "Arbitraje comercial",
+      "detalle": "Revisión de documentación reservada de Agroexport Oriental S.R.L.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0222",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 30,
+      "facturable": true,
+      "cliente": "Alimentos del Beni S.A.",
+      "asunto": "Auditoría laboral",
+      "detalle": "Revisión de documentación reservada de Alimentos del Beni S.A.: cuentas, contratos y contingencias"
+    },
+    {
+      "id": "X-0223",
+      "abogado_id": "A-04",
+      "periodo": "2026-07",
+      "minutos": 90,
+      "facturable": false,
+      "cliente": "Interno",
+      "asunto": "Capacitación",
+      "detalle": "Actividad interna"
+    }
+  ]
+}
