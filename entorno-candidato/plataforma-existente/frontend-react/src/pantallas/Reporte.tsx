@@ -6,10 +6,10 @@ interface Fila {
   nivel: string;
   costoTotal: number;
   horasRegistradas: number;
-  costoHora: number;
+  costoHora: number | null;
 }
 
-const bs = (valor: number) => `Bs ${valor.toLocaleString("es-BO", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+const bs = (valor: number | null) => valor === null ? "No calculable" : `Bs ${valor.toLocaleString("es-BO", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 
 export default function Reporte() {
   const [incluirSocios, setIncluirSocios] = useState(false);
@@ -30,7 +30,9 @@ export default function Reporte() {
       });
   }, [incluirSocios]);
 
-  const promedio = filas.length ? filas.reduce((suma, f) => suma + f.costoHora, 0) / filas.length : 0;
+  const suma = filas.reduce<number | null>((total, f) =>
+    total === null || f.costoHora === null ? null : total + f.costoHora, 0);
+  const promedio = suma === null ? null : filas.length ? suma / filas.length : 0;
 
   return (
     <div>
@@ -53,7 +55,7 @@ export default function Reporte() {
               <td className="py-2">{f.nombre}</td>
               <td>{f.nivel}</td>
               <td className="text-right">{f.horasRegistradas}</td>
-              <td className="text-right">{bs(f.costoHora)}</td>
+              <td className="text-right">{f.costoHora === null ? "No calculable: sin horas registradas" : bs(f.costoHora)}</td>
             </tr>
           ))}
         </tbody>
