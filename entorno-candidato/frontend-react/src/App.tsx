@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 type Metric = {
   costo_incluido: string | null; costo_contable_disponible: string | null; costo_excluido: string;
   horas_facturables: string | null; costo_por_hora: string | null; estado: string; motivo: string | null;
-  cobertura_estado: string; disponibilidad: string; meses_incluidos: string[]; meses_total: number;
+  cobertura_estado: string; disponibilidad: string; meses_incluidos: string[]; meses_total: number; meses_sin_datos_contables: string[];
   abogados_con_cobertura: number; abogados_total: number; incompleto: boolean;
   exclusiones: { periodo: string; abogado_id?: string; motivo: string; costo_excluido: string | null }[];
 };
@@ -50,7 +50,8 @@ function Chart({ periods, series, unit }: { periods: string[]; series: { name: s
 }
 
 function Coverage({ metric }: { metric: Metric }) {
-  return <><span className={`badge ${metric.cobertura_estado === 'PARCIAL' ? 'partial' : ''}`}>{metric.estado}</span>{metric.incompleto && <span className="badge partial">INCOMPLETO</span>}<p>{metric.meses_incluidos.length} de {metric.meses_total} meses incluidos<br />{metric.abogados_con_cobertura} de {metric.abogados_total} abogados con cobertura</p>{metric.motivo && <p className="reason">No calculable: {metric.motivo}</p>}</>;
+  if (metric.abogados_total === 0) return <p>{metric.motivo}</p>;
+  return <><span className={`badge ${metric.cobertura_estado === 'PARCIAL' ? 'partial' : ''}`}>{metric.estado}</span>{metric.incompleto && <span className="badge partial">INCOMPLETO</span>}<p>{metric.meses_incluidos.length} de {metric.meses_total} meses incluidos<br />{metric.abogados_con_cobertura} de {metric.abogados_total} abogados con cobertura</p>{metric.meses_sin_datos_contables.length > 0 && <p>Sin datos contables para este grupo/período: {metric.meses_sin_datos_contables.join(', ')}</p>}{metric.motivo && <p className="reason">No calculable: {metric.motivo}</p>}</>;
 }
 function Exclusions({ metric }: { metric: Metric }) {
   return metric.exclusiones.length ? <details><summary>Exclusiones · {format(metric.costo_excluido, 'Bs. ')}</summary><ul>{metric.exclusiones.map((e, i) => <li key={i}>{e.periodo} {e.abogado_id} · {e.motivo} · Costo excluido: {format(e.costo_excluido, 'Bs. ')}</li>)}</ul><p>Costo contable disponible: {format(metric.costo_contable_disponible, 'Bs. ')}. No se incorpora el costo excluido al cálculo.</p></details> : null;

@@ -202,12 +202,16 @@ def aggregate(s, keys, periods):
     included_cost = D(0)
     included_minutes = 0
     included_periods = []
+    periods_without_accounting = []
     exclusions = []
     known_costs = [s.accounting[key]['costo_total'] for key in keys if s.accounting[key]['costo_total'] is not None]
     known_cost = sum(known_costs, D(0)) if known_costs else None
     excluded_cost = D(0)
     for p in periods:
         all_keys = {key for key in keys if key[1] == p}
+        if not all_keys:
+            periods_without_accounting.append(p)
+            continue
         eligible = {key for key in all_keys if key[0] in covered}
         no_coverage = all_keys - eligible
         for key in sorted(no_coverage):
@@ -215,8 +219,7 @@ def aggregate(s, keys, periods):
             if cost is not None: excluded_cost += cost
             exclusions.append(dict(periodo=p, abogado_id=key[0], motivo='SIN COBERTURA DE HORAS', costo_excluido=money(cost)))
         reasons = []
-        if not all_keys: reasons.append('Sin datos contables para este grupo y período')
-        elif not eligible: reasons.append('Sin cobertura de horas de los miembros')
+        if not eligible: reasons.append('Sin cobertura de horas de los miembros')
         if p not in s.covered_months: reasons.append('Falta de cobertura de horas')
         reasons += s.problems({aid for aid, _ in eligible}, p)
         if reasons:
@@ -231,7 +234,9 @@ def aggregate(s, keys, periods):
     ratio = included_cost * 60 / D(included_minutes) if included_minutes else None
     partial = len(covered) < len(members) or len(included_periods) < len(periods)
     reason = None
-    if not covered:
+    if not members:
+        reason = 'Sin datos contables para este grupo/período'
+    elif not covered:
         reason = 'Sin cobertura de horas de los miembros'
     elif not included_periods:
         reason = '; '.join(sorted({item['motivo'] for item in exclusions})) or 'Sin períodos elegibles'
@@ -243,7 +248,8 @@ def aggregate(s, keys, periods):
                 costo_por_hora=money(ratio), estado='PARCIAL' if partial else ('COMPLETO' if ratio is not None else 'NO CALCULABLE'),
                 cobertura_estado='PARCIAL' if partial else 'COMPLETO', disponibilidad='CALCULABLE' if ratio is not None else 'NO CALCULABLE', motivo=reason,
                 meses_incluidos=included_periods, meses_total=len(periods), abogados_con_cobertura=len(covered), abogados_total=len(members), exclusiones=exclusions,
-                incompleto=len(periods) == 1 and periods[0] not in s.covered_months)
+                meses_sin_datos_contables=periods_without_accounting,
+                incompleto=bool(keys) and len(periods) == 1 and periods[0] not in s.covered_months)
 
 
 def query(s, start=None, end=None, areas=None, levels=None, lawyer=None):
@@ -277,6 +283,8 @@ def query(s, start=None, end=None, areas=None, levels=None, lawyer=None):
             visible = key in selected_keys
             row = s.accounting.get(key) if visible else None
             point = aggregate(s, {key} if row else set(), [p])
+            if key not in s.accounting:
+                point['motivo'] = 'Sin datos contables para este período'
             series.append(dict(periodo=p, sueldo=money(row['sueldo']) if row else None, costo_total=money(row['costo_total']) if row else None, fuera_del_filtro=key in s.accounting and not visible, **point))
         individual = dict(abogado_id=lawyer, cobertura='CON COBERTURA' if lawyer in s.covered_lawyers else 'SIN COBERTURA DE HORAS', serie=series)
     classifications = {c for classes in s.classifications.values() for c in classes}

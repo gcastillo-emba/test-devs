@@ -19,6 +19,39 @@ def group(rows, records, start=None, end=None):
 
 
 class CalculationTests(unittest.TestCase):
+    def test_group_month_without_accounting_is_not_hours_exclusion(self):
+        for records in ([record(), record(p='2025-03', rid='3')],
+                        [record(), record(p='2025-02', rid='2'), record(p='2025-03', rid='3')]):
+            with self.subTest(global_hours_in_gap=len(records) == 3):
+                g = group([row(), row(p='2025-03', cost='300')], records)
+                gap = g['serie'][1]
+                self.assertEqual(gap['motivo'], 'Sin datos contables para este grupo/período')
+                self.assertFalse(gap['incompleto'])
+                self.assertEqual(gap['exclusiones'], [])
+                self.assertIsNone(gap['costo_por_hora'])
+                self.assertEqual(g['meses_sin_datos_contables'], ['2025-02'])
+                self.assertEqual(g['exclusiones'], [])
+                self.assertEqual((g['costo_incluido'], g['horas_facturables'], g['costo_por_hora']), ('400.00', '2.00', '200.00'))
+                self.assertEqual(g['meses_incluidos'], ['2025-01', '2025-03'])
+
+    def test_individual_month_without_accounting_preserves_unmatched_hours(self):
+        for records in ([record()], [record(), record(p='2025-02', rid='2')]):
+            with self.subTest(unmatched_hours=len(records) == 2):
+                s = build_snapshot([row()], records)
+                q = query(s, '2025-01', '2025-02', lawyer='A')
+                gap = q['individual']['serie'][1]
+                self.assertEqual(gap['motivo'], 'Sin datos contables para este período')
+                self.assertFalse(gap['incompleto'])
+                self.assertFalse(gap['fuera_del_filtro'])
+                self.assertEqual(gap['exclusiones'], [])
+                for field in ['costo_total', 'sueldo', 'horas_facturables', 'costo_por_hora']:
+                    self.assertIsNone(gap[field])
+                self.assertEqual(q['individual']['serie'][0]['costo_por_hora'], '100.00')
+                orphans = [o for o in q['observaciones'] if o['tipo'] == 'SIN CONTRAPARTE CONTABLE']
+                self.assertEqual(len(orphans), len(records) - 1)
+                if orphans:
+                    self.assertEqual((orphans[0]['abogado_id'], orphans[0]['periodo'], orphans[0]['horas_facturables']), ('A', '2025-02', '1.00'))
+
     def test_normal_weighted_not_mean(self):
         g = group([row(), row('B', cost='300')], [record(minutes=120), record('B', minutes=180, rid='2'), record(minutes=60, billable=False, rid='3')])
         self.assertEqual((g['costo_incluido'], g['horas_facturables'], g['costo_por_hora'], g['estado']), ('400.00', '5.00', '80.00', 'COMPLETO'))
