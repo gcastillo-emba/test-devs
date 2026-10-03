@@ -1,0 +1,90 @@
+# =========================
+# Node / Nest / React
+# =========================
+node_modules/
+**/node_modules/
+
+dist/
+**/dist/
+
+build/
+**/build/
+
+coverage/
+**/coverage/
+
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# =========================
+# Environment
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# Python
+# =========================
+venv/
+.venv/
+env/
+ENV/
+
+**/venv/
+**/.venv/
+**/env/
+
+__pycache__/
+**/__pycache__/
+
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# =========================
+# AI / Agent local files
+# =========================
+.agents/
+**/.agents/
+
+skills-lock.json
+**/skills-lock.json
+
+AGENTS.md
+**/AGENTS.md
+
+# =========================
+# IDE
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Temporary files
+# =========================
+*.tmp
+*.temp
+*.swp
+*.swo
+.cache/
+**/.cache/
+
+# =========================
+# Test-devs local source
+# =========================
+test-devs/
+test-devs.zip
+**/test-devs/
+**/test-devs.zip

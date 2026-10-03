@@ -1,0 +1,264 @@
+openapi: 3.1.0
+info:
+  title: backend-nest
+  version: 0.0.1
+  description: NestJS backend. All endpoints are served by this service; no other internal APIs are exposed.
+servers:
+  - url: http://localhost:3000
+paths:
+  /:
+    get:
+      summary: Health/root check
+      responses:
+        '200':
+          description: Plain-text greeting (service is up)
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: "Hello World!"
+  /api/analitica/dashboard:
+    get:
+      summary: Dashboard completo (resumen + series para los gráficos)
+      description: >
+        Agrega todo lo necesario para el dashboard del frontend en una sola llamada.
+        Responde con valores ya calculados en el backend; nunca devuelve registros crudos.
+      parameters:
+        - { $ref: '#/components/parameters/Periodo' }
+        - { $ref: '#/components/parameters/AbogadoId' }
+        - { $ref: '#/components/parameters/Area' }
+        - { $ref: '#/components/parameters/Nivel' }
+      responses:
+        '200':
+          description: Datos agregados del dashboard
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Dashboard' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+  /api/analitica/resumen:
+    get:
+      summary: Resumen general (tarjetas de resumen)
+      parameters:
+        - { $ref: '#/components/parameters/Periodo' }
+        - { $ref: '#/components/parameters/AbogadoId' }
+        - { $ref: '#/components/parameters/Area' }
+        - { $ref: '#/components/parameters/Nivel' }
+      responses:
+        '200':
+          description: Totales de horas y costos
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Resumen' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+  /api/analitica/horas-abogados:
+    get:
+      summary: Horas por abogado (gráfico de barras)
+      description: Solo incluye abogados con registros de trabajo en el periodo o rango consultado.
+      parameters:
+        - { $ref: '#/components/parameters/Periodo' }
+        - { $ref: '#/components/parameters/AbogadoId' }
+        - { $ref: '#/components/parameters/Area' }
+        - { $ref: '#/components/parameters/Nivel' }
+      responses:
+        '200':
+          description: Una fila por abogado con registros
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/HorasPorAbogado' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+  /api/analitica/costos-abogados:
+    get:
+      summary: Costos por abogado (gráfico de barras)
+      description: >
+        `costoPorHora` y `costoPorHoraFacturable` son null cuando el abogado no tiene horas
+        en el periodo. Se usan las horas calculadas desde los registros de trabajo, no
+        `horasFacturadasReportadas`.
+      parameters:
+        - { $ref: '#/components/parameters/Periodo' }
+        - { $ref: '#/components/parameters/AbogadoId' }
+        - { $ref: '#/components/parameters/Area' }
+        - { $ref: '#/components/parameters/Nivel' }
+      responses:
+        '200':
+          description: Una fila por abogado con costos
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/CostoPorAbogado' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+  /api/analitica/distribucion-tiempo:
+    get:
+      summary: Distribución facturable vs no facturable (gráfico donut)
+      parameters:
+        - { $ref: '#/components/parameters/Periodo' }
+        - { $ref: '#/components/parameters/AbogadoId' }
+        - { $ref: '#/components/parameters/Area' }
+        - { $ref: '#/components/parameters/Nivel' }
+      responses:
+        '200':
+          description: Reparto de horas y porcentajes
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/DistribucionTiempo' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+  /api/analitica/evolucion:
+    get:
+      summary: Evolución mensual (gráfico de líneas)
+      description: Serie global, o de un abogado concreto si se envía `abogadoId`. No acepta `periodo`.
+      parameters:
+        - { $ref: '#/components/parameters/AbogadoId' }
+      responses:
+        '200':
+          description: Una fila por periodo (`YYYY-MM`), ascendente
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/EvolucionMensual' }
+        '400': { $ref: '#/components/responses/BadRequest' }
+components:
+  parameters:
+    Periodo:
+      name: periodo
+      in: query
+      required: false
+      description: Periodo mensual en formato `YYYY-MM`. Omitido = todo el histórico.
+      schema: { type: string, pattern: '^\d{4}-(0[1-9]|1[0-2])$', example: '2025-01' }
+    AbogadoId:
+      name: abogadoId
+      in: query
+      required: false
+      description: Identificador del abogado (`AB-XXX`).
+      schema: { type: string, pattern: '^AB-\d{3}$', example: 'AB-001' }
+    Area:
+      name: area
+      in: query
+      required: false
+      schema: { type: string, maxLength: 64, example: 'Tributario' }
+    Nivel:
+      name: nivel
+      in: query
+      required: false
+      schema: { type: string, maxLength: 64, example: 'Socio' }
+  responses:
+    BadRequest:
+      description: Validation failed (whitelist rejects unknown fields)
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    NotFound:
+      description: Entity not found
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+  schemas:
+    Resumen:
+      type: object
+      required:
+        - totalAbogados
+        - horasTotales
+        - horasFacturables
+        - horasNoFacturables
+        - porcentajeFacturable
+        - costoTotal
+        - costoPromedioHoraFacturable
+      properties:
+        totalAbogados: { type: number, description: 'Cantidad de abogados (respeta los filtros de abogado)' }
+        horasTotales: { type: number, description: 'SUM(minutos) / 60' }
+        horasFacturables: { type: number, description: 'SUM(minutos WHERE facturable) / 60' }
+        horasNoFacturables: { type: number }
+        porcentajeFacturable: { type: number, description: '0 cuando no hay horas registradas' }
+        costoTotal: { type: number }
+        costoPromedioHoraFacturable:
+          type: [number, 'null']
+          description: 'costoTotal / horasFacturables; null si no hay horas facturables'
+    HorasPorAbogado:
+      type: object
+      required:
+        - abogadoId
+        - nombre
+        - nivel
+        - area
+        - horasTotales
+        - horasFacturables
+        - horasNoFacturables
+        - porcentajeFacturable
+      properties:
+        abogadoId: { type: string }
+        nombre: { type: string }
+        nivel: { type: [string, 'null'] }
+        area: { type: [string, 'null'] }
+        horasTotales: { type: number }
+        horasFacturables: { type: number }
+        horasNoFacturables: { type: number }
+        porcentajeFacturable: { type: number }
+    CostoPorAbogado:
+      type: object
+      required:
+        - abogadoId
+        - nombre
+        - nivel
+        - area
+        - costoTotal
+        - horasFacturables
+        - costoPorHora
+        - costoPorHoraFacturable
+      properties:
+        abogadoId: { type: string }
+        nombre: { type: string }
+        nivel: { type: [string, 'null'] }
+        area: { type: [string, 'null'] }
+        costoTotal: { type: number }
+        horasFacturables: { type: number }
+        costoPorHora: { type: [number, 'null'], description: 'costoTotal / horasTotales; null si no hay horas' }
+        costoPorHoraFacturable: { type: [number, 'null'], description: 'costoTotal / horasFacturables; null si no hay horas facturables' }
+    DistribucionTiempo:
+      type: object
+      required: [horasFacturables, horasNoFacturables, porcentajeFacturable, porcentajeNoFacturable]
+      properties:
+        horasFacturables: { type: number }
+        horasNoFacturables: { type: number }
+        porcentajeFacturable: { type: number }
+        porcentajeNoFacturable: { type: number }
+    EvolucionMensual:
+      type: object
+      required:
+        - periodo
+        - horasTotales
+        - horasFacturables
+        - horasNoFacturables
+        - porcentajeFacturable
+        - costoTotal
+        - costoPorHoraFacturable
+      properties:
+        periodo: { type: string, pattern: '^\d{4}-(0[1-9]|1[0-2])$' }
+        horasTotales: { type: number }
+        horasFacturables: { type: number }
+        horasNoFacturables: { type: number }
+        porcentajeFacturable: { type: number }
+        costoTotal: { type: number }
+        costoPorHoraFacturable: { type: [number, 'null'] }
+    Dashboard:
+      type: object
+      required: [resumen, horasPorAbogado, costosPorAbogado, distribucionTiempo, evolucionMensual]
+      properties:
+        resumen: { $ref: '#/components/schemas/Resumen' }
+        horasPorAbogado:
+          type: array
+          items: { $ref: '#/components/schemas/HorasPorAbogado' }
+        costosPorAbogado:
+          type: array
+          items: { $ref: '#/components/schemas/CostoPorAbogado' }
+        distribucionTiempo: { $ref: '#/components/schemas/DistribucionTiempo' }
+        evolucionMensual:
+          type: array
+          items: { $ref: '#/components/schemas/EvolucionMensual' }
+    Error:
+      type: object
+      properties:
+        statusCode: { type: integer }
+        message: {}
+        error: { type: string }
