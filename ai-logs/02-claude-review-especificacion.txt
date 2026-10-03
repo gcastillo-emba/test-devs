@@ -1,0 +1,34 @@
+❯ Actúa como reviewer técnico y de producto independiente.
+
+  Estamos en una prueba técnica y todavía estamos en la fase de especificación. NO modifiques ningún archivo.
+
+  Lee:
+
+  - LEEME.md
+  - 2-especificacion.md
+  - datos/contabilidad.csv, únicamente en la medida necesaria para validar que la spec sea coherente con su contrato
+
+  Puedes consultar la API pública documentada en http://localhost:8000 si es necesario.
+
+  NO inspecciones archivos internos de servicios/: debe tratarse como un sistema externo.
+
+  Contexto confirmado del Product Owner:
+
+  - Los usuarios principales son los socios de la firma.
+  - Los costos son información sensible.
+  - El objetivo es permitir comparaciones que ayuden a tomar decisiones de negocio.
+  - No existen métricas o visualizaciones históricas que tengamos que replicar.
+  - Para las horas deben utilizarse únicamente registros con facturable = true.
+  - La evolución temporal es importante.
+  - También interesa poder analizar la evolución de un abogado individual.
+  - Los problemas de calidad de datos deben hacerse visibles para evitar decisiones basadas en información engañosa.
+
+  Decisiones de implementación tomadas:
+  - período de las horas = mes de fecha_trabajo;
+  - fecha_carga se usa para detectar cargas tardías;
+  - costo = costo_total;
+  - agregaciones = SUM(costos) / SUM(horas facturables), no promedio de ratios individuales;
+  - FastAPI + React;
+  - actualización explícita/manual en esta entrega;
+  - autenticación/gestión de usuarios fuera de alcance de implementación, aunque la sensibilidad del acceso debe quedar documentada;
+  - no inventar moneda ni reglas especiales para socios.

@@ -1,0 +1,480 @@
+
+```
+  >_ OpenAI Codex (v0.160.0)
+     ~/Developer/entrevista-MB/test-devs/entorno-candidato
+
+  What’s today’s side quest?
+• Permission selection requested: Full Access
+```
+Estamos en la fase de IMPLEMENTACIÓN de una prueba técnica con tiempo muy limitado.  
+  
+La especificación está congelada y es la fuente de verdad:  
+  
+\- \`LEEME.md\`  
+\- \`2-especificacion.md\`  
+  
+También puedes inspeccionar:  
+\- \`frontend-react/\`  
+\- \`datos/contabilidad.csv\`  
+\- \`docker-compose.yml\`  
+\- la API pública documentada en \`http://localhost:8000\`  
+  
+RESTRICCIÓN IMPORTANTE:  
+\`servicios/\` representa un sistema externo.  
+NO inspecciones, leas ni modifiques su implementación interna.  
+Solo consume su API pública.  
+  
+STACK OBLIGATORIO:  
+\- Backend: Python + FastAPI  
+\- Frontend: React + TypeScript  
+\- No usar PostgreSQL para esta entrega salvo que ya sea imprescindible por la spec.  
+\- No implementar autenticación.  
+  
+OBJETIVO:  
+Implementa AHORA una versión end-to-end funcional y demostrable de la especificación.  
+  
+No necesito otro análisis largo y NO esperes una segunda aprobación antes de escribir código.  
+  
+Trabaja con este orden de prioridad:  
+  
+P0 — DEBE FUNCIONAR  
+1\. Backend FastAPI que:  
+&#32;&#32;&#32;\- lea \`datos/contabilidad.csv\`;  
+&#32;&#32;&#32;\- descargue todos los registros de la API externa usando paginación de hasta 500;  
+&#32;&#32;&#32;\- use solo registros \`facturable = true\`;  
+&#32;&#32;&#32;\- agrupe horas por \`abogado\_id + mes(fecha\_trabajo)\`;  
+&#32;&#32;&#32;\- aplique exactamente las reglas de cobertura, datos incompletos y cálculo definidas en \`2-especificacion.md\`;  
+&#32;&#32;&#32;\- calcule costo por hora por \`area + nivel\`;  
+&#32;&#32;&#32;\- exponga la información necesaria al frontend;  
+&#32;&#32;&#32;\- permita actualización manual;  
+&#32;&#32;&#32;\- devuelva observaciones de calidad de datos;  
+&#32;&#32;&#32;\- incluya fecha/hora de última actualización exitosa.  
+  
+2\. Frontend React que permita:  
+&#32;&#32;&#32;\- ver tabla principal por área + nivel;  
+&#32;&#32;&#32;\- costo incluido;  
+&#32;&#32;&#32;\- horas facturables;  
+&#32;&#32;&#32;\- costo por hora;  
+&#32;&#32;&#32;\- estado COMPLETO / PARCIAL / NO CALCULABLE cuando corresponda;  
+&#32;&#32;&#32;\- filtros de período, área y nivel;  
+&#32;&#32;&#32;\- observaciones visibles de calidad de datos;  
+&#32;&#32;&#32;\- botón de actualizar datos.  
+  
+P1 — SI HAY TIEMPO  
+3\. Evolución temporal:  
+&#32;&#32;&#32;\- gráfico mensual comparativo;  
+&#32;&#32;&#32;\- huecos reales para meses no calculables;  
+&#32;&#32;&#32;\- no convertir huecos en cero.  
+  
+4\. Vista individual:  
+&#32;&#32;&#32;\- seleccionar abogado;  
+&#32;&#32;&#32;\- ver evolución de costo total, sueldo, horas facturables y costo por hora;  
+&#32;&#32;&#32;\- respetar \`SIN COBERTURA DE HORAS\`.  
+  
+P2 — SOLO SI P0/P1 YA FUNCIONAN  
+5\. Mejoras visuales y polish.  
+  
+REGLAS:  
+\- Reutiliza el scaffold existente.  
+\- Mantén la implementación simple y proporcional al volumen.  
+\- No hagas refactors no relacionados.  
+\- No inventes requisitos.  
+\- No promedies ratios individuales: sigue exactamente la matemática de la spec.  
+\- No confundas \`facturable\` con \`horas\_facturadas\`.  
+\- Usa \`fecha\_trabajo\` para período.  
+\- Presenta moneda como Bs., según la decisión documentada.  
+\- No descartes silenciosamente datos sin cruce.  
+\- Mantén claramente separados cero real, falta de cobertura y dato inválido.  
+\- Para resultados PARCIALES, numerador y denominador deben usar la misma población/períodos incluidos.  
+  
+VERIFICACIÓN:  
+Al terminar:  
+1\. ejecuta backend y frontend;  
+2\. ejecuta las verificaciones/build/lint disponibles;  
+3\. prueba al menos:  
+&#32;&#32;&#32;\- mes normal;  
+&#32;&#32;&#32;\- octubre 2025 sin cobertura global;  
+&#32;&#32;&#32;\- grupo sin cobertura;  
+&#32;&#32;&#32;\- grupo parcial;  
+&#32;&#32;&#32;\- rango parcial;  
+&#32;&#32;&#32;\- caso de horas cero reales;  
+4\. reporta:  
+&#32;&#32;&#32;\- archivos creados/modificados;  
+&#32;&#32;&#32;\- comandos ejecutados;  
+&#32;&#32;&#32;\- qué funciona;  
+&#32;&#32;&#32;\- cualquier limitación restante.  
+  
+IMPORTANTE:  
+Tienes autorización para implementar y ejecutar comandos ahora.  
+No esperes mi aprobación entre pasos salvo que encuentres una contradicción que impida continuar.  
+  
+Prioriza una solución funcional sobre perfección.  
+
+Voy a leer la especificación y el scaffold, implementar el flujo completo y verificar los casos exigidos sin acceder a la implementación de `servicios/`.
+```
+• Failed (exit 1) pwd && rg --files -g 'AGENTS.md' -g '!servicios/**' -g '!node_modules/**' -g '!frontend-react/node_mo…
+  └ /Users/andy/Developer/entrevista-MB/test-devs/entorno-candidato
+• Ran cat LEEME.md 2-especificacion.md docker-compose.yml
+  └       POSTGRES_DB: tablero
+        ports:
+          - "5432:5432"
+• Ran ls -la frontend-react; cat frontend-react/package.json; head -n 4 datos/contabilidad.csv; find .. -name AGENTS.md…
+  └ index.css
+    main.tsx
+    {"estado":"ok","registros":51812}{"datos":[{"id":"R-000001","abogado_id":"AB-007","fecha_trabajo":"2025-01-02","fec…
+```
+La API pública está disponible y contiene 51.812 registros. Implementaré snapshots en memoria, cálculos decimales y exclusiones explícitas por cobertura o datos inválidos; octubre de 2025 permanecerá visible con horas ausentes.
+```
+• Ran mkdir -p backend; cat frontend-react/src/App.tsx frontend-react/src/index.css frontend-react/vite.config.ts; pyth…
+  └ Python 3.12.15
+    v22.23.3
+    ?? 2-especificacion.md
+• Ran cat > backend/domain.py <<'PY' …
+  └ Installing collected packages: typing-extensions, idna, h11, click, annotated-types, annotated-doc, uvicorn, typing…
+    
+    Successfully installed annotated-doc-0.0.5 annotated-types-0.8.0 anyio-4.15.1 click-8.5.0 fastapi-0.142.2 h11-0.16.…
+• Ran cat > frontend-react/src/App.tsx <<'TSX' …
+  └ (no output)
+```
+El flujo principal ya está implementado, junto con el gráfico mensual y la exploración individual. Ahora verificaré la matemática, los ceros reales, las exclusiones y la conservación del snapshot ante fallos; después revisaré la interfaz en el navegador con la habilidad `vercel:agent-browser`.
+```
+• Explored
+  └ Read SKILL.md (vercel:agent-browser skill), SKILL.md (vercel:agent-browser-verify skill), SKILL.md (vercel:verifica…
+         skill)
+• Ran npm run build && npm run lint
+  └ > oxlint
+    
+    src/App.tsx:95:5: warning react(set-state-in-effect): Calling setState synchronously within an effect can trigger c…
+• Failed (exit 1) python3 - <<'PY' …
+  └ Ran 18 tests in 0.009s
+    
+    FAILED (errors=25)
+• Ran python3 - <<'PY' …
+  └ Ran 21 tests in 0.010s
+    
+    OK
+• Ran npx --yes agent-browser --version
+  └ agent-browser 0.27.0
+• Ran curl -s http://127.0.0.1:8001/api/estado
+  └ {"actualizando":false,"error":null,"ultima_actualizacion":"2026-10-02T22:46:51.363089+00:00","con_datos":true}
+• Failed (exit 1) python3 - <<'PY' …
+  └ Rango parcial: [('Corporativo', 'Asociado', 19, 20, 3, 3, '202.16'), ('Corporativo', 'Asociado Senior', 19, 20, 1, …
+    Octubre 2025: 20 grupos INCOMPLETOS con horas y ratio null
+    Mes normal: [('Corporativo', 'Asociado', 'COMPLETO', '201.48'), ('Corporativo', 'Asociado Senior', 'COMPLETO', '304…
+```
+Las 21 pruebas del backend pasan. Con las fuentes reales, enero de 2025 tiene grupos calculables, octubre queda INCOMPLETO con horas y ratio nulos, y el rango completo incluye 19 de 20 meses en los grupos con datos fiables. Los grupos de socios quedan sin cobertura individual. Los casos de población parcialmente cubierta y cero real se verificaron con fixtures controlados.
+```
+• Ran npx --yes agent-browser open http://127.0.0.1:5173 && npx --yes agent-browser snapshot -i && npx --yes agent-brow…
+  └     - option "SIN COBERTURA DE HORAS" [ref=e233]
+      - button "Mostrar 100 más (600 pendientes)" [ref=e31]
+    ✓ Screenshot saved to /tmp/tablero-verificacion.png
+• Failed (exit 254) python3 - <<'PY' …
+  └ npm error enoent This is related to npm not being able to find a file.
+    npm error enoent
+    npm error A complete log of this run can be found in: /Users/andy/.npm/_logs/2026-10-02T22_47_52_874Z-debug-0.log
+• Viewed image tablero-verificacion.png
+• Ran npm run build && npm run lint
+  └ > frontend-react@0.0.0 lint
+    > oxlint
+    
+• Ran npx --yes agent-browser eval 'document.querySelector("vite-error-overlay, .vite-error-overlay, #webpack-dev-serve…
+  └ - cell "No calculable" [ref=e175]
+    - cell "PARCIAL 0 de 20 meses incluidos 0 de 1 abogados con cobertura No calculable: Sin cobertura de horas de los …
+    - cell "Exclusiones · Bs. 1.315.529,70" [ref=e177]
+• Failed (exit 1) npx --yes agent-browser eval 'JSON.stringify({rango:[...document.querySelectorAll("input[type=month]"…
+  └ "{\"rango\":[\"2025-01\",\"2026-08\"],\"incompleto\":true,\"tablas\":2}"
+    ✓ Done
+    ✗ Unknown subaction: select
+• Ran python3 - <<'PY' …
+  └ (no output)
+• Ran npx --yes agent-browser fill '[aria-label="Desde"]' '2025-10' && npx --yes agent-browser eval 'JSON.stringify([..…
+  └ ✓ Done
+    "[\"\",\"2026-08\"]"
+• Ran python3 - <<'PY' …
+  └ API real: mes normal, octubre sin cobertura, grupo sin cobertura, rango 19/20 e individual sin cobertura: OK
+    Observaciones: {'CLASIFICACIÓN AUSENTE': 5, 'CARGA POSTERIOR': 574, 'SIN COBERTURA DE HORAS': 120, 'INCOMPLETO': 1}
+    Fixtures: grupo parcialmente cubierto y horas cero reales (no presentes en la descarga actual).
+• Ran npx --yes agent-browser select 'select' 'AB-001' && npx --yes agent-browser eval 'JSON.stringify({values:[...docu…
+  └ ✓ Done
+    "{\"values\":[\"AB-001\",\"\"],\"individual\":\"Costo total\\n0,00\\n25.155,08\\n50.310,17\\n75.465,25\\n2025-01\\n…
+• Ran npx --yes agent-browser eval --stdin <<'JS' …
+  └ "[\"2025-10\",\"2025-10\"]"
+• Ran python3 - <<'PY' …
+  └ Ran 22 tests in 0.013s
+    
+    OK
+• Ran command -v agent-browser; backend/.venv/bin/uvicorn backend.main:app --host 127.0.0.1 --port 8001
+  └ INFO:     Waiting for application shutdown.
+    INFO:     Application shutdown complete.
+    INFO:     Finished server process [22816]
+• Ran npx --yes agent-browser eval 'JSON.stringify({rango:[...document.querySelectorAll("input[type=month]")].map(e=>e.…
+  └ "{\"rango\":[\"2025-10\",\"2025-10\"],\"fila\":\"Corporativo\\nAsociado\\n\\t—\\t—\\tNo calculable\\tPARCIALINCOMPL…
+• Ran python3 - <<'PY' …
+  └ ✓ Done
+    ✓ Done
+```
+La interfaz carga y permite filtrar, comparar series y consultar costos y sueldos de abogados sin cobertura, manteniendo sus horas y ratios ausentes. El build y el lint pasan sin advertencias. Estoy cerrando la prueba del botón de actualización y verificando que las incidencias de cobertura aparezcan antes que las cargas tardías informativas.
+```
+• Ran python3 - <<'PY' …
+  └ Ran 23 tests in 0.011s
+    
+    OK
+• Ran npx --yes agent-browser eval 'JSON.stringify({areas:[...document.querySelectorAll("fieldset:first-of-type input:c…
+  └ "{\"areas\":[\"Corporativo\"],\"grupos\":[\"Corporativo\\nAsociado\",\"Corporativo\\nAsociado Senior\",\"Corporativ…
+    ✓ Done
+• Ran git status --short; git diff --stat; cat backend/sources.py; sed -n '69,78p' backend/domain.py; sed -n '72,112p' …
+  └   const observations = board?.observaciones.filter(o => !observationType || o.tipo === observationType) ?? [];
+      return <main>
+        <header><div><p className="eyebrow">CONTABILIDAD + REGISTRO DE HORAS</p><h1>Costos por hora facturable</h1><p>C…
+• Ran npx --yes agent-browser eval --stdin <<'JS' …
+  └ "{\"gapOctoberHasPoint\":false,\"lineCrossesGap\":false,\"observation\":\"INCOMPLETO · 2025-10 · Alcance global\\nF…
+• Ran backend/.venv/bin/uvicorn backend.main:app --host 127.0.0.1 --port 8001
+  └ INFO:     Waiting for application shutdown.
+    INFO:     Application shutdown complete.
+    INFO:     Finished server process [23382]
+• Ran cat >> IMPLEMENTACION.md <<'MD' …
+  └ {"actualizando":false,"error":null,"ultima_actualizacion":"2026-10-02T22:52:51.359844+00:00","con_datos":true}
+• Ran python3 - <<'PY' …
+  └ Versión final activa: API completa, prioridad de observaciones y exclusiones correctas.
+    ✓ Browser closed
+```
+Implementación end-to-end funcionando:
+
+- Frontend: [http://localhost:5173 (http://localhost:5173)](<http://localhost:5173>)
+- Backend y documentación: [http://localhost:8001/docs (http://localhost:8001/docs)](<http://localhost:8001/docs>)
+
+Incluye tabla por área/nivel, filtros múltiples, actualización manual atómica, observaciones, cobertura, gráficos con huecos reales y vista individual. Descarga los **51\.812 registros**. No se accedió a la implementación de `servicios/`.
+
+Verificación: **23 pruebas aprobadas**, build y lint sin advertencias, interfaz comprobada en navegador. Se probaron mes normal, octubre 2025, grupos sin cobertura y parcialmente cubiertos, rango parcial y ceros reales. Los últimos dos casos de población parcial y ceros usaron fixtures controlados. También se verificó conservación del snapshot ante fallos.
+
+Archivos creados:
+
+- `backend/`: `__init__.py`, `main.py`, `domain.py`, `sources.py`, `requirements.txt`, `test_domain.py`, `test_refresh.py`.
+- `.gitignore` y IMPLEMENTACION.md.
+
+Modificados: `frontend-react/src/App.tsx`, `src/index.css` y `vite.config.ts`.
+
+Comandos principales ejecutados: creación de venv, instalación de requirements, Uvicorn en 8001, `npm run dev`, `unittest`, `npm run build`, `npm run lint`, consultas HTTP y `agent-browser`.
+
+Limitación restante: la API externa no garantiza consistencia transaccional entre páginas; se detectan inconsistencias observables. Los snapshots permanecen en memoria, según la especificación.
+```
+  Worked for 16m 12s • 6:53 PM
+• Opened http://localhost:5173 in your browser.
+```
+No modifiques nada.  
+  
+Dame un briefing extremadamente corto para poder defender esta implementación oralmente.  
+  
+Quiero:  
+  
+1\. arquitectura en 6-8 bullets;  
+2\. flujo exacto de datos desde las dos fuentes hasta React;  
+3\. fórmula y reglas de cobertura;  
+4\. endpoints que creaste;  
+5\. 5 decisiones técnicas importantes y por qué;  
+6\. 3 limitaciones conocidas;  
+7\. qué archivos mirar si me preguntan dónde está cada cosa.  
+  
+Máximo 500 palabras.  
+
+**1\. Arquitectura**
+
+- Backend nuevo: Python + FastAPI.
+- Adaptador CSV para contabilidad.
+- Adaptador HTTP para la API externa, con páginas de hasta 500.
+- Dominio central para validación, cobertura y cálculos.
+- Snapshot en memoria, reemplazado atómicamente tras una carga exitosa.
+- React + TypeScript consume resultados; no calcula ratios.
+- Vite dirige `/api` al backend mediante proxy.
+
+**2\. Flujo exacto**
+
+Carga inicial o botón → releer CSV + recorrer `siguiente` hasta `null` → comprobar paginación completa → validar filas y registrar incidencias → determinar cobertura global e individual sobre toda la API → sumar minutos exclusivamente con `facturable = true`, por abogado y mes de `fecha_trabajo` → cruzar con contabilidad, conservando observaciones sin contraparte → publicar snapshot → aplicar filtros y calcular grupos/series en FastAPI → devolver JSON a React.
+
+Si falla la descarga, permanece el snapshot anterior y su fecha exitosa.
+
+**3\. Fórmula y cobertura**
+
+`Costo/hora = SUM(costo_total incluido) × 60 / SUM(minutos facturables incluidos)`.
+
+- Nunca se promedian ratios ni se usan `horas_facturadas` contables.
+- Cobertura mensual: existe algún registro global con fecha de trabajo válida, facturable o no.
+- Cobertura individual: el abogado aparece en algún registro de toda la API.
+- Sin cobertura individual: se excluyen simétricamente su costo y horas; ratio individual nulo.
+- Mes sin cobertura o con insumos no confiables: se excluye simétricamente del rango.
+- Cero real con cobertura: conserva costo y aporta cero horas; no excluye el mes.
+- Denominador cero: ratio nulo con motivo. Exclusiones producen PARCIAL; se informa también disponibilidad.
+- Área/nivel corresponden al CSV de cada mes.
+
+**4\. Endpoints**
+
+- `GET /api/estado`: carga, error y última actualización.
+- `POST /api/actualizar`: actualización completa.
+- `GET /api/tablero`: grupos, series, observaciones e individual; acepta `inicio`, `fin`, múltiples `area`/`nivel` y `abogado_id`.
+
+**5\. Cinco decisiones y por qué**
+
+1. **Memoria:** suficiente para el volumen y alcance; evita infraestructura innecesaria.
+2. **Decimal:** evita errores binarios; redondeo HALF\_UP únicamente al presentar.
+3. **Fórmulas en backend:** una única fuente de cálculo para tabla, gráficos e individual.
+4. **Publicación atómica y actualización exclusiva:** evita snapshots parciales y actualizaciones simultáneas.
+5. **Nulos y exclusiones explícitos:** distingue cero, falta de cobertura y dato inválido; los gráficos conservan huecos.
+
+**6\. Tres limitaciones**
+
+- Reiniciar elimina el snapshot y exige nueva carga.
+- La API externa no garantiza consistencia transaccional entre páginas.
+- Sin autenticación ni autorización, expresamente fuera de alcance.
+
+**7\. Archivos para defenderlo**
+
+- `backend/domain.py`: validación, cruce, cobertura, fórmulas y filtros.
+- `backend/sources.py`: descarga y controles de paginación.
+- `backend/main.py`: endpoints, carga inicial y actualización atómica.
+- `backend/test_domain.py`, `test_refresh.py`: 23 pruebas.
+- `frontend-react/src/App.tsx`: pantalla, filtros, gráficos y estados.
+- `src/index.css`, `vite.config.ts`: estilos y proxy.
+- `IMPLEMENTACION.md`: ejecución y verificación.
+```
+  Worked for 32s • 6:57 PM
+```
+La revisión independiente no encontró BLOCKERS y verificó que los 22 ratios actuales coinciden exactamente con un cálculo independiente.  
+  
+Haz SOLO este fix acotado de presentación/semántica. No cambies fórmulas, cobertura de horas ni arquitectura.  
+  
+Problema:  
+Cuando un grupo o abogado no tiene fila contable para un período, actualmente algunos resultados lo cuentan como período “excluido” y/o muestran motivos relacionados con falta de cobertura de horas (“0 de 0 abogados”, “Sin cobertura de horas de los miembros”).  
+  
+Eso es engañoso: en esos casos el problema es que el grupo/persona no existe en Contabilidad para ese período.  
+  
+Corrección mínima:  
+  
+1\. Para un grupo área+nivel sin ninguna fila contable en un mes:  
+&#32;&#32;&#32;\- tratar ese período como “sin datos contables para este grupo/período”;  
+&#32;&#32;&#32;\- no describirlo como falta de cobertura de horas;  
+&#32;&#32;&#32;\- no mostrar “0 de 0 abogados con cobertura”;  
+&#32;&#32;&#32;\- no debe afectar la matemática de los meses donde sí existe población contable.  
+  
+2\. En la vista individual, si un abogado no tiene fila contable en un mes:  
+&#32;&#32;&#32;\- mostrar “Sin datos contables para este período”;  
+&#32;&#32;&#32;\- no mostrar “Sin cobertura de horas” como motivo;  
+&#32;&#32;&#32;\- si existen horas API sin contraparte contable, mantener la observación \`SIN CONTRAPARTE CONTABLE\`.  
+  
+3\. No cambies ninguna fórmula ni los ratios existentes.  
+4\. No implementes la política más amplia sobre registros API inválidos encontrada por Claude; con los datos actuales hay 0 incidencias y no quiero ampliar scope ahora.  
+5\. Añade o ajusta tests solo para estas dos situaciones.  
+6\. Ejecuta tests, build y lint.  
+7\. Reporta exclusivamente archivos modificados y resultado de las verificaciones.  
+  
+Prioriza el cambio mínimo. No hagas refactors ni mejoras visuales.  
+
+Haré el ajuste mínimo para distinguir ausencia de contabilidad de falta de cobertura de horas, sin cambiar los cálculos. Añadiré pruebas para ambos casos y ejecutaré tests, build y lint.
+```
+• Ran sed -n '195,340p' backend/domain.py; cat backend/test_domain.py; rg -n 'Coverage|fuera_del_filtro|meses_incluidos…
+  └ 122:        {!board.grupos.length ? <p className="empty">No hay grupos para los filtros seleccionados.</p> : <div c…
+    125:        <details><summary>Detalle mensual de las series seleccionadas</summary><div className="table-wrap"><tab…
+    128:        {board.individual && <><p className="notice">{board.individual.cobertura}. Los costos y sueldos conocid…
+• Ran backend/.venv/bin/python - <<'PY' …
+  └ Baseline guardado con las fuentes actuales.
+• Edited 3 files (+48 -6)
+  └ backend/domain.py (+12 -4)
++    periods_without_accounting = []
+    ⋮
++        if not all_keys:
+
+  └ backend/test_domain.py (+33 -0)
++    def test_group_month_without_accounting_is_not_hours_exclusion(self):
++        for records in ([record(), record(p='2025-03', rid='3')],
++                        [record(), record(p='2025-02', rid='2'), record(p='2025-03', rid='3')]):
+
+  └ frontend-react/src/App.tsx (+3 -2)
+-  cobertura_estado: string; disponibilidad: string; meses_incluidos: string[]; meses_total: number;
++  cobertura_estado: string; disponibilidad: string; meses_incluidos: string[]; meses_total: number; meses_sin_datos_contables: string[];
+• Ran backend/.venv/bin/python -m unittest discover -s backend -p 'test_*.py' -v && backend/.venv/bin/python - <<'PY' …
+  └ 
+    OK
+    Comparación antes/después: 22 resultados actuales idénticos.
+• Ran npm run build && npm run lint
+  └ > frontend-react@0.0.0 lint
+    > oxlint
+    
+```
+Archivos modificados:
+
+- `backend/domain.py`
+- `backend/test_domain.py`
+- `frontend-react/src/App.tsx`
+
+Verificaciones:
+
+- **25 tests aprobados**, incluidos los dos casos nuevos.
+- **Build aprobado**.
+- **Lint aprobado sin advertencias**.
+- Comparación antes/después: **los 22 resultados actuales conservan exactamente sus ratios**.
+```
+  Worked for 2m 2s • 7:01 PM
+```
+La UI funciona y muestra el snapshot, pero al usar “Actualizar” queda en estado “Actualizando...” y aparece:  
+  
+TypeError: Failed to fetch  
+Se conserva la última actualización exitosa.  
+  
+NO modifiques código todavía.  
+  
+Diagnostica únicamente:  
+1\. reproduce el POST /api/actualizar;  
+2\. revisa si el backend sigue procesando o si falla;  
+3\. identifica si hay timeout, proceso duplicado, problema de CORS/proxy o excepción backend;  
+4\. dame causa raíz y fix mínimo.  
+  
+No hagas refactors ni cambios no relacionados.  
+
+Voy a reproducir el POST y contrastarlo con el estado del backend, los procesos y el proxy. No modificaré código.
+```
+• Ran cat backend/main.py; cat frontend-react/vite.config.ts; sed -n '75,115p' frontend-react/src/App.tsx; lsof -nP -iT…
+  └ 24934 24927       00:01 rg uvicorn|vite|backend.main
+    24635 24580       06:19 /opt/homebrew/Cellar/python@3.12/3.12.15/Frameworks/Python.framework/Versions/3.12/Resource…
+    24657 24639       06:10 node /Users/andy/Developer/entrevista-MB/test-devs/entorno-candidato/frontend-react/node_mo…
+• Ran curl -sS --max-time 5 -i http://127.0.0.1:8001/api/estado; curl -sS --max-time 5 -i http://127.0.0.1:5173/api/est…
+  └ content-type: application/json
+    
+    {"estado":"ok","registros":51812}
+• Failed (exit 28) cat /Users/andy/.codex/plugins/cache/openai-curated-remote/vercel/0.21.4/skills/investigation-mode/S…
+  └ node    24657 andy    1w   REG   1,14      161 7424615 /private/tmp/mb-frontend.log
+    node    24657 andy    2w   REG   1,14      161 7424615 /private/tmp/mb-frontend.log
+    curl: (28) Operation timed out after 5006 milliseconds with 0 bytes received
+• Ran curl -sS --max-time 45 -X POST -w '\nHTTP=%{http_code} segundos=%{time_total}\n' http://127.0.0.1:8001/api/actual…
+  └ {"actualizando":false,"error":null,"ultima_actualizacion":"2026-10-02T23:14:49.343796+00:00","con_datos":true}
+    HTTP=200 segundos=0.870857
+• Failed (exit 28) curl -sS --max-time 15 -X POST -w '\nHTTP=%{http_code} segundos=%{time_total}\n' http://127.0.0.1:51…
+  └ curl: (28) Operation timed out after 15006 milliseconds with 0 bytes received
+    
+    HTTP=000 segundos=15.006622
+```
+El POST directo al backend terminó con HTTP 200 en 0,87 segundos y `actualizando=false`. En cambio, Vite no responde ni a `/`: su proceso figura como suspendido (`T`), al igual que npm. Estoy usando `vercel:investigation-mode` para contrastar los logs y confirmar el estado del proceso.
+```
+• Ran cat /tmp/mb-backend.log /tmp/mb-frontend.log; ps -o pid,ppid,pgid,tpgid,state,command -p 24580,24635,24639,24657;…
+  └ vary: Origin
+    
+    {"actualizando":false,"error":null,"ultima_actualizacion":"2026-10-02T23:14:49.343796+00:00","con_datos":true}
+```
+**Causa raíz: Vite está suspendido**, por lo que su proxy deja de responder. El navegador conserva el snapshot ya cargado, pero pierde acceso a actualización y estado.
+
+Evidencia:
+
+- POST directo a `8001/api/actualizar`: **200 OK en 0,87 s**, `actualizando=false`, sin error.
+- POST mediante `5173/api/actualizar`: **timeout a los 15 s**, sin respuesta.
+- Incluso `/` en 5173 no responde.
+- npm y Vite figuran como **`T` — suspendidos**, en un grupo de procesos en segundo plano.
+- Un único backend y un único Vite; sin excepciones backend. CORS devuelve el origen permitido.
+
+La suspensión es compatible con **SIGTTIN** al leer Vite del terminal en segundo plano; el origen exacto de la señal no está confirmado.
+
+**Fix mínimo:** en la terminal que inició Vite, ejecutar `jobs -l` y luego `fg %N` para su job. Mantenerlo en primer plano. Si debe ejecutarse en segundo plano, relanzarlo con stdin redirigido desde `/dev/null`.
+
+No modifiqué código ni reanudé procesos.
+```
+  Worked for 1m 14s • 7:15 PM
+La implementación end-to-end funciona; el ajuste de ausencia contable pasó 25 tests, build y lint, conservando los 22 ratios. El diagnóstico de «Actualizar» identifica Vite suspendido: el backend responde correctamente, pero el proxy no. No se modificó código ni se reanudaron procesos; la recuperación sigue pendiente.
+Next: Reanudar Vite con fg %N desde su terminal, o relanzarlo con stdin desde /dev/null si debe ejecutarse en segundo plano.
+```

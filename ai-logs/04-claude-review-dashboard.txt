@@ -1,0 +1,75 @@
+❯ La implementación ya está terminada y funcional.
+
+  Codex reporta:
+  - frontend React en http://localhost:5173
+  - backend FastAPI en http://localhost:8001
+  - 51.812 registros de la API procesados
+  - 23 tests aprobados
+  - build y lint limpios
+  - tabla área+nivel, filtros, actualización manual, calidad de datos, gráfico temporal y vista individual implementados
+
+  Ahora haz una revisión FINAL y RÁPIDA de la implementación.
+
+  Tenemos muy poco tiempo.
+
+  IMPORTANTE:
+  - NO modifiques archivos.
+  - NO hagas refactors.
+  - NO propongas mejoras de estilo.
+  - NO revises la implementación interna de servicios/.
+  - Prioriza únicamente bugs que puedan hacer que la demo produzca números incorrectos, rompa el flujo principal o contradiga 2-especificacion.md.
+
+  Revisa especialmente:
+
+  1. Fórmula SUM(costos)/SUM(horas facturables).
+  2. facturable=true vs horas_facturadas.
+  3. período = fecha_trabajo.
+  4. octubre 2025 sin cobertura.
+  5. abogados sin cobertura total de API.
+  6. grupos parcialmente cubiertos.
+  7. meses con cero horas reales.
+  8. numerador y denominador simétricos en resultados PARCIALES.
+  9. actualización atómica / último snapshot válido.
+  10. filtros frontend → backend.
+  11. que no exista un ratio global mezclando niveles.
+  12. que cliente/asunto no se expongan en UI.
+
+  Devuélveme SOLO:
+
+  BLOCKERS:
+  - máximo 3
+
+  IMPORTANTES:
+  - máximo 3
+
+  Si no encuentras blockers, escribe literalmen
+  BLOCKERS: ninguno.
+
+  No edites nada.
+
+  Read 3 files, listed 1 directory, ran 2 shell
+
+Revisé spec, backend y frontend; ahora consul para confirmar números reales.
+
+  Ran 2 shell commands
+
+BLOCKERS: ninguno
+
+- Recalculé los 22 grupos directamente desde ros de la API, aparte del backend, y los 22ratios coinciden exactamente. Octubre 2025 sale INCOMPLETO (19 de 20 meses), los Socios aparecen como «0 de M
+  abogados con cobertura» sin ratio, y en la liente ni asunto.
+
+IMPORTANTES:
+
+- Meses sin filas contables del grupo se cuenend/domain.py:218). «Laboral · Sin nivelinformado» muestra «2 de 20 meses incluidos», queda PARCIAL y lista 17 exclusiones «Sin datos contables para este
+  grupo y período». Esto contradice §5, que s por falta de cobertura de horas o por datos no confiables. En el detalle mensual de esos mesesfigura además un motivo equivocado: «0 de 0 abogados» y «Sin
+  cobertura de horas de los miembros» (domainen; lo que confunde es la cobertura y elmotivo. Les pasará también a los grupos de abogados que cambian de nivel o área.
+- Un solo registro inválido de la API puede dupos (domain.py:81 y :162). Si un registro trae abogado_id válido pero fecha_trabajo inválida, ese abogado queda invalidado en todos los meses y todos sus grupos
+  salen "No calculable". Si no tiene ni abogatodos los ratios del tablero. Con los datosactuales no ocurre (0 incidencias), y §9 lo permite en parte («cobertura no verificable»). Pero si alguien pregunta
+  o la API cambia durante una actualización euedar vacío.
+- La vista individual muestra un motivo engañoso en meses sin fila contable (domain.py:279). En los meses en que un
+  abogado con cobertura no tiene fila en el Cin cobertura de horas de los miembros». Siademás tiene horas en la API ese mes, tampoco se muestran ahí (solo en la observación «SIN CONTRAPARTE CONTABLE»).
+  Para la demo, mejor no abrir el detalle de
+
+✻ Baked for 1m 35s · done 6:57 PM
+
+※ recap: I did a quick final review of the cost the demo: no blockers, and the ratios match an independent recalculation. Next, decide whether to fix the three important issues (misleading coverage counts and labels) or demo as is. (disable recaps in /config)

@@ -1,0 +1,339 @@
+```
+>_ OpenAI Codex (v0.160.0)
+     ~/Developer/entrevista-MB/test-devs/entorno-candidato
+
+  Hello again, carbon-based collaborator.
+• Permission selection requested: Full Access
+```
+Estamos en el Paso 4b de una prueba técnica. Tenemos 50 minutos.  
+  
+Lee primero:  
+\- \`4-tickets.md\`  
+\- \`plataforma-existente/LEEME.md\`  
+  
+Como elegí Python + React, trabaja ÚNICAMENTE con:  
+\- \`plataforma-existente/python-fastapi/\`  
+\- \`plataforma-existente/frontend-react/\`  
+  
+No trabajes sobre Java/Angular y no modifiques mi implementación nueva del tablero fuera de \`plataforma-existente/\`.  
+  
+TAREA 1 — corregir dos reportes:  
+  
+Reporte 1:  
+“Cuando marco ‘Incluir socios’ en el reporte, da error. Sin esa opción funciona bien.”  
+  
+Reporte 2:  
+“El costo por hora de Lucía Terrazas sale Bs 350 en el reporte y Bs 500 en su ficha. Me pasa con los demás también. ¿Cuál es el correcto?”  
+  
+Quiero que trabajes con este proceso, pero sin esperar aprobación intermedia si la causa queda clara:  
+  
+1\. Lee la arquitectura/documentación relevante.  
+2\. Reproduce ambos bugs.  
+3\. Identifica la causa raíz de cada uno con evidencia concreta.  
+4\. Determina cuál comportamiento es correcto según las reglas existentes de la aplicación; no inventes reglas de negocio.  
+5\. Implementa el FIX MÍNIMO para ambos.  
+6\. Añade o ajusta tests de regresión.  
+7\. Ejecuta tests/build/lint relevantes.  
+8\. No hagas refactors ni mejoras no relacionadas.  
+  
+Al terminar, NO escribas todavía la revisión de arquitectura. Reporta:  
+\- causa raíz Reporte 1;  
+\- fix Reporte 1;  
+\- causa raíz Reporte 2;  
+\- cuál valor era correcto y por qué;  
+\- fix Reporte 2;  
+\- archivos modificados;  
+\- tests/comandos ejecutados;  
+\- cualquier problema adicional encontrado.  
+  
+Puedes modificar código para esta tarea./Users/andy/Documents/Moreno\\ Baldivieso/Entrevista/4-tickets.md  
+
+Voy a leer los tickets y la documentación, reproducir ambos errores y corregirlos con cambios mínimos y tests de regresión, únicamente en Python/FastAPI y React dentro de `plataforma-existente/`.
+```
+• Ran pwd; rg --files -g 'AGENTS.md' -g '4-tickets.md' -g 'LEEME.md' -g 'README*' -g 'pyproject.toml' -g 'package.json'…
+  └ plataforma-existente/python-fastapi/tests/test_api.py
+    frontend-react/package.json
+    frontend-react/README.md
+• Ran cat '/Users/andy/Documents/Moreno Baldivieso/Entrevista/4-tickets.md' plataforma-existente/LEEME.md; rg --files p…
+  └ plataforma-existente/frontend-react/vite.config.ts
+    plataforma-existente/frontend-react/src/index.css
+    plataforma-existente/frontend-react/src/pantallas/Reporte.tsx
+• Ran cat plataforma-existente/python-fastapi/app/dominio/*.py plataforma-existente/python-fastapi/app/aplicacion/*.py …
+  └ plataforma-existente/LEEME.md
+    LEEME.md
+    frontend-react/README.md
+• Failed (exit 1) cat 2-especificacion.md; command -v python3; test -d plataforma-existente/frontend-react/node_modules…
+  └ - Los rangos de presencia no prueban altas/bajas. Aplicar exclusivamente las reglas explícitas de cobertura mensual…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación.
+    /opt/homebrew/opt/python@3.12/libexec/bin/python3
+• Failed (exit 1) python3 -m pytest -q
+  └ /Library/Developer/CommandLineTools/usr/bin/python3: No module named pytest
+```
+La función de dominio de esta aplicación define costo/hora usando **todas las horas registradas**; la ficha filtra solo las facturables. También encontré que los socios no tienen registros y el cálculo divide entre cero. Voy a reproducir ambos casos por HTTP y verificar los totales. Las reglas del tablero nuevo corresponden a otra aplicación y no las aplicaré aquí.
+```
+• Ran cat /Users/andy/.codex/plugins/cache/openai-curated-remote/vercel/0.21.4/skills/react-best-practices/SKILL.md; ca…
+  └ backend/.venv/
+    __pycache__/
+    *.pyc
+• Ran /opt/homebrew/opt/python@3.12/libexec/bin/python3 -m venv .venv; .venv/bin/python -m pip install -r requirements.…
+  └ Installing collected packages: typing-extensions, pluggy, packaging, iniconfig, idna, h11, click, certifi, annotate…
+    
+    Successfully installed annotated-types-0.8.0 anyio-4.15.1 certifi-2026.7.22 click-8.5.0 fastapi-0.115.6 h11-0.16.0 …
+• Ran npm ci
+  └   run `npm fund` for details
+    
+    found 0 vulnerabilities
+• Ran .venv/bin/python -m pytest -q; .venv/bin/python - <<'PY' …
+  └ A-02 Tomás Iriarte costo= 21600 minutos totales= 7200 minutos facturables= 5400
+    A-03 Sofía Navia costo= 21000 minutos totales= 6300 minutos facturables= 4200
+    A-04 Diego Urquieta costo= 13500 minutos totales= 7500 minutos facturables= 4500
+```
+Reproduje los dos bugs: el reporte devuelve HTTP 500 con socios por `ZeroDivisionError`; para Lucía devuelve Bs 350, mientras la ficha devuelve Bs 500. Su costo es Bs 31.500, con 90 horas totales y 63 facturables: según la regla de dominio existente, corresponde **Bs 350/h**.
+
+El fix devolverá `null` cuando no haya horas y mostrará «No calculable: sin horas registradas», conservando los costos. La ficha reutilizará el cálculo de dominio con todas las horas. Aplicaré también la skill `vercel:react-best-practices` al revisar los dos componentes afectados.
+```
+• Edited 2 files (+56 -1)
+  └ plataforma-existente/python-fastapi/tests/test_api.py (+42 -1)
++import pytest
++
+   ⋮
+
+  └ plataforma-existente/python-fastapi/tests/test_costo_hora.py (+14 -0)
++import pytest
++
++from app.dominio.costo_hora import calcular_costo_hora
+• Failed (exit 1) .venv/bin/python -m pytest -q --tb=short
+  └ FAILED tests/test_costo_hora.py::test_costo_hora[64000-0-None] - ZeroDivision...
+    FAILED tests/test_costo_hora.py::test_costo_hora[0-0-None] - ZeroDivisionErro...
+    11 failed, 6 passed, 1 warning in 0.85s
+• Edited 4 files (+20 -13)
+  └ plataforma-existente/frontend-react/src/pantallas/Ficha.tsx (+7 -4)
+-  const [costoHora, setCostoHora] = useState<number | null>(null);
++  const [costoHora, setCostoHora] = useState<number | null | undefined>(undefined);
+   ⋮
+
+  └ plataforma-existente/frontend-react/src/pantallas/Reporte.tsx (+6 -4)
+-  costoHora: number;
++  costoHora: number | null;
+-const bs = (valor: number) => `Bs ${valor.toLocaleString("es-BO", { minimumFractionDigits: 2, maximumFractionDig
+
+  └ plataforma-existente/python-fastapi/app/dominio/costo_hora.py (+4 -2)
+-def calcular_costo_hora(costo_total: float, minutos: int) -> float:
+-    """Costo por hora: costo total del período dividido por todas las horas registradas."""
++def calcular_costo_hora(costo_total: float, minutos: int) -> float | None:
+
+  └ plataforma-existente/python-fastapi/app/entrada/http_abogados.py (+3 -3)
++from app.dominio.costo_hora import calcular_costo_hora
+   ⋮
+-    minutos = sum(r.minutos for r in repositorio.registros_de(abogado_id) if r.facturable)
+• Ran .venv/bin/python -m pytest -q
+  └ 
+    -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+    17 passed, 1 warning in 0.13s
+• Ran npm run lint
+  └ > costos-frontend-react@0.0.0 lint
+    > oxlint
+    
+• Ran npm run build
+  └ dist/assets/index-CtaQOJ0y.js   223.26 kB │ gzip: 69.66 kB
+    
+    ✓ built in 519ms
+• Ran git diff --check; git diff --stat; git status --short; git diff -- plataforma-existente/python-fastapi/app/domini…
+  └  M plataforma-existente/python-fastapi/tests/test_api.py
+    ?? plataforma-existente/python-fastapi/.venv/
+    ?? plataforma-existente/python-fastapi/tests/test_costo_hora.py
+```
+Los fixes pasan los 17 tests; también pasan build y lint de React. Las regresiones fallaban antes del cambio y ahora cubren socios sin horas, coincidencia entre ficha y reporte para los seis abogados y una firma sin registros.
+
+Encontré dos problemas adicionales que dejo fuera del fix: React calcula un promedio simple distinto de `promedioFirma`, y el backend registra detalles de clientes/asuntos en los logs. El promedio de React ahora muestra «No calculable» si contiene ratios nulos, para evitar tratarlos como cero.
+```
+• Edited 2 files (+5 -1)
+  └ plataforma-existente/python-fastapi/.venv/.gitignore (+1 -0)
++*
+
+  └ plataforma-existente/python-fastapi/app/dominio/costo_hora.py (+4 -1)
+-    """Costo / todas las horas registradas; sin horas, el cociente no es calculable."""
++    """Costo por hora: costo total del período dividido por todas las horas registradas.
++
+• Ran git diff --check; git status --short; git diff --numstat
+  └ 7    2    entorno-candidato/plataforma-existente/python-fastapi/app/dominio/costo_hora.py
+    3    3    entorno-candidato/plataforma-existente/python-fastapi/app/entrada/http_abogados.py
+    42    1    entorno-candidato/plataforma-existente/python-fastapi/tests/test_api.py
+```
+Ambos reportes corregidos con cambios mínimos.
+
+- **Reporte 1 — causa:** los socios `P-01` y `P-02` tienen costos pero ningún registro de horas. El cálculo dividía entre cero y devolvía HTTP 500.
+- **Fix:** el dominio devuelve `null` cuando no hay horas. Reporte y ficha muestran «No calculable: sin horas registradas». Se conservan los socios y sus costos.
+- **Reporte 2 — causa:** el reporte usaba todas las horas registradas; la ficha filtraba únicamente las facturables y duplicaba la fórmula.
+- **Valor correcto:** **Bs 350/h**, según la definición existente en el dominio: Bs 31.500 / 90 horas totales. Bs 500 resultaba de dividir por 63 horas facturables.
+- **Fix:** la ficha suma todas las horas y reutiliza la función del dominio.
+
+Archivos modificados, todos dentro de `plataforma-existente/`:
+
+- `python-fastapi/app/dominio/costo_hora.py`
+- `python-fastapi/app/entrada/http_abogados.py`
+- `python-fastapi/tests/test_api.py`
+- `python-fastapi/tests/test_costo_hora.py` — nuevo
+- `frontend-react/src/pantallas/Ficha.tsx`
+- `frontend-react/src/pantallas/Reporte.tsx`
+
+Validación ejecutada:
+
+- `.venv/bin/python -m pytest -q`: **17 tests pasan**. Las regresiones fallaban antes del fix.
+- `npm run build`: correcto.
+- `npm run lint`: correcto.
+- `git diff --check`: correcto.
+- Reproducción HTTP de ambos errores con `TestClient`.
+
+Problemas adicionales pendientes: React calcula un promedio simple distinto de `promedioFirma`; el backend escribe detalles de clientes/asuntos en logs; pytest emite una advertencia de deprecación de Starlette/AnyIO. No se corrigieron en esta tarea. No ejecuté pruebas de navegador ni redacté la revisión de arquitectura.
+```
+  Worked for 3m 58s • 7:23 PM
+```
+Vamos a cerrar el Paso 4b.  
+  
+NO hagas más cambios de código.  
+  
+Crea un archivo breve:  
+\`plataforma-existente/4-resolucion.md\`  
+  
+Debe responder exactamente a \`4-tickets.md\` y reflejar únicamente el estado ACTUAL.  
+  
+Usa como hechos confirmados de la implementación:  
+  
+\#\# Tarea 1 — Reporte 1  
+  
+Problema:  
+“Incluir socios” generaba error.  
+  
+Causa raíz:  
+Los socios P-01 y P-02 tienen costos pero no registros de horas. El cálculo intentaba dividir entre cero y terminaba en HTTP 500.  
+  
+Corrección:  
+\- conservar socios y costos;  
+\- \`costoHora = null\` cuando no existen horas;  
+\- frontend muestra “No calculable: sin horas registradas”.  
+  
+Verificación:  
+\- tests de regresión;  
+\- ya no existe HTTP 500 al incluir socios.  
+  
+\#\# Tarea 1 — Reporte 2  
+  
+Problema:  
+Lucía Terrazas mostraba Bs 350/h en reporte y Bs 500/h en ficha.  
+  
+Causa raíz:  
+\- reporte: usaba todas las horas registradas;  
+\- ficha: usaba únicamente horas facturables y duplicaba la fórmula.  
+  
+Regla correcta EXISTENTE de esta aplicación:  
+Bs 31.500 / 90 horas registradas = Bs 350/h.  
+  
+Corrección:  
+\- ficha usa todas las horas, igual que la regla de dominio;  
+\- reutiliza \`calcular\_costo\_hora\`;  
+\- elimina la segunda interpretación de la regla.  
+  
+Verificación general:  
+\- \`pytest\`: 17 tests pasan;  
+\- frontend build: correcto;  
+\- frontend lint: correcto;  
+\- \`git diff --check\`: correcto.  
+  
+\#\# Tarea 2 — Arquitectura hexagonal  
+  
+Incluye de forma breve estos hallazgos ACTUALES:  
+  
+\#\#\# Backend  
+  
+1\. Dominio depende de infraestructura  
+Evidencia:  
+\`app/dominio/modelos.py\`: \`Abogado.registros\` importa/instancia \`JsonRepositorioCostos\`.  
+  
+Problema:  
+dependencia dominio → infraestructura e I/O oculto.  
+  
+Corrección conceptual:  
+caso de uso obtiene registros mediante el puerto y entrega datos al dominio.  
+  
+2\. Caso de uso depende del adaptador concreto  
+Evidencia:  
+\`app/aplicacion/reporte\_costos.py\` instancia \`JsonRepositorioCostos\`; el puerto \`RepositorioCostos\` no gobierna realmente la dependencia.  
+  
+Problema:  
+aplicación → infraestructura; no existe inversión efectiva de dependencias.  
+  
+Corrección:  
+inyectar \`RepositorioCostos\` por constructor y componer el adaptador en \`main.py\` / Depends.  
+  
+3\. Endpoint de ficha se salta aplicación  
+Evidencia:  
+\`app/entrada/http\_abogados.py\` importa el repositorio concreto y orquesta acceso + cálculo.  
+  
+Problema:  
+la entrada conoce infraestructura y lógica de caso de uso.  
+  
+Corrección:  
+crear \`ObtenerCostoHoraAbogado\` en aplicación; el router solo traduce HTTP.  
+  
+\#\#\# Frontend  
+  
+1\. Pantallas llaman HTTP directamente  
+Evidencia:  
+\`Ficha.tsx\` / \`Reporte.tsx\` usan \`fetch\` directamente.  
+  
+Problema:  
+vista acoplada a transporte y URLs.  
+  
+Corrección:  
+puerto + adaptador HTTP fuera de los componentes.  
+  
+2\. Regla de negocio en \`Reporte.tsx\`  
+Evidencia:  
+calcula el promedio de la firma como promedio simple de \`costoHora\`, aunque backend ya entrega \`promedioFirma\` ponderado.  
+  
+Problema:  
+regla duplicada e inconsistente en la vista.  
+  
+Corrección:  
+usar el valor del backend o mover la regla a dominio/aplicación frontend.  
+  
+3\. No hay separación dominio/aplicación frontend  
+Evidencia:  
+tipos, carga, errores y casos de uso viven dentro de los componentes.  
+  
+Problema:  
+componentes coordinan lógica además de presentar.  
+  
+Corrección:  
+tipos/modelos separados + adaptador HTTP + hooks/casos de uso de aplicación.  
+  
+\#\# Otros problemas encontrados  
+  
+Incluye brevemente:  
+  
+\- Logs exponen información sensible de cliente/asunto/detalle.  
+\- El período no se usa al obtener costos/registros; con múltiples meses podría mezclar períodos.  
+\- \`next()\` sin valor por defecto puede producir 500 si falta costo.  
+\- El promedio simple del frontend difiere del \`promedioFirma\` ponderado del backend; se identificó pero no se corrigió por estar fuera del alcance de los dos reportes.  
+  
+IMPORTANTE:  
+\- No menciones Codex ni Claude.  
+\- No describas la historia del proceso de revisión.  
+\- No agregues hallazgos no confirmados.  
+\- No modifiques código.  
+\- Mantén la nota breve y profesional.  
+  
+Después reporta únicamente que el archivo fue creado.  
+
+Voy a crear `plataforma-existente/4-resolucion.md` con los hechos confirmados y los hallazgos actuales, sin modificar código.
+```
+• Added plataforma-existente/4-resolucion.md (+48 -0)
++# Paso 4b — Resolución
++
++## Tarea 1 — Corrección de reportes
+```
+Creado `plataforma-existente/4-resolucion.md`.
+```
+  Worked for 35s • 7:32 PM
+```

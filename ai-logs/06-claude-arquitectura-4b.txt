@@ -1,0 +1,220 @@
+Estamos en el Paso 4b de una prueba técnica. Necesito una revisión de arquitectura, NO cambios de código.
+
+  Lee:
+  - 4-tickets.md
+  - plataforma-existente/LEEME.md
+
+  Elegí Python + React, por lo que revisa únicamente:
+  - plataforma-existente/python-fastapi/
+  - plataforma-existente/frontend-react/
+
+  NO modifiques archivos.
+
+  La aplicación afirma seguir arquitectura hexagonal.
+
+  TAREA:
+  Identifica por escrito dónde NO respeta arquitectura hexagonal, tanto en backend como en frontend, y explica cómo lo corregirías.
+
+  Quiero evidencia concreta del código, no una explicación genérica de arquitectura hexagonal.
+
+  Para cada hallazgo indica:
+  1. archivo/componente;
+  2. qué dependencia o responsabilidad viola la separación esperada;
+  3. por qué es una violación;
+  4. cómo debería quedar la dependencia correcta;
+  5. corrección conceptual mínima, sin implementarla.
+
+  Prioriza máximo:
+  - 4 hallazgos backend;
+  - 4 hallazgos frontend.
+
+  Además identifica problemas adicionales relevantes solo si son claramente importantes.
+
+  Devuelve la respuesta organizada así:
+
+  Backend
+
+  Hallazgo ...
+
+  - Evidencia
+  - Problema
+  - Corrección
+
+  Frontend
+
+  Hallazgo ...
+
+  - Evidencia
+  - Problema
+  - Corrección
+
+  Otros problemas
+
+  - ...
+
+  NO edites código.
+  NO revises Java/Angular.
+  Sé concreto y breve: esto debe poder pegarse después en la nota final de entrega.
+  /Users/andy/Documents/Moreno\ Baldivieso/Entrevista/4-tickets.md
+
+  Ran 5 shell commands
+
+Backend
+
+Hallazgo 1: el dominio depende de infraestructura
+
+- Evidencia: app/dominio/modelos.py:23-27. La propiedad Abogado.registros importa e instancia JsonRepositorioCostos para leer seed.json.
+- Problema: es la violación más grave, porque la dependencia va hacia afuera (dominio → infraestructura). La entidad deja de ser un objeto de negocio puro: hace I/O de forma oculta, no se puede probar sin el JSON y está atada a una sola forma de guardar datos. Además consulta el repositorio por cada abogado.
+- Corrección: el dominio no debe importar nada. Hay que quitar la propiedad registros. El caso de uso pide los registros mediante el puerto (repositorio.registros_de(id)) y se los pasa al cálculo de dominio.
+
+Hallazgo 2: el caso de uso ignora el puerto y usa la implementación concreta
+
+- Evidencia: app/aplicacion/reporte_costos.py:4 y :11 hacen self.repositorio = JsonRepositorioCostos(). El puerto RepositorioCostos (aplicacion/puertos.py) está definido pero nadie lo usa. http_reportes.py:10 crea el caso de uso a mano en cada petición.
+- Problema: la capa de aplicación depende de infraestructura, cuando debería ser al revés. El puerto existe solo de nombre. No se puede cambiar el adaptador ni probar el caso de uso con un repositorio falso. Tampoco hay raíz de composición.
+- Corrección: el caso de uso recibe el puerto por constructor: GenerarReporteCostos(repositorio: RepositorioCostos). El adaptador concreto se conecta en un solo lugar (main.py o un proveedor Depends de FastAPI), y el router recibe el caso de uso ya armado.
+
+Hallazgo 3: el adaptador HTTP se salta la capa de aplicación y tiene su propia regla de negocio
+
+- Evidencia: app/entrada/http_abogados.py:3,6 importa e instancia JsonRepositorioCostos directamente. En :19-25 calcula el costo por hora por su cuenta: filtra solo los registros facturable, divide y redondea, sin usar dominio/costo_hora.calcular_costo_hora.
+- Problema: la capa de entrada solo debería depender de aplicación, y aquí depende de infraestructura. Además la regla de negocio queda duplicada y con otro criterio: la ficha cuenta solo horas facturables y el reporte cuenta todas. Por eso salen Bs 350 y Bs 500 (Reporte 2): las dos pantallas no comparten la regla.
+- Corrección: crear el caso de uso ObtenerCostoHoraAbogado en aplicacion/, que use el puerto y la misma función de dominio que el reporte. El router solo traduce la petición, llama al caso de uso y mapea el 404. Qué minutos cuentan debe quedar decidido en el dominio, en un solo lugar.
+
+Hallazgo 4: la capa de aplicación conoce el formato de la respuesta HTTP
+
+- Evidencia: app/aplicacion/reporte_costos.py:24-38 devuelve un dict con las claves del JSON público en camelCase (abogadoId, costoHora, promedioFirma).
+- Problema: el caso de uso queda atado al formato de la API. Si cambia la API, hay que tocar la aplicación. Además no hay un tipo de salida definido.
+- Corrección: el caso de uso devuelve un DTO propio (por ejemplo los dataclasses ReporteCostos y FilaReporte). El adaptador de entrada lo convierte en la respuesta HTTP, por ejemplo con un response_model de Pydantic.
+
+Frontend
+
+Hallazgo 1: los componentes llaman a la API directamente
+
+- Evidencia: src/pantallas/Ficha.tsx:16,21 y src/pantallas/Reporte.tsx:21 usan fetch("/api/...") con las URLs, la verificación de respuesta.ok y el json() dentro de useEffect.
+- Problema: el LEEME dice que el acceso a la API no vive en los componentes. Aquí la vista depende del transporte HTTP y de las rutas concretas: no hay puerto ni adaptador.
+- Corrección: definir un puerto (interface CostosRepositorio { listarAbogados(); costoHora(id); reporte(incluirSocios) }) y un adaptador HttpCostosRepositorio en infraestructura/. Los componentes no lo importan: lo reciben a través de la capa de aplicación (ver hallazgo 4).
+
+Hallazgo 2: regla de negocio calculada en el componente, distinta a la del backend
+
+- Evidencia: src/pantallas/Reporte.tsx:33 calcula el promedio de la firma como un promedio simple de costoHora por fila. Ignora el promedioFirma que ya envía el backend, que está ponderado por horas.
+- Problema: una regla de negocio vive en la vista y además da otro resultado que el backend. La pantalla muestra un «costo promedio de la firma» incorrecto. Con socios sin horas (costoHora: null) se vuelve peor: JavaScript trata null como 0, así que el socio entra en el promedio con costo 0 y lo baja.
+- Corrección: mostrar promedioFirma tal como llega del backend. Si algún cálculo tiene que vivir en el cliente, va en el dominio o la aplicación del frontend, nunca en el componente.
+
+Hallazgo 3: modelos de dominio definidos dentro de las vistas y atados al formato de la API
+
+- Evidencia: interface Abogado en Ficha.tsx:3-7 e interface Fila en Reporte.tsx:3-10. Las respuestas se usan sin tipo (datos.filas, datos.costoHora salen como any de json()).
+- Problema: no hay capa de dominio. Cada vista declara su propia versión del modelo, copiada del JSON del backend, y no hay conversión entre el formato de la API y el modelo. Cualquier cambio en la API rompe las vistas directamente.
+- Corrección: poner los tipos en dominio/ (Abogado, ReporteCostos, costoHora: number | null). El adaptador HTTP convierte el DTO de la API en esos modelos.
+
+Hallazgo 4: la lógica de los casos de uso vive en los componentes
+
+- Evidencia: los dos componentes manejan solos la carga, el manejo de errores, el reinicio del estado y la selección inicial. Ficha.tsx:11 tiene fijado useState("A-01"). En Reporte.tsx:27-30, un error deja filas=[] y la tarjeta muestra «Bs 0,00» como si fuera un dato real.
+- Problema: los componentes deberían solo presentar, pero aquí coordinan los casos de uso. Esa lógica no se puede probar ni reutilizar.
+- Corrección: crear una capa de aplicación con hooks o casos de uso (useReporteCostos(incluirSocios), useCostoHoraAbogado(id)) que usen el puerto y devuelvan { datos, cargando, error }. El componente solo muestra ese estado.
+
+Otros problemas
+
+- Fuga de información confidencial en los logs: reporte_costos.py:21 registra con nivel INFO cada Registro completo, incluidos cliente, asunto y detalle (por ejemplo «Revisión de documentación reservada de Hotelera Valle Alto…»). Eso expone información protegida por secreto profesional y genera unas 223 líneas por petición. Hay que quitarlo o registrar solo cantidades o IDs en nivel DEBUG.
+- El período se ignora: costo_de y registros_de no filtran por periodo, aunque los datos lo traen. Cuando haya más de un mes, el reporte mezclará costos y horas de distintos períodos. El puerto debería recibir el período.
+- Error 500 por un dato faltante: repositorio_json.py:28 usa next() sin valor por defecto. Si un abogado no tiene costo cargado, lanza StopIteration y la API responde 500.
+- Regla sin dueño: la docstring de calcular_costo_hora dice «todas las horas registradas» y la ficha usa solo las facturables. El negocio tiene que decidir y dejar escrito qué criterio vale (relacionado con el Reporte 2).
+- Frontend:
+  - En Ficha.tsx:19-31 no se cancelan los fetch (no hay AbortController). Si se cambia de abogado rápido, puede quedar en pantalla el costo de otro abogado.
+  - El formato de moneda no coincide entre pantallas: «Bs 350.00» con toFixed en la ficha y «Bs 350,00» con es-BO en el reporte.
+
+No modifiqué ningún archivo. Todo lo anterior sale de la lectura de python-fastapi/app/ y frontend-react/src/.
+
+✻ Baked for 1m 7s · done 7:23 PM
+
+※ recap: Para la Tarea 2 del Paso 4b, entregué la revisión escrita de arquitectura hexagonal del backend Python y el frontend React: cuatro hallazgos por lado más otros problemas, sin editar código. Lo siguiente es pegarla en la nota final de entrega junto con los cambios de la Tarea 1. (disable recaps in /config)
+
+❯ Codex trabajó en paralelo contigo y ya aplicó los fixes de los dos reportes de usuario.
+
+  Antes de cerrar la tarea de arquitectura, vuelve a leer ÚNICAMENTE el estado ACTUAL de:
+
+  - plataforma-existente/python-fastapi/
+  - plataforma-existente/frontend-react/
+
+  No modifiques archivos.
+
+  Algunos hallazgos de tu revisión anterior pueden haber quedado resueltos por los fixes de Codex, especialmente la duplicación de la regla de costo por hora en la ficha.
+
+  Quiero una lista FINAL de violaciones de arquitectura hexagonal que SIGAN existiendo ahora.
+
+  Máximo:
+  - 3 hallazgos Backend
+  - 3 hallazgos Frontend
+  - 3 problemas adicionales importantes
+
+  Para cada hallazgo:
+  - archivo/evidencia;
+  - violación;
+  - por qué importa;
+  - corrección conceptual.
+
+  NO incluyas problemas que ya hayan sido corregidos.
+  NO describas la historia de revisión.
+  NO edites archivos.
+
+  La salida debe ser suficientemente breve para usarla en la nota final requerida por 4-tickets.md.
+
+  Ran 2 shell commands
+
+Backend
+
+B1: el dominio depende de infraestructura
+
+- Evidencia: app/dominio/modelos.py:23-27. La propiedad Abogado.registros importa e instancia JsonRepositorioCostos.
+- Violación: la dependencia va del dominio hacia infraestructura, en dirección contraria a la regla central.
+- Por qué importa: la entidad hace I/O oculto contra seed.json. No se puede probar sin el archivo y además consulta el repositorio una vez por abogado.
+- Corrección: quitar la propiedad. El caso de uso obtiene los registros mediante el puerto (repositorio.registros_de(id)) y el dominio solo recibe datos.
+
+B2: el caso de uso usa la implementación concreta y no el puerto
+
+- Evidencia: app/aplicacion/reporte_costos.py:4,11 hace self.repositorio = JsonRepositorioCostos(). El puerto RepositorioCostos (aplicacion/puertos.py) no lo usa nadie. entrada/http_reportes.py:10 crea el caso de uso a mano y no hay raíz de composición.
+- Violación: la capa de aplicación depende de infraestructura en lugar de una abstracción.
+- Por qué importa: el puerto existe solo de nombre. No se puede cambiar la persistencia ni probar el caso de uso con un repositorio falso.
+- Corrección: inyectar el puerto por constructor (GenerarReporteCostos(repositorio: RepositorioCostos)) y conectar el adaptador en un solo lugar (main.py o Depends de FastAPI).
+
+B3: el endpoint de la ficha se salta la capa de aplicación
+
+- Evidencia: app/entrada/http_abogados.py:4,7 importa e instancia JsonRepositorioCostos a nivel de módulo. En :17-25 hace la orquestación completa: busca el abogado, suma los minutos, obtiene el costo y llama a calcular_costo_hora.
+- Violación: el adaptador de entrada depende de infraestructura y hace el trabajo de un caso de uso. Según el LEEME, la entrada solo puede depender de aplicación.
+- Por qué importa: la regla de dominio ya es una sola, pero la forma de obtener «minutos del abogado» está escrita dos veces: aquí y en reporte_costos.py:19-22. Si una de las dos cambia, la ficha y el reporte vuelven a dar números distintos.
+- Corrección: crear un caso de uso ObtenerCostoHoraAbogado en aplicacion/ que use el puerto y comparta el cálculo con el reporte. El router solo traduce la petición, llama al caso de uso y convierte «no encontrado» en 404.
+
+Frontend
+
+F1: los componentes llaman a la API directamente
+
+- Evidencia: src/pantallas/Ficha.tsx:16,22 y src/pantallas/Reporte.tsx:21 usan fetch("/api/...") con las rutas, la verificación de respuesta.ok y el json() dentro de useEffect.
+- Violación: el LEEME dice que el acceso a la API no vive en los componentes.
+- Por qué importa: la vista queda atada al transporte HTTP y a las rutas concretas. No se puede probar ni reemplazar la fuente de datos.
+- Corrección: definir un puerto CostosRepositorio (listarAbogados, costoHora, reporte) y un adaptador HttpCostosRepositorio en infraestructura/. Los componentes lo usan a través de la capa de aplicación (F3).
+
+F2: regla de negocio en el componente, distinta a la del backend
+
+- Evidencia: src/pantallas/Reporte.tsx:33-35 calcula el promedio de la firma como un promedio simple de costoHora y devuelve null si alguna fila es null. Ignora el promedioFirma que ya calcula el backend, ponderado por horas.
+- Violación: el LEEME dice que las reglas de negocio no viven en los componentes.
+- Por qué importa: la pantalla muestra un valor incorrecto con los datos actuales:
+  - Sin socios muestra Bs 209,50, y el backend calcula Bs 199,09.
+  - Con socios muestra «No calculable», y el backend calcula Bs 483,18.
+- Corrección: mostrar promedioFirma tal como llega del backend. Si algún cálculo tiene que estar en el cliente, va en el dominio o la aplicación del frontend, no en la vista.
+
+F3: no hay capa de dominio ni de aplicación, todo vive en la vista
+
+- Evidencia: los tipos están declarados dentro de los componentes (interface Abogado en Ficha.tsx:3-7, interface Fila en Reporte.tsx:3-10). Las respuestas se usan sin tipo (datos.filas, datos.costoHora). Los componentes también manejan la carga, los errores y el reinicio del estado, y la selección inicial está fijada con useState("A-01") en Ficha.tsx:11.
+- Violación: los componentes coordinan los casos de uso y definen el modelo, cuando deberían solo presentar.
+- Por qué importa: cualquier cambio en el formato de la API rompe las vistas directamente. La lógica no se puede probar ni reutilizar, y el criterio «no calculable» está repetido en Ficha.tsx:45 y Reporte.tsx:58.
+- Corrección: poner los tipos en dominio/, con un mapper del formato de la API al modelo dentro del adaptador. Los hooks o casos de uso van en aplicacion/ (useReporteCostos, useCostoHoraAbogado) y devuelven { datos, cargando, error }. El componente solo muestra ese estado.
+
+Otros problemas importantes
+
+1. Información confidencial en los logs: app/aplicacion/reporte_costos.py:21 registra con nivel INFO cada Registro completo, incluidos cliente, asunto y detalle (por ejemplo «documentación reservada de Hotelera Valle Alto…»). Eso expone información protegida por secreto profesional y genera unas 220 líneas por petición. Hay que quitarlo o registrar solo cantidades o IDs en nivel DEBUG.
+2. El período se ignora: costo_de y registros_de (infraestructura/repositorio_json.py:27-35) no filtran por periodo. Cuando haya más de un mes, el costo por hora mezclará costos y horas de distintos períodos. El puerto debería recibir el período.
+3. Error 500 por un dato faltante: repositorio_json.py:28 usa next() sin valor por defecto. Si un abogado no tiene costo cargado, lanza StopIteration y tanto el reporte como la ficha responden 500.
+
+No modifiqué ningún archivo.
+
+✻ Brewed for 32s · done 7:28 PM
+
+※ recap: Estamos cerrando la Tarea 2 del paso 4b (revisión de arquitectura hexagonal). Con el código actual, después de los fixes de Codex, quedaron 3 hallazgos de backend, 3 de frontend y 3 problemas extra. Lo siguiente es pegarlos en la nota final de entrega. (disable recaps in /config)

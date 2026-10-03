@@ -1,0 +1,684 @@
+
+```
+  >_ OpenAI Codex (v0.160.0)
+     ~/Developer/entrevista-MB
+
+  Speak, friend, and enter a prompt.
+
+  To get started, describe a task or try one of these commands:
+
+  /init - create an AGENTS.md file with instructions for Codex
+  /status - show current session configuration
+  /permissions - choose what Codex is allowed to do
+  /model - choose what model and reasoning effort to use
+  /review - review any changes and find issues
+• Permission selection requested: Full Access
+• Model changed to gpt-6.1-sol high
+```
+Estamos todavia en la fase de analisis y especificacion de la prueba. No modifiques ningun archivo y no implementes codigo.  
+Lee LEEME.md, 1-enunciado.md, la estructura general del repositorio, frontend-react/package.json, docker-compose.yml/compose.yaml y datos/contabilidad.csv.  
+El sistema dentro de servicios/ debe tratarse como un sistema externo: no inspecciones sus archivos internos. Solo puedes consumir su API documentada en http://localhost:8000.  
+Consulta /salud y una pagina pequeña de /registros.  
+Quiero que me entregues:  
+1\. forma exacta de ambas fuentes de datos;  
+2\. campos que permitirían cruzarlas;  
+3\. posibles problemas de calidad o compatibilidad de datos;  
+4\. arquitectura mínima razonable para Python + React;  
+5\. decisiones técnicas que todavía dependan de una respuesta del Product Owner;  
+6\. riesgos/edge cases que deberían aparecer en la especificación.  
+No escribas código ni hagas cambios.  
+
+Voy a revisar los documentos, la estructura y las dos fuentes de datos sin modificar archivos. Trataré `servicios/` como un sistema externo y consultaré únicamente su API documentada, incluyendo `/salud` y una página pequeña de `/registros`.
+```
+• Failed (exit 1) pwd; rg --files -g 'AGENTS.md' -g '!servicios/**' -g '!node_modules/**' -g '!.git/**' -g '!frontend-react/node_modules/**' -g '!**/package-…
+  └ /Users/andy/Developer/entrevista-MB
+• Ran for task_path in /AGENTS.md /Users/AGENTS.md /Users/andy/AGENTS.md /Users/andy/Developer/AGENTS.md /Users/andy/Developer/entrevista-MB/AGENTS.md; do if…
+  └ (no output)
+• Explored
+  └ Read SKILL.md (spreadsheets:Spreadsheets skill)
+• Ran cat LEEME.md 1-enunciado.md frontend-react/package.json; for task_compose in docker-compose.yml compose.yaml; do if [ -f "$task_compose" ]; then printf…
+  └ cat: LEEME.md: No such file or directory
+    cat: 1-enunciado.md: No such file or directory
+    cat: frontend-react/package.json: No such file or directory
+• Explored
+  └ List ls -la
+    List rg --files --hidden -g '!servicios/**' -g '!node_modules/**' -g '!frontend-react/node_modules/**' -g '!.git/**' -g '!**/package-lock.json' -g '!**/
+         yarn.lock' -g '!**/pnpm-lock.yaml'
+```
+El material está en `test-devs/entorno-candidato`, dentro del directorio de trabajo indicado. Aplicaré la habilidad de hojas de cálculo para la revisión de solo lectura del CSV; primero confirmaré el enunciado y el contrato público de la API.
+```
+• Explored
+  └ Read SKILL.md (spreadsheets:Spreadsheets skill)
+• Ran cat LEEME.md frontend-react/package.json docker-compose.yml; rg --files --hidden -g '!**/servicios/**' -g '!**/node_modules/**' -g '!**/.git/**' -g '!*…
+  └ 2026-06,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9789.13,1664.15,3500.00,14953.28,108.75
+    2026-07,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9701.26,1649.21,3500.00,14850.47,67.75
+    2026-08,AB-040,Julia Soliz,Junior,Propiedad Intelectual,9486.66,1612.73,3500.00,14599.39,99.75
+• Ran cat README.md; rg --files --hidden --no-ignore -g '!**/servicios/**' -g '!**/node_modules/**' -g '!**/.git/**' -g '*enunciado*' -g 'AGENTS.md'; curl -s…
+  └ content-type: application/json
+    
+    {"openapi":"3.1.0","info":{"title":"Registro de horas","version":"2.3.1"},"paths":{"/salud":{"get":{"summary":"Salud","operationId":"salud_salud_get","re…
+```
+No aparece `1-enunciado.md` en el repositorio disponible. ¿Está en otra ruta o tiene otro nombre? Continuaré el análisis con `LEEME.md`, el CSV y la API mientras tanto.
+```
+• Explored
+  └ Read SKILL.md (spreadsheets:Spreadsheets skill), read_only_qna.md
+• Ran curl -sS -i --max-time 15 'http://localhost:8000/registros?pagina=1&tamano=5'; curl -sS --max-time 15 http://localhost:8000/docs
+  └     </body>
+        </html>
+        
+• Ran file datos/contabilidad.csv; cut -d, -f1 datos/contabilidad.csv | sort | uniq -c; cut -d, -f2 datos/contabilidad.csv | sort | uniq -c; cut -d, -f4 dato…
+  └ 119:2026-06,AB-006,Florencia Lema,Socio,Corporativo,55964.29,9513.93,3500.00,68978.22,0.00
+    120:2026-07,AB-006,Florencia Lema,Socio,Corporativo,56521.82,9608.71,3500.00,69630.53,0.00
+    121:2026-08,AB-006,Florencia Lema,Socio,Corporativo,55675.69,9464.87,3500.00,68640.56,0.00
+• Ran ls -la; ls -la entorno-candidato; rg --files --hidden --no-ignore -g '!**/servicios/**' -g '!**/node_modules/**' -g '!**/.git/**' -g '!**/package-lock.…
+  └ entorno-candidato/plataforma-existente/java-spring/src/main/java/com/salinascrespo/costos/entrada/SaludController.java
+    entorno-candidato/plataforma-existente/java-spring/mvnw
+    entorno-candidato/plataforma-existente/java-spring/src/test/java/com/salinascrespo/costos/ApiTest.java
+```
+La API respondió correctamente y reporta 51.812 registros. En la muestra, `minutos` llega como texto y hay dos fechas distintas: trabajo y carga. El CSV contiene 724 filas mensuales, cinco filas sin `nivel` y 120 con horas facturadas en cero. Estas diferencias deben quedar explícitas antes de definir los indicadores y el cruce.
+```
+• Explored
+  └ Read contabilidad.csv
+• Ran file -I datos/contabilidad.csv; od -An -tx1 -N24 datos/contabilidad.csv; git --no-optional-locks status --short; ls -d /Users/andy/Developer/entrevista…
+  └            69  64  2c  6e  6f  6d  62  72                                
+    
+    /Users/andy/Developer/entrevista-MB/test-devs/entorno-candidato/frontend-react/node_modules
+```
+\> No aparece \`1-enunciado.md\` en el repositorio disponible. ¿Está en otra ruta o tiene otro nombre? Continuaré el análisis con \`LEEME.md\`, el CSV y la API mientras tanto.  
+  
+aqui te lo comparto:  
+{  
+1-enunciado  
+Requerimiento — Tablero de costos por hora  
+Se entrega al candidato en el paso 1 (minuto 15). No se envía antes.  
+\\---  
+Contexto  
+El Estudio Salinas Crespo es una firma de abogados con unos cuarenta profesionales en cinco áreas de práctica. Los abogados registran sus horas en un sistema, y la contabilidad lleva los costos en otro. Hoy nadie puede responder con datos una pregunta que la dirección se hace desde hace tiempo.  
+Lo que se necesita  
+Necesitamos saber cuánto cuesta realmente una hora de cada nivel de abogado, por área de práctica, y verlo en un tablero.  
+Fuentes disponibles  
+Fuente  
+Cómo se accede  
+Registro de horas  
+API REST en http://localhost:8000 (ver LEEME.md del entorno)  
+Contabilidad  
+Export en datos/contabilidad.csv  
+Requisitos funcionales  
+El tablero muestra el costo por hora por nivel de abogado y por área de práctica.  
+Se puede ver cómo evoluciona en el tiempo.  
+Requisitos no funcionales  
+Es una herramienta interna de la firma.  
+Tiene que poder actualizarse cuando lleguen datos nuevos.  
+Cómo sigue  
+Tienes quince minutos con el product owner para aclarar lo que necesites. Después de eso, puedes volver a consultarle en cualquier momento hasta el final del paso 4, y se espera que lo hagas.  
+Luego escribirás la especificación que le entregarías a un agente de IA para construir esto. No escribas código todavía.  
+}.  
+
+Con el enunciado que compartiste, queda claro el objetivo del tablero, pero falta definir qué significa “una hora”: registrada, facturable o facturada. También confirmé que no hay claves abogado–mes duplicadas y que todos los costos totales cuadran con sus componentes. Siete abogados tienen cobertura parcial, sin huecos entre su primer y último mes disponible; no podemos atribuirlo a altas o bajas sin confirmación del Product Owner.
+El cruce es viable mediante **abogado + mes**, pero la fórmula del costo por hora depende de decisiones de negocio que el enunciado todavía deja abiertas. Revisé el enunciado que compartiste, los archivos solicitados y la API pública. No modifiqué archivos ni implementé código; no leí archivos internos de `servicios/`.
+
+**1\. Ambas fuentes tienen distinta granularidad.**
+
+El CSV de contabilidad (test-devs/entorno-candidato/datos/contabilidad.csv:1) contiene **724 filas**, correspondientes a **40 abogados** y **20 meses**, desde `2025-01` hasta `2026-08`. Según test-devs/entorno-candidato/LEEME.md, cada fila representa un abogado en un mes.
+
+Su formato físico es UTF-8 sin BOM, separado por comas, con encabezado. Los importes y las horas usan punto decimal y dos decimales. El orden exacto de columnas es:
+
+| Campo | Forma observada | Significado disponible |
+|---|---|---|
+| `periodo` | Texto `YYYY-MM` | Mes contable |
+| `abogado_id` | Texto como `AB-007` | Identificador del abogado |
+| `nombre` | Texto con posibles tildes | Nombre |
+| `nivel` | Texto; puede estar vacío | Socio, Asociado Senior, Asociado o Junior |
+| `area` | Texto | Corporativo, Tributario, Laboral, Litigios o Propiedad Intelectual |
+| `sueldo` | Decimal con dos posiciones | Componente del costo |
+| `cargas_sociales` | Decimal con dos posiciones | Componente del costo |
+| `gastos_asignados` | Decimal con dos posiciones | Componente del costo |
+| `costo_total` | Decimal con dos posiciones | Total contable |
+| `horas_facturadas` | Decimal con dos posiciones | Horas que contabilidad identifica como facturadas |
+
+La moneda y las reglas de reconocimiento contable **no están especificadas**.
+
+La API de horas entrega registros individuales de trabajo:
+
+- [GET `/salud`](<http://localhost:8000/salud>) respondió HTTP 200 con `estado: "ok"` y `registros: 51812`.
+- [GET `/registros?pagina=1&tamano=5`](<http://localhost:8000/registros?pagina=1&amp;tamano=5>) respondió HTTP 200 con cinco registros.
+
+Cada registro de esa muestra tiene exactamente estos campos:
+
+| Campo | Tipo JSON observado | Ejemplo |
+|---|---|---|
+| `id` | String | `"R-000001"` |
+| `abogado_id` | String | `"AB-007"` |
+| `fecha_trabajo` | String `YYYY-MM-DD` | `"2025-01-02"` |
+| `fecha_carga` | String `YYYY-MM-DD` | `"2025-01-02"` |
+| `minutos` | **String** | `"106"` |
+| `facturable` | Boolean | `true` |
+| `cliente` | String | `"Textiles Pando"` |
+| `asunto` | String | `"Auditoría laboral"` |
+
+La respuesta paginada contiene `datos` —una lista—, `pagina`, `tamano` y `total` —enteros—, y `siguiente` —ruta relativa o `null`—. En la consulta realizada, `total` fue `51812` y `siguiente` fue `/registros?pagina=2&tamano=5`.
+
+El contrato público admite `pagina ≥ 1` y `1 ≤ tamano ≤ 500`; los valores predeterminados son 1 y 100. [OpenAPI](<http://localhost:8000/openapi.json>) documenta esos parámetros y el error 422, pero **no define el esquema de las respuestas exitosas**. Por eso, los tipos de los registros anteriores son observaciones de cinco registros; no garantizan ausencia de nulos o formatos distintos en el resto.
+
+**2\. El cruce natural requiere agregar las horas antes de unirlas.**
+
+La clave candidata es:
+
+| Contabilidad | Registro de horas |
+|---|---|
+| `abogado_id` | `abogado_id` |
+| `periodo` | Mes derivado de `fecha_trabajo` o `fecha_carga`, según la regla acordada |
+
+Primero se agregan los minutos por abogado y mes y se convierten a horas dividiendo entre 60. Después se cruzan con la fila contable correspondiente.
+
+`nivel`, `area` y `nombre` vienen del CSV. Conviene tomar los del **mes correspondiente**, para poder representar futuros cambios de nivel o área. `id` identifica registros de horas; no sirve para unirlos con contabilidad. `cliente` y `asunto` no tienen contraparte en el CSV.
+
+Debe conservarse información sobre filas presentes únicamente en una fuente. Un cruce que retenga solo coincidencias podría ocultar costos o trabajo.
+
+**3\. Hay problemas confirmados y compatibilidades todavía por verificar.**
+
+En el CSV completo confirmé:
+
+- **Cinco filas sin nivel:** `AB-034`, junio–agosto de 2026, y `AB-038`, julio–agosto de 2026. No corresponde inferir el nivel a partir del sueldo.
+- **120 filas con horas facturadas en cero:** los seis socios, durante los veinte meses. Son ceros explícitos; dividir sus costos por esas horas deja el indicador indefinido.
+- **Cobertura temporal parcial en siete abogados:** `AB-021`, `AB-027`, `AB-032`, `AB-034`, `AB-036`, `AB-038` y `AB-039`. No hay huecos entre el primer y último mes disponible de cada uno. Esto podría representar altas o bajas, pero requiere confirmación.
+- No encontré claves `(abogado_id, periodo)` duplicadas.
+- En todas las filas, `costo_total = sueldo + cargas_sociales + gastos_asignados`, comparando centavos.
+- Los cinco campos numéricos tienen formato válido y valores no negativos.
+
+Entre fuentes existen estas diferencias relevantes:
+
+- **Facturable y facturado representan conceptos distintos.** `facturable: true` no demuestra que esas horas hayan sido facturadas.
+- La API entrega minutos como texto; el CSV entrega horas decimales. Hace falta conversión validada y una política de precisión.
+- Trabajo y carga pueden ocurrir en fechas distintas. En `R-000005`, el trabajo es del 3 de enero y la carga del 31 de enero: ya existe evidencia de carga tardía.
+- No se ha comprobado la cobertura temporal completa de la API, la coincidencia de todos los abogados, ni duplicados o anomalías fuera de la muestra.
+- El CSV termina en agosto de 2026. Debe mostrarse su cobertura, sin asumir que incluye el mes actual.
+
+**4\. La arquitectura mínima razonable es un backend Python que prepare los datos y un frontend React que los presente.**
+
+El flujo propuesto es: **CSV y API externa → validación y agregación en Python → API del tablero → React**.
+
+- **Backend:** FastAPI, lector CSV y cliente HTTP para la API externa. Separar adquisición de datos, validación y reglas de cálculo, sin añadir capas innecesarias.
+- **Modelo de cálculo:** conservar minutos y usar aritmética decimal para importes y cocientes. Las fórmulas y la agregación pertenecen al backend.
+- **Actualización:** una carga inicial y una operación explícita de actualización que relea el CSV y recorra la API. Preparar una versión completa y reemplazar la anterior solamente al terminar satisfactoriamente.
+- **Almacenamiento:** una versión validada en memoria puede bastar para una primera entrega. PostgreSQL resulta útil si deben persistirse importaciones, recuperarse resultados después de reinicios o auditar cambios.
+- **Frontend:** usar el punto de partida existente de React, TypeScript, Vite, Tailwind y Radix. Mostrar resultados por nivel y área, evolución temporal, filtros y estados de carga, vacío, error y dato no calculable.
+
+El test-devs/entorno-candidato/frontend-react/package.json ya contiene esa base frontend. test-devs/entorno-candidato/docker-compose.yml define la API externa en el puerto 8000 y PostgreSQL 16 en 5432; todavía no define el backend del tablero. `compose.yaml` no está presente.
+
+Para el volumen anunciado, una lectura completa con páginas de 500 requeriría **104 solicitudes**. Conviene evitar repetir esa descarga cada vez que alguien cambia un filtro.
+
+**5\. Las decisiones pendientes del Product Owner determinan el resultado del tablero.**
+
+| Decisión | Pregunta que debe resolverse |
+|---|---|
+| Denominador | ¿El costo se divide entre horas registradas, facturables o facturadas? |
+| Mes de imputación | ¿Cuenta la fecha de trabajo, la fecha de carga o un período contable con cierre? |
+| Costos incluidos | ¿Se usa `costo_total` completo? ¿Hay costos que excluir o redistribuir? |
+| Socios | ¿Se muestran sus costos propios, se distribuyen entre otros niveles o tienen otro tratamiento? |
+| Agregación | ¿Se espera costo total del grupo dividido entre horas del grupo, o promedio de costos por hora individuales? |
+| Fuentes discrepantes | ¿Qué fuente prevalece y qué diferencias deben mostrarse como incidencias? |
+| Datos incompletos | ¿Cómo se presentan niveles vacíos, costos sin horas y horas sin costo? |
+| Moneda y precisión | ¿Cuál es la moneda, el redondeo y la tolerancia de conciliación? |
+| Actualización | ¿Es manual o periódica? ¿Las cargas tardías recalculan meses anteriores? |
+| Uso interno | ¿Quién puede consultar costos, actualizar datos y ver detalle individual? ¿Se necesita historial? |
+
+Si el objetivo es medir el costo de una hora del grupo, la propuesta a validar es **suma de costos / suma de horas**, manteniendo la misma población y período en ambos términos. Promediar cocientes individuales da otro resultado.
+
+**6\. La especificación debe describir explícitamente estos casos límite.**
+
+- **Denominador cero:** resultado no calculable, con motivo visible; no convertirlo en costo cero.
+- **Dato ausente frente a cero real:** distinguir falta de contabilidad, ausencia de registros y cero explícito.
+- **Costos sin horas y horas sin costos:** conservarlos y definir su efecto sobre los totales.
+- **Nivel vacío o desconocido:** mostrarlo sin perder filas ni inventar una clasificación.
+- **Altas, bajas y cambios de nivel o área:** aplicar la clasificación y cobertura del período correspondiente.
+- **Carga tardía entre meses y correcciones históricas:** definir imputación, cierre y recálculo.
+- **Duplicados:** tratar por separado registros con el mismo `id` y filas contables con la misma clave.
+- **Formato inesperado:** minutos vacíos, negativos o no numéricos; fechas inválidas; booleanos o campos con tipos distintos.
+- **Fallo de paginación:** timeout, página repetida, cambio de `total`, ruta siguiente inválida o modificación de datos durante la descarga. La API no documenta una instantánea estable.
+- **Actualización incompleta:** conservar la última versión completa e indicar su antigüedad y el fallo.
+- **Totales y tendencias:** calcular cocientes a partir de sumas coherentes, evitar duplicar costos al unirlos con registros individuales y redondear al presentar.
+- **Filtros sin resultados y períodos incompletos:** mostrar estados claros y cobertura disponible.
+- **Acceso a información sensible:** concretar permisos para costos y detalle de clientes/asuntos, según el alcance acordado.
+```
+  Worked for 3m 51s • 5:32 PM
+```
+Estamos en la etapa de especificación de una prueba técnica.  
+Todavía NO debes escribir código ni modificar la implementación.  
+Necesito que crees en la raíz del entorno candidato un archivo llamado 2-especificacion.md.  
+Antes de escribirlo, lee:  
+\- LEEME.md  
+\- 1-enunciado.md  
+\- datos/contabilidad.csv  
+\- frontend-react/package.json  
+Puedes consultar únicamente la API pública documentada en http://localhost:8000.  
+No inspecciones ni leas la implementación interna de servicios/, porque debe tratarse como un sistema externo.  
+Contexto confirmado después del discovery con el Product Owner:  
+\- Los usuarios principales del tablero son los socios de la firma.  
+\- La información es sensible.  
+\- El objetivo principal no es cumplir un KPI predefinido, sino permitir que los socios comparen datos y tomen mejores decisiones de negocio.  
+\- Actualmente no existe un tablero ni KPIs definidos; esta es una solución nueva.  
+\- La visualización debe permitir analizar los datos de forma suficientemente amplia para hacer comparaciones.  
+\- Para el cálculo de horas deben considerarse únicamente registros con facturable = true.  
+\- Es importante analizar la evolución temporal.  
+\- También debe ser posible entender la evolución individual de un abogado cuando sea útil para analizar cambios de costo/salario en el tiempo.  
+\- Si existen datos inválidos, incompletos, incompatibles o potencialmente engañosos, el tablero debe generar observaciones visibles para que los socios no tomen decisiones sin conocer esas limitaciones.  
+Decisiones/propuestas técnicas:  
+\- Integrar las fuentes mediante abogado\_id + período.  
+\- Agregar primero los minutos de la API por abogado y período.  
+\- Convertir minutos facturables a horas.  
+\- Para agrupaciones por nivel/área, calcular costo por hora como:  
+&#32;&#32;SUM(costo\_total) / SUM(horas\_facturables).  
+&#32;&#32;No utilizar promedio simple de ratios individuales.  
+\- Utilizar costo\_total del CSV como costo del abogado para el período, ya que equivale a sueldo + cargas sociales + gastos asignados.  
+\- nivel, area y nombre deben corresponder al período del CSV para soportar futuros cambios.  
+\- Nunca convertir denominadores cero o datos faltantes en costo cero.  
+\- No descartar silenciosamente registros que no crucen entre ambas fuentes.  
+\- No mostrar cliente ni asunto en el tablero ejecutivo porque son innecesarios para este objetivo.  
+\- Proponer una arquitectura mínima de FastAPI + React. PostgreSQL está disponible pero no debe utilizarse salvo que aporte valor claro para esta entrega.  
+Sobre el período de imputación:  
+\- Estamos consultando al PO si las horas deben atribuirse usando fecha\_trabajo o fecha\_carga.  
+\- La recomendación actual es utilizar fecha\_trabajo porque representa cuándo ocurrió el trabajo, y utilizar fecha\_carga únicamente para identificar cargas tardías.  
+\- Si la respuesta todavía no está confirmada, documenta esto claramente como SUPUESTO PENDIENTE DE VALIDACIÓN, no como un hecho.  
+La especificación debe ser breve, ejecutable y servir posteriormente como input para un agente de implementación.  
+Estructúrala con:  
+1\. Objetivo y principio de producto  
+2\. Usuarios y sensibilidad de la información  
+3\. Fuentes de datos  
+4\. Reglas de integración  
+5\. Definición del costo por hora  
+6\. Funcionalidad del dashboard  
+7\. Filtros y comparativas  
+8\. Evolución temporal  
+9\. Calidad de datos y observaciones  
+10\. Actualización de datos  
+11\. Arquitectura propuesta  
+12\. Fuera de alcance  
+13\. Criterios de aceptación  
+14\. Supuestos y decisiones pendientes  
+Para la UI, propone una primera versión enfocada en decisión ejecutiva, evitando complejidad innecesaria. Como mínimo considera:  
+\- resumen por área y nivel;  
+\- costo total;  
+\- horas facturables;  
+\- costo por hora;  
+\- filtros de período, área y nivel;  
+\- gráfico temporal comparativo;  
+\- posibilidad de analizar un abogado individual;  
+\- observaciones visibles de calidad de datos.  
+No inventes requisitos de negocio no confirmados. Cuando algo no esté definido, márcalo como supuesto o decisión pendiente.  
+Antes de escribir el archivo, resume en 5–10 bullets las decisiones que entendiste y cualquier contradicción o ambigüedad importante. Espera mi aprobación antes de crear 2-especificacion.md.  
+
+Releeré las fuentes permitidas y contrastaré las reglas con lo confirmado por el PO. Después resumiré las decisiones y ambigüedades en 5–10 puntos; esperaré tu aprobación antes de crear `2-especificacion.md`.
+```
+• Ran curl -sS --max-time 15 http://localhost:8000/salud; curl -sS --max-time 15 'http://localhost:8000/registros?pagina=1&tamano=5'
+  └ {"estado":"ok","registros":51812}{"datos":[{"id":"R-000001","abogado_id":"AB-007","fecha_trabajo":"2025-01-02","fecha_carga":"2025-01-02","minutos":"106"…
+• Explored
+  └ Read contabilidad.csv
+• Failed (exit 1) cat LEEME.md frontend-react/package.json; if [ -f 1-enunciado.md ]; then cat 1-enunciado.md; fi; if [ -f 2-especificacion.md ]; then ls -l …
+  └     "vite": "^8.3.0"
+      }
+    }
+```
+Releí las fuentes permitidas y consulté `/salud` y cinco registros de la API. Estas son las decisiones que llevaría a la especificación:
+
+- **Producto:** herramienta nueva para que los socios comparen costos y evolución, y tomen decisiones de negocio. No incorporaremos KPIs, metas, semáforos ni rankings de desempeño no acordados.
+- **Información sensible:** el tablero mostrará únicamente información necesaria para ese análisis. No incluirá `cliente` ni `asunto`. El mecanismo de autenticación y los permisos concretos siguen pendientes.
+- **Fuentes:** contabilidad aportará costos y atributos mensuales; la API externa aportará tiempo facturable. `1-enunciado.md` sigue sin existir físicamente en el entorno: usaré el contenido que compartiste anteriormente como enunciado, sin crear ese archivo.
+- **Integración:** agregar primero los registros por `abogado_id + período` y después cruzarlos con contabilidad. `nombre`, `nivel` y `area` se tomarán del CSV del período correspondiente, conservando cambios históricos.
+- **Horas:** considerar exclusivamente `facturable = true`, validar `minutos` y convertir su suma a horas. `horas_facturadas` del CSV **no será el denominador**. Sus ceros en socios no demuestran que tengan cero horas facturables en la API.
+- **Costo por hora:** usar `costo_total` y calcular `SUM(costo_total) / SUM(horas_facturables)` para cada agrupación y selección temporal. Nunca promediar ratios individuales ni representar denominadores cero o datos faltantes como costo cero.
+- **Imputación temporal:** `fecha_trabajo` será la recomendación, marcada literalmente como **SUPUESTO PENDIENTE DE VALIDACIÓN**. `fecha_carga` permitirá identificar cargas tardías. También queda pendiente definir si las actualizaciones recalculan períodos ya cerrados.
+- **Primera UI:** resumen por área y nivel con costo total, horas facturables y costo por hora; filtros mensuales de período, área y nivel; gráfico temporal comparativo; y selección de un abogado para consultar su evolución de costo, sueldo, horas y costo por hora.
+- **Calidad:** observaciones visibles y contextualizadas para niveles vacíos, datos inválidos, duplicados, cobertura incompleta y registros sin cruce. Queda pendiente la política exacta para calcular resultados con datos incompletos: propongo mostrar los datos disponibles y marcar como no calculable el indicador afectado cuando falte un insumo necesario, sin descartar incidencias silenciosamente.
+- **Arquitectura y actualización:** FastAPI + React, con cálculos en el backend y una versión validada en memoria. Propongo actualización manual que relea ambas fuentes y conserve la última versión completa si falla. PostgreSQL no se incorporará inicialmente. Frecuencia de actualización, moneda, redondeo y tratamiento de socios o redistribución de costos quedarán identificados como decisiones pendientes cuando corresponda.
+
+El archivo tendrá las **14 secciones solicitadas**, con reglas y criterios de aceptación verificables, distinguiendo acuerdos, propuestas y pendientes.
+
+¿Apruebas este enfoque para crear `2-especificacion.md` en la raíz de `test-devs/entorno-candidato`? Espero tu aprobación antes de escribirlo, como solicitaste.
+```
+  Worked for 55s • 6:01 PM
+```
+Aprobado, con estos ajustes antes de crear 2-especificacion.md:  
+  
+1\. Fecha de imputación  
+Ya no queda pendiente. Para esta implementación usaremos el mes de \`fecha\_trabajo\`, porque representa cuándo ocurrió realmente el trabajo y es lo más coherente con el objetivo de analizar costos y tomar decisiones por período.  
+  
+\`fecha\_carga\` no define el período del cálculo; se utilizará como señal de calidad para detectar y reportar cargas tardías.  
+  
+Documenta esto como una decisión de implementación fundamentada en el objetivo de negocio, no como una respuesta literal del PO.  
+  
+2\. Métricas  
+No digas que “no habrá KPIs”, porque costo por hora es la métrica principal solicitada.  
+  
+La regla es:  
+\- no inventar métricas adicionales de desempeño;  
+\- no crear metas, semáforos, rankings o evaluaciones de abogados no solicitadas.  
+  
+3\. Acceso y sensibilidad  
+Está confirmado que los usuarios objetivo son los socios y que la información de costos es sensible.  
+  
+La especificación debe establecer que en una implementación productiva el acceso tiene que restringirse a usuarios autorizados.  
+  
+Sin embargo, autenticación, autorización y gestión de usuarios quedan fuera del alcance de esta entrega técnica, salvo que exista infraestructura ya provista para ello.  
+  
+4\. Actualización  
+Acepto como decisión de MVP una actualización explícita/manual que:  
+\- relea el CSV;  
+\- vuelva a consumir completamente la API;  
+\- valide las dos fuentes;  
+\- prepare el nuevo snapshot;  
+\- reemplace el snapshot anterior únicamente si la actualización termina correctamente.  
+  
+El tablero debe mostrar cuándo se realizó la última actualización exitosa.  
+  
+No agregar scheduling periódico en esta versión.  
+  
+5\. Calidad de datos  
+Las observaciones de calidad deben ser visibles en el producto, porque los socios usarán estos datos para tomar decisiones.  
+  
+La especificación debe contemplar, entre otras:  
+\- niveles faltantes;  
+\- datos inválidos;  
+\- registros sin contraparte entre fuentes;  
+\- denominadores cero;  
+\- cargas tardías;  
+\- cobertura temporal incompleta;  
+\- duplicados si se detectan.  
+  
+No ocultar incidencias mediante un inner join ni convertir datos ausentes en cero.  
+  
+6\. UI / toma de decisiones  
+La primera versión debe priorizar comparación ejecutiva:  
+\- tabla/resumen por área + nivel;  
+\- costo total;  
+\- horas facturables;  
+\- costo por hora;  
+\- filtro/rango temporal;  
+\- filtros por área y nivel;  
+\- gráfico temporal comparativo;  
+\- posibilidad de seleccionar un abogado individual para ver evolución de costo total, sueldo, horas facturables y costo por hora;  
+\- panel o superficie visible de observaciones de calidad de datos.  
+  
+Evita dashboards decorativos o visualizaciones que no respondan a una pregunta de negocio.  
+  
+7\. Moneda  
+La fuente no especifica moneda. No inventes Bs/USD ni símbolo monetario. Déjalo identificado como dato no especificado por la fuente.  
+  
+8\. Socios  
+No dar tratamiento contable especial al nivel “Socio” ni redistribuir sus costos porque no existe una regla de negocio que lo autorice.  
+  
+Recuerda que \`horas\_facturadas\` del CSV y \`facturable\` de la API son conceptos distintos.  
+  
+Con estos ajustes, crea ahora \`2-especificacion.md\`.  
+  
+Quiero una especificación concreta y ejecutable por otro agente, no un informe de investigación. Mantén las 14 secciones acordadas y criterios de aceptación verificables.  
+  
+No escribas todavía código de implementación.  
+
+Crearé `2-especificacion.md` con los ajustes aprobados, las 14 secciones y criterios de aceptación verificables. La fecha de trabajo y la actualización manual quedarán como decisiones de implementación. No modificaré la implementación.
+```
+• Ran git --no-optional-locks status --short; for task_file in AGENTS.md 1-enunciado.md 2-especificacion.md; do if [ -f "$task_file" ]; then printf '\n%s\n' …
+  └ (no output)
+```
+La especificación distinguirá un cero comprobado de un dato ausente. Cuando falte un insumo necesario, mostrará los valores disponibles y la observación correspondiente, sin publicar un costo por hora engañoso. También explicitará que los costos de abogados con cero horas siguen formando parte del costo total de su grupo.
+```
+• Added test-devs/entorno-candidato/2-especificacion.md (+123 -0)
++# Especificación — Tablero de costos por hora
++
++Estado: alcance aprobado para la entrega técnica. Implementar únicamente lo descrito; no completar decisiones pendientes con reglas de negocio invent
+• Ran wc -l -w 2-especificacion.md; rg -n '^## |SUPUESTO|pendiente|KPI|fecha_trabajo|fecha_carga|PostgreSQL|Socio|cliente|asunto' 2-especificacion.md; git --…
+  └ - La API no documenta consistencia de snapshot entre páginas. Detectar inconsistencias observables; no afirmar una garantía transaccional externa que no …
+    - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+• Edited test-devs/entorno-candidato/2-especificacion.md (+4 -4)
+-Si falta o es inválido un insumo necesario, mostrar el resultado afectado como no calculable, indicando el motivo. Los totales disponibles pueden mostrarse como parciales, identificados como tales; no publicar un ratio que mezcle poblaciones incompletas sin advertencia. Usar aritmética decimal y no redondear antes de agregar. Decisión de presentación: dos decimales, redondeo a la mitad hacia arriba; conservar precisión interna.
+• Ran rg -n '^## ' 2-especificacion.md; git --no-optional-locks status --short; sed -n '103,123p' 2-especificacion.md
+  └ - La API no documenta consistencia de snapshot entre páginas. Detectar inconsistencias observables; no afirmar una garantía transaccional externa que no …
+    - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+```
+Creé test-devs/entorno-candidato/2-especificacion.md con las 14 secciones, los ajustes aprobados y criterios de aceptación verificables.
+
+Verifiqué que el único cambio es este documento. No escribí código de implementación ni modifiqué otros archivos.
+```
+  Worked for 3m 46s • 6:09 PM
+```
+Acepto el BLOCKER B1 encontrado por la revisión independiente de Claude.  
+  
+Actualiza únicamente \`2-especificacion.md\`. No implementes código todavía.  
+  
+El problema detectado es:  
+\- Contabilidad contiene datos para octubre de 2025.  
+\- La API pública contiene 0 registros globales con \`fecha\_trabajo\` en 2025-10.  
+\- No debemos interpretar ese mes como “0 horas”, porque podría representar un hueco de cobertura de la fuente.  
+\- La regla actual de la spec tampoco debe hacer que cualquier rango que incluya ese mes quede completamente no calculable.  
+  
+Quiero introducir explícitamente estas reglas:  
+  
+1\. Cobertura mensual de la fuente  
+Un mes tiene cobertura de horas si la API contiene registros de trabajo para ese mes a nivel global.  
+  
+Si existen filas contables del mes pero la API tiene 0 registros globales:  
+\- el mes se considera INCOMPLETO;  
+\- no interpretar las horas como cero;  
+\- no calcular costo por hora para ese mes;  
+\- generar una observación visible de calidad de datos.  
+  
+2\. Cálculo mensual  
+Para un mes incompleto:  
+\- mostrar los datos contables disponibles si son útiles;  
+\- mostrar el costo por hora como “No calculable”;  
+\- mostrar el motivo: falta de cobertura de horas.  
+  
+3\. Cálculo de rangos  
+Para un rango de varios meses:  
+\- utilizar únicamente meses calculables;  
+\- excluir del numerador Y del denominador los meses sin cobertura suficiente;  
+\- nunca incluir costo de un mes excluido con horas cero;  
+\- si se excluye al menos un mes, marcar el resultado como PARCIAL;  
+\- mostrar cobertura, por ejemplo “19 de 20 meses incluidos”, y listar los períodos excluidos con su motivo.  
+  
+Si ningún mes seleccionado es calculable, el indicador completo será “No calculable”.  
+  
+4\. Diferenciar cobertura global de cero individual  
+No confundir un mes entero sin datos de API con un abogado que tiene cero horas facturables.  
+  
+Si el mes globalmente sí tiene cobertura y un abogado tiene 0 horas facturables:  
+\- esas son 0 horas facturables registradas para ese abogado;  
+\- su costo contable sigue formando parte del costo de su grupo;  
+\- su ratio individual es no calculable cuando el denominador es cero;  
+\- esto no invalida automáticamente el ratio agregado del grupo.  
+  
+5\. Evolución temporal  
+El gráfico debe representar meses incompletos como huecos / no calculables, no como costo 0 y no conectarlos de manera que sugiera un dato existente.  
+  
+6\. Calidad de datos  
+La UI debe mostrar los meses sin cobertura como observaciones explícitas.  
+  
+7\. Rango inicial  
+No inventes un rango por defecto especial para esconder octubre. La UI puede mostrar el rango disponible; si contiene períodos incompletos, debe hacer visible su cobertura.  
+  
+Actualiza también los criterios de aceptación para cubrir:  
+\- un mes completo;  
+\- un mes sin cobertura de API;  
+\- un rango parcialmente completo;  
+\- un rango sin ningún mes calculable;  
+\- cero horas facturables individual dentro de un mes con cobertura.  
+  
+Mantén el resto de la especificación sin cambios innecesarios.  
+  
+Al terminar, resume exactamente qué secciones cambiaste. No escribas código.  
+
+Actualizaré únicamente `2-especificacion.md` para distinguir la falta de cobertura mensual de las cero horas individuales y permitir resultados parciales en rangos. Revisaré las reglas relacionadas y añadiré los cinco casos de aceptación solicitados.
+```
+• Ran cat 2-especificacion.md; git --no-optional-locks status --short
+  └ - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+    ?? 2-especificacion.md
+• Explored
+  └ Read 2-especificacion.md
+• Edited test-devs/entorno-candidato/2-especificacion.md (+28 -15)
+-3. Seleccionar exclusivamente registros con `facturable = true`; agregar sus minutos por `(abogado_id, período)` y convertir la suma a horas dividiendo entre 60.
+-4. Cruzar ese agregado con contabilidad por `(abogado_id, periodo)`. Conservar la unión de claves de ambas fuentes; no usar un cruce que elimine sile
+• Ran cat 2-especificacion.md; git --no-optional-locks status --short
+  └ - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+    ?? 2-especificacion.md
+• Ran sed -n '20,105p' 2-especificacion.md; sed -n '120,155p' 2-especificacion.md; git --no-optional-locks status --short
+  └ - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+    ?? 2-especificacion.md
+```
+Actualicé únicamente test-devs/entorno-candidato/2-especificacion.md. Cambié estas secciones:
+
+- **4\. Reglas de integración:** cobertura mensual global y distinción frente a cero horas individuales.
+- **5\. Definición del costo por hora:** cálculo mensual, rangos PARCIALES, exclusión de costos y horas, cobertura y motivos.
+- **7\. Filtros y comparativas:** rango inicial transparente, sin ocultar octubre.
+- **8\. Evolución temporal:** huecos sin puntos cero ni conexiones engañosas.
+- **9\. Calidad de datos y observaciones:** observación explícita del B1 y reevaluación en cada actualización.
+- **13\. Criterios de aceptación:** los cinco escenarios solicitados, con resultados verificables.
+
+Verifiqué que las otras ocho secciones permanecen sin cambios. No implementé código.
+```
+  Worked for 2m 49s • 6:23 PM
+```
+Vamos a cerrar la especificación y pasar inmediatamente a implementación.  
+  
+Acepto parte de la revisión independiente de Claude. Haz UNA ÚLTIMA corrección acotada de \`2-especificacion.md\`.  
+  
+NO implementes código todavía.  
+  
+\#\# 1. Rangos y horas cero reales  
+  
+Corrige la regla de rangos:  
+  
+\- Excluir un período solamente cuando no tenga cobertura de la fuente de horas o exista un problema que haga sus datos no confiables.  
+\- Si un mes tiene cobertura y la población incluida tiene costo pero 0 horas facturables registradas, ese costo permanece en el numerador y aporta 0 al denominador.  
+\- Un rango es \`No calculable\` solamente si, después de aplicar las reglas de cobertura, \`SUM(horas\_facturables) = 0\`.  
+  
+Añade explícitamente este ejemplo:  
+  
+Mes A: costo 100, horas 1  
+Mes B: costo 300, horas 0  
+Resultado del rango: (100 + 300) / (1 + 0) = 400  
+  
+No eliminar el costo del Mes B.  
+  
+\#\# 2. Abogados sin cobertura individual  
+  
+Introduce explícitamente:  
+  
+\- Si un abogado no tiene ningún registro en TODA la API descargada, no interpretar su ausencia como 0 horas.  
+\- Clasificarlo como \`SIN COBERTURA DE HORAS\`.  
+\- No publicar costo/hora individual para esa persona.  
+  
+Para un grupo \`área + nivel\`:  
+  
+\- Si algunos miembros tienen cobertura y otros no:  
+&#32;&#32;\- calcular costo/hora usando únicamente la población con cobertura;  
+&#32;&#32;\- excluir simétricamente costo y horas de miembros sin cobertura;  
+&#32;&#32;\- marcar el resultado como \`PARCIAL\`;  
+&#32;&#32;\- mostrar \`N de M abogados con cobertura\`;  
+&#32;&#32;\- generar observación visible indicando miembros y costo excluido.  
+\- Si ningún miembro del grupo tiene cobertura:  
+&#32;&#32;\- costo/hora = \`No calculable\`.  
+  
+Un abogado que sí tiene registros en otros períodos pero tiene 0 horas facturables en un mes con cobertura puede representar 0 horas facturables registradas para ese mes; conservar su costo y marcar la observación correspondiente.  
+  
+\#\# 3. No crear ratio global de toda la firma  
+  
+El requerimiento principal es comparar por \`área + nivel\`.  
+  
+No crear un costo/hora general que mezcle niveles profesionales.  
+  
+La vista principal debe ser la matriz/lista \`área + nivel\`.  
+  
+La vista individual es una exploración separada.  
+  
+\#\# 4. Moneda  
+  
+Usar \*\*Bolivianos (Bs.)\*\* como moneda de presentación.  
+  
+IMPORTANTE:  
+\- La fuente de datos no especifica explícitamente la moneda.  
+\- Documentar Bs. como una decisión de producto/implementación para esta entrega, no como un hecho inferido del CSV.  
+\- No introducir conversiones de moneda.  
+  
+\#\# 5. Calidad / presentación  
+  
+\- Mostrar cobertura temporal y cobertura de abogados.  
+\- Las cargas tardías son observaciones informativas y, si se muestran, agregarlas por abogado/período; no generar miles de alertas individuales.  
+\- Minutos válidos: entero \> 0, aunque venga como string JSON. Cualquier otro valor es incidencia.  
+\- Una columna de costo en un resultado PARCIAL debe representar solamente el costo de la población/períodos incluidos en ese cálculo.  
+\- El costo excluido puede aparecer separadamente como contexto de calidad.  
+  
+\#\# 6. Alcance  
+  
+\- Cambiar estado del documento a \`Borrador de especificación para entrega técnica\`.  
+\- Eliminar referencias a la historia de revisión o nombres de agentes.  
+\- Autenticación/autorización queda explícitamente FUERA DEL ALCANCE de esta entrega.  
+\- Solo documentar que en producción la información debería restringirse a usuarios autorizados.  
+\- No ampliar requisitos hipotéticos innecesarios.  
+  
+\#\# 7. Criterios de aceptación  
+  
+Ajusta solamente los criterios afectados para verificar:  
+  
+\- mes global sin cobertura;  
+\- mes con cobertura y cero horas reales;  
+\- rango parcial;  
+\- abogado sin ninguna cobertura en API;  
+\- grupo parcialmente cubierto;  
+\- grupo sin ningún miembro con cobertura;  
+\- ejemplo 100/1 + 300/0 = 400;  
+\- presentación monetaria en Bs.  
+  
+Después:  
+1\. verifica consistencia interna del documento;  
+2\. dime qué secciones cambiaste;  
+3\. NO vuelvas a hacer investigación extensa;  
+4\. NO escribas código todavía.  
+  
+Esta será la versión final de la spec.  
+
+Haré la corrección final solo en `2-especificacion.md`, sin investigación adicional ni código. Revisaré la consistencia entre cobertura, horas cero, población incluida, presentación en Bs. y criterios de aceptación.
+```
+• Ran cat 2-especificacion.md; git --no-optional-locks status --short
+  └ - Los rangos de presencia por abogado no prueban altas/bajas; la ausencia no autoriza imputaciones. Los datos ambiguos permanecen observados/no calculabl…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación. `1-enunciado.md` no estaba presente físicamente…
+    ?? 2-especificacion.md
+```
+La distinción quedará explícita: el cero mensual se conserva en el cálculo del rango; la ausencia total de un abogado en la API se trata como falta de cobertura individual. El estado PARCIAL mostrará los meses, abogados y costos excluidos. También retiraré las referencias a la revisión y fijaré Bs. como decisión de presentación.
+```
+• Edited test-devs/entorno-candidato/2-especificacion.md (+48 -37)
+-Estado: alcance aprobado para la entrega técnica. Implementar únicamente lo descrito; no completar decisiones pendientes con reglas de negocio inventadas.
++Estado: Borrador de especificación para entrega técnica. Implementar únicamente lo descrito; no completar decisiones pendientes con reglas de negocio
+• Ran cat 2-especificacion.md; git --no-optional-locks status --short
+  └ - Los rangos de presencia no prueban altas/bajas. Aplicar exclusivamente las reglas explícitas de cobertura mensual e individual, cero registrado y exclu…
+    - Base documental: `LEEME.md`, fuentes disponibles y enunciado/decisiones compartidos en la conversación.
+    ?? 2-especificacion.md
+• Edited test-devs/entorno-candidato/2-especificacion.md (+2 -2)
+-| Valor negativo o total contable distinto de sus componentes | Reportar incompatibilidad potencial. No corregir, redistribuir ni reinterpretar; dejar no calculable el indicador afectado hasta aclarar el dato. |
++| Valor negativo o total contable distinto de sus componentes | Reportar incompatibilidad potencial. No corregir, redistribuir ni reinterpretar; dejar
+• Ran rg -n '^Estado:|^## |denominador positivo|meses calculables|revisión|Claude|B1|salvo infraestructura|símbolos de moneda|SIN COBERTURA|100 \+ 300|FUERA …
+  └ 141:## 14. Supuestos y decisiones pendientes
+    144:- Moneda de presentación: Bolivianos (Bs.) como decisión de producto/implementación para esta entrega. La fuente no especifica explícitamente moneda;…
+    ?? 2-especificacion.md
+```
+Actualicé únicamente test-devs/entorno-candidato/2-especificacion.md.
+
+Cambié el estado del documento y estas secciones:
+
+- **2 y 12:** sensibilidad y autenticación/autorización fuera de alcance.
+- **3 y 14:** Bs. como decisión de presentación, sin conversiones; eliminación de referencias históricas.
+- **4 y 5:** cobertura individual, exclusiones simétricas y conservación del costo en meses con cero horas. Incluí el ejemplo **100/1 + 300/0 = 400**.
+- **6, 7 y 8:** vista principal área + nivel, exploración individual separada y cobertura visible, sin ratio global.
+- **9:** minutos válidos, observaciones informativas agrupadas y costos excluidos.
+- **11:** contrato del backend coherente con esas reglas.
+- **13:** criterios de aceptación afectados.
+
+Verifiqué la consistencia interna y mantuve intactas las secciones **1 y 10**. No implementé código ni modifiqué otros archivos.
+```
+  Worked for 6m 4s • 6:34 PM
+La especificación final quedó actualizada y revisada por consistencia interna, lista para orientar la implementación del tablero por área + nivel. Incluye cobertura temporal e individual, resultados parciales, costos conservados ante horas cero reales, presentación en Bs. y criterios verificables. Solo se modificó 2-especificacion.md; todavía no se escribió código de implementación.
+```

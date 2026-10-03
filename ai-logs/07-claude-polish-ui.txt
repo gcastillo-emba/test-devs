@@ -1,0 +1,18 @@
+❯ Estamos en la fase FINAL de una prueba técnica.
+
+  La funcionalidad del dashboard está congelada y verificada. Quiero únicamente un polish visual profesional del frontend.
+
+  Trabaja SOLO en:
+  frontend-react/
+
+  Puedes usar la skill de UI/UX, Taste o Impeccable disponible que consideres más apropiada.
+
+  IMPORTANTE — RESTRICCIONES ABSOLUTAS:
+
+  - NO modificar backend.
+  - NO modificar APIs.
+  - NO modificar fórmulas.
+  - NO modificar reglas de cobertura.
+  - NO modificar filtros ni comportamiento.
+  - NO cambiar la semántica de estados COMPLETO / PARCIAL / NO CALCULABLE.
+  - NO instalar librerías nuevas salvo que sea referir las actuales.
